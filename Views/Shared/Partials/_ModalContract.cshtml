@@ -1,0 +1,28 @@
+@* modalContract *@
+<div class="modal-overlay" id="modalContract">
+    <div class="modal-card" style="max-width: 700px;">
+        <div class="modal-header"><h3 class="modal-title" id="lblContractModal">إضافة عقد</h3><button class="modal-close">&times;</button></div>
+        <div class="modal-body">
+            <form id="formContract" class="form-grid">
+                <input type="hidden" id="contractId">
+                <div class="form-group span-2"><label>المشروع *</label><select class="form-select" id="contractProjectId" required></select></div>
+                <div class="form-group span-2"><label>اسم العقد *</label><input type="text" class="form-control" id="contractName" required></div>
+                <div class="form-group"><label>قيمة العقد الأصلية *</label><input type="number" step="any" class="form-control" id="contractAmount" required></div>
+                <div class="form-group"><label>فترة الصرف (أيام) *</label><input type="number" class="form-control" id="contractPaymentTerms" value="45" required></div>
+                <div class="form-group"><label>تاريخ توقيع العقد</label><input type="date" class="form-control" id="contractSignDate" lang="ar"></div>
+                <div class="form-group"><label>الحالة</label><select class="form-select" id="contractStatus"><option value="Active">ساري</option><option value="Closed">منتهي</option></select></div>
+                <div class="form-group span-full" style="margin-top:0.5rem;padding-top:0.75rem;border-top:1px solid var(--border, #e2e8f0);">
+                    <strong style="display:block;margin-bottom:0.5rem;">قيم العقد المعدل</strong>
+                    <span style="font-size:0.8rem;color:var(--gray,#64748b);">حصر البنود إدخال يدوي — VO والتفويضات والضريبة تُحدَّث تلقائياً من الموقف التنفيذي لنفس العقد</span>
+                </div>
+                <div class="form-group"><label>قيمة الحصر لبنود المقايسة</label><input type="number" step="any" min="0" class="form-control" id="contractModifiedAmount" placeholder="0"></div>
+                <div class="form-group"><label>قيمة VO</label><input type="number" step="any" class="form-control" id="contractVoAmount" value="0" readonly title="تُحدَّث من الموقف التنفيذي"></div>
+                <div class="form-group"><label>قيمة التعويضات</label><input type="number" step="any" class="form-control" id="contractClaimsAmount" value="0" readonly title="تُحدَّث من الموقف التنفيذي"></div>
+                <div class="form-group"><label>قيمة الضريبة المضافة</label><input type="number" step="any" class="form-control" id="contractVatAmount" value="0" readonly title="تُحدَّث من الموقف التنفيذي"></div>
+            </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary modal-cancel">إلغاء</button><button class="btn btn-primary" id="btnSaveContract">حفظ</button></div>
+    </div>
+</div>
+
+<!-- INVOICE MODAL -->

@@ -1,0 +1,27 @@
+@* Import / Export page *@
+            <!-- IMPORT/EXPORT -->
+            <div id="importExportView" class="page-view">
+                <div class="form-grid">
+                    <div class="kpi-card span-2">
+                        <h3>وحدة الاستيراد والتصدير الموحدة (Excel & JSON)</h3>
+                        <p style="margin: 1rem 0; color: var(--gray);">يمكنك إدارة كامل عمليات النسخ الاحتياطي وتحديث البيانات الأساسية والشاملة من هذه الشاشة.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn btn-success" id="btnExportFullExcel">📥 تصدير جميع البيانات</button>
+                            <label class="btn btn-secondary">
+                                📤 استيراد جميع البيانات
+                                <input type="file" id="fileImportFullExcel" accept=".xlsx, .xls" style="display: none;">
+                            </label>
+                            <label class="btn btn-primary">
+                                🔄 استيراد البيانات الأساسية
+                                <input type="file" id="fileImportMasterData" accept=".xlsx, .xls" style="display: none;">
+                            </label>
+                            <button class="btn btn-primary" id="btnExportJSON">💾 نسخة احتياطية</button>
+                            <label class="btn btn-secondary">
+                                📂 استعادة نسخة احتياطية
+                                <input type="file" id="fileImportJSON" accept=".json" style="display: none;">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+

@@ -1,0 +1,182 @@
+@* Executive position page *@
+            <!-- EXECUTIVE POSITION -->
+            <div id="execPositionView" class="page-view">
+                <div class="kpi-grid" id="execSummaryBar" style="margin-bottom: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+                    <div class="kpi-card info">
+                        <div class="kpi-label">قيمة العقد</div>
+                        <div class="kpi-value" id="execKpiContractAmount" data-full="0.00">0.00</div>
+                        <div class="kpi-sub">العقد المحدد</div>
+                    </div>
+                    <div class="kpi-card success">
+                        <div class="kpi-label">إجمالي الموقف التنفيذي</div>
+                        <div class="kpi-value" id="execKpiTotalExec" data-full="0.00">0.00</div>
+                        <div class="kpi-sub">حسب الإدخال الحالي</div>
+                    </div>
+                    <div class="kpi-card warning">
+                        <div class="kpi-label">إجمالي المستخلصات</div>
+                        <div class="kpi-value" id="execKpiTotalInvoices" data-full="0.00">0.00</div>
+                        <div class="kpi-sub">المستخلصات المسجلة</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">الفرق</div>
+                        <div class="kpi-value" id="execKpiDiff" data-full="0.00">0.00</div>
+                        <div class="kpi-sub">الموقف - المستخلصات</div>
+                    </div>
+                    <div class="kpi-card info">
+                        <div class="kpi-label">نسبة التنفيذ</div>
+                        <div class="kpi-value" id="execKpiExecRate">0%</div>
+                        <div class="kpi-sub">من قيمة العقد</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">نسبة المستخلصات</div>
+                        <div class="kpi-value" id="execKpiInvRate">0%</div>
+                        <div class="kpi-sub">من قيمة العقد</div>
+                    </div>
+                </div>
+
+                <div class="table-container" style="margin-bottom: 1.5rem; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="font-size: 1.1rem;">إدخال ومتابعة الموقف التنفيذي</h3>
+                        <div style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+                            <div class="form-group" style="min-width: 220px; margin: 0;">
+    <label style="font-size: 0.8rem; font-weight: 600;">المشروع</label>
+    <select class="form-select" id="execProjectSelect">
+        <option value="">كل المشروعات</option>
+    </select>
+</div>
+                            <div class="form-group" style="min-width: 220px; margin: 0;">
+                                <label style="font-size: 0.8rem; font-weight: 600;">العقد المحدد *</label>
+                                <select class="form-select" id="execContractSelect"></select>
+                            </div>
+                            <div class="form-group" style="min-width: 160px; margin: 0;">
+                                <label style="font-size: 0.8rem; font-weight: 600;">تاريخ الموقف *</label>
+                                <input type="date" class="form-control" id="execDateInput" lang="ar">
+                            </div>
+                            <button class="btn btn-primary" id="btnSaveExecPosition">💾 حفظ إصدار جديد</button>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 0.75rem; color: var(--gray);">بيانات إدخال الموقف التنفيذي</h4>
+                    <div class="data-table-wrapper" style="margin-bottom: 2rem;">
+                        <table class="data-table" id="tblExecInputs">
+                            <thead>
+                                <tr>
+                                    <th>البند</th>
+                                    <th>الإجمالي حتى تاريخه</th>
+                                    <th>الحالي (تلقائي)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-exec-key="workVolume">
+                                    <td><strong>قيمة الأعمال المنفذة</strong></td>
+                                    <td><input type="number" step="any" class="form-control exec-cum-input" id="exec_workVolume_cum" value="0"></td>
+                                    <td><input type="number" step="any" class="form-control exec-curr-val" id="exec_workVolume_curr" readonly value="0"></td>
+                                </tr>
+                                <tr data-exec-key="variationOrders">
+                                    <td><strong>قيمة VO (أعمال إضافية)</strong></td>
+                                    <td><input type="number" step="any" class="form-control exec-cum-input" id="exec_variationOrders_cum" value="0"></td>
+                                    <td><input type="number" step="any" class="form-control exec-curr-val" id="exec_variationOrders_curr" readonly value="0"></td>
+                                </tr>
+                                <tr data-exec-key="materials">
+                                    <td><strong>قيمة التشوينات</strong></td>
+                                    <td><input type="number" step="any" class="form-control exec-cum-input" id="exec_materials_cum" value="0"></td>
+                                    <td><input type="number" step="any" class="form-control exec-curr-val" id="exec_materials_curr" readonly value="0"></td>
+                                </tr>
+                                <tr data-exec-key="claims">
+                                    <td><strong>قيمة التعويضات</strong></td>
+                                    <td><input type="number" step="any" class="form-control exec-cum-input" id="exec_claims_cum" value="0"></td>
+                                    <td><input type="number" step="any" class="form-control exec-curr-val" id="exec_claims_curr" readonly value="0"></td>
+                                </tr>
+                                <tr data-exec-key="vat">
+                                    <td><strong>ضريبة القيمة المضافة</strong></td>
+                                    <td><input type="number" step="any" class="form-control exec-cum-input" id="exec_vat_cum" value="0"></td>
+                                    <td><input type="number" step="any" class="form-control exec-curr-val" id="exec_vat_curr" readonly value="0"></td>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>إجمالي الموقف التنفيذي</strong></td>
+                                    <td id="execTotalCumCell">0.00</td>
+                                    <td id="execTotalCurrCell" style="font-weight: 700; color: var(--primary);">0.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <h4 style="margin-bottom: 0.75rem; color: var(--dark);">جدول المقارنة (الموقف التنفيذي vs المستخلصات)</h4>
+                    <div class="data-table-wrapper">
+                        <table class="data-table" id="tblExecComparison">
+                            <thead>
+                                <tr>
+                                    <th>البند</th>
+                                    <th>الموقف التنفيذي</th>
+                                    <th>إجمالي المستخلصات</th>
+                                    <th>الفرق</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-comp-key="workVolume">
+                                    <td>قيمة الأعمال</td>
+                                    <td id="comp_exec_workVolume">0.00</td>
+                                    <td id="comp_inv_workVolume">0.00</td>
+                                    <td id="comp_diff_workVolume">0.00</td>
+                                </tr>
+                                <tr data-comp-key="variationOrders">
+                                    <td>VO</td>
+                                    <td id="comp_exec_variationOrders">0.00</td>
+                                    <td id="comp_inv_variationOrders">0.00</td>
+                                    <td id="comp_diff_variationOrders">0.00</td>
+                                </tr>
+                                <tr data-comp-key="materials">
+                                    <td>التشوينات</td>
+                                    <td id="comp_exec_materials">0.00</td>
+                                    <td id="comp_inv_materials">0.00</td>
+                                    <td id="comp_diff_materials">0.00</td>
+                                </tr>
+                                <tr data-comp-key="claims">
+                                    <td>التعويضات</td>
+                                    <td id="comp_exec_claims">0.00</td>
+                                    <td id="comp_inv_claims">0.00</td>
+                                    <td id="comp_diff_claims">0.00</td>
+                                </tr>
+                                <tr data-comp-key="vat">
+                                    <td>ضريبة القيمة المضافة</td>
+                                    <td id="comp_exec_vat">0.00</td>
+                                    <td id="comp_inv_vat">0.00</td>
+                                    <td id="comp_diff_vat">0.00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr style="font-size: 1rem; font-weight: 700;">
+                                    <td>إجمالي الموقف التنفيذي</td>
+                                    <td id="comp_exec_total">0.00</td>
+                                    <td id="comp_inv_total">0.00</td>
+                                    <td id="comp_diff_total">0.00</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-toolbar">
+                        <h3>السجل الزمني للموقف التنفيذي (Version History)</h3>
+                        <button class="btn btn-danger btn-sm" id="btnDeleteLastExecVersion">🗑️ حذف آخر إصدار فقط</button>
+                    </div>
+                    <div class="data-table-wrapper">
+                        <table class="data-table" id="tblExecHistory">
+                            <thead>
+                                <tr>
+                                    <th>رقم الإصدار</th>
+                                    <th>تاريخ الموقف</th>
+                                    <th>المستخدم</th>
+                                    <th>إجمالي الموقف التنفيذي</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="execHistoryPagination" class="pagination-container" style="margin-top:0.75rem"></div>
+                </div>
+            </div>

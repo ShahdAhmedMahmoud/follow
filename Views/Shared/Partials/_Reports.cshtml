@@ -1,0 +1,271 @@
+@* Reports page *@
+            <!-- REPORTS (REORGANIZED TO 3 REPORTS ONLY) -->
+            <div id="reportsView" class="page-view">
+                <div class="nav-tabs">
+                    <div class="tab-item active" data-tab="repExecPositionView">1- تقرير الموقف التنفيذي</div>
+                    <div class="tab-item" data-tab="repEscalationsView">2- تقرير التعليات</div>
+                    <div class="tab-item" data-tab="repInvoicesView">3- تقرير المستحقات (المستخلصات)</div>
+                </div>
+
+                <!-- 1. REPORT: EXECUTIVE POSITION -->
+                <div id="repExecPositionView" class="tab-content active">
+                    <div class="table-container">
+                        <div class="table-toolbar">
+                            <div class="table-toolbar-left">
+                                <input type="text" class="form-control table-search" id="searchRepExec" placeholder="بحث في تقرير الموقف التنفيذي...">
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepExec', 'تقرير_الموقف_التنفيذي')">📊 تصدير Excel</button>
+                                <button class="btn btn-primary btn-sm" onclick="printReportSection('repExecPositionView', 'تقرير الموقف التنفيذي')">🖨️ طباعة</button>
+                            </div>
+                        </div>
+
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblRepExec">
+                                <thead>
+                                    <tr>
+                                        <th onclick="sortTable('tblRepExec', 0)">المالك</th>
+                                        <th onclick="sortTable('tblRepExec', 1)">المشروع</th>
+                                        <th onclick="sortTable('tblRepExec', 2)">العقد</th>
+                                        <th onclick="sortTable('tblRepExec', 3)">قيمة العقد</th>
+                                        <!-- الموقف التنفيذي -->
+                                        <th onclick="sortTable('tblRepExec', 4)">موقف: الأعمال</th>
+                                        <th onclick="sortTable('tblRepExec', 5)">موقف: VO</th>
+                                        <th onclick="sortTable('tblRepExec', 6)">موقف: التشوينات</th>
+                                        <th onclick="sortTable('tblRepExec', 7)">موقف: التعويضات</th>
+                                        <th onclick="sortTable('tblRepExec', 8)">موقف: الضريبة</th>
+                                        <th onclick="sortTable('tblRepExec', 9)">إجمالي الموقف</th>
+                                        <!-- المستخلصات -->
+                                        <th onclick="sortTable('tblRepExec', 10)">مستخلص: الأعمال</th>
+                                        <th onclick="sortTable('tblRepExec', 11)">مستخلص: VO</th>
+                                        <th onclick="sortTable('tblRepExec', 12)">مستخلص: التشوينات</th>
+                                        <th onclick="sortTable('tblRepExec', 13)">مستخلص: التعويضات</th>
+                                        <th onclick="sortTable('tblRepExec', 14)">مستخلص: الضريبة</th>
+                                        <th onclick="sortTable('tblRepExec', 15)">إجمالي المستخلصات</th>
+                                        <!-- المقارنة -->
+                                        @* <th onclick="sortTable('tblRepExec', 16)">فرق الأعمال</th> *@
+                                        @* <th onclick="sortTable('tblRepExec', 17)">فرق VO</th> *@
+                                        @* <th onclick="sortTable('tblRepExec', 18)">فرق التشوينات</th> *@
+                                        @* <th onclick="sortTable('tblRepExec', 19)">فرق التعويضات</th> *@
+                                        @* <th onclick="sortTable('tblRepExec', 20)">فرق الضريبة</th> *@
+                                        <th onclick="sortTable('tblRepExec', 21)">الفرق الكلي</th>
+                                        <!-- مؤشرات -->
+                                        <th onclick="sortTable('tblRepExec', 22)">نسبة التنفيذ</th>
+                                        <th onclick="sortTable('tblRepExec', 23)">نسبة المستخلصات</th>
+                                        <th onclick="sortTable('tblRepExec', 24)">المتبقي من العقد</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr style="background: #f1f5f9; font-weight: 700;">
+                                        <td colspan="3">الإجمالي العام / المتوسطات</td>
+                                        <td id="repExecFootContract">0.00</td>
+                                        <td id="repExecFootExecWV">0.00</td>
+                                        <td id="repExecFootExecVO">0.00</td>
+                                        <td id="repExecFootExecMat">0.00</td>
+                                        <td id="repExecFootExecClaims">0.00</td>
+                                        <td id="repExecFootExecVat">0.00</td>
+                                        <td id="repExecFootExecTotal" style="color: var(--primary);">0.00</td>
+                                        <td id="repExecFootInvWV">0.00</td>
+                                        <td id="repExecFootInvVO">0.00</td>
+                                        <td id="repExecFootInvMat">0.00</td>
+                                        <td id="repExecFootInvClaims">0.00</td>
+                                        <td id="repExecFootInvVat">0.00</td>
+                                        <td id="repExecFootInvTotal" style="color: var(--success);">0.00</td>
+                                        @* <td id="repExecFootDiffWV">0.00</td> *@
+                                        @* <td id="repExecFootDiffVO">0.00</td> *@
+                                        @* <td id="repExecFootDiffMat">0.00</td> *@
+                                        @* <td id="repExecFootDiffClaims">0.00</td> *@
+                                        @* <td id="repExecFootDiffVat">0.00</td> *@
+                                        <td id="repExecFootDiffTotal">0.00</td>
+                                        <td id="repExecFootRateExec">0%</td>
+                                        <td id="repExecFootRateInv">0%</td>
+                                        <td id="repExecFootRemaining">0.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <div id="pagination-tblRepExec"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. REPORT: ESCALATIONS -->
+                <div id="repEscalationsView" class="tab-content">
+                    <div class="kpi-grid" style="margin-bottom: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                        <div class="kpi-card info">
+                            <div class="kpi-label">عدد التعليات</div>
+                            <div class="kpi-value" id="kpiRepEscCount">0</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">إجمالي التعليات</div>
+                            <div class="kpi-value" id="kpiRepEscTotal" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card success">
+                            <div class="kpi-label">إجمالي ما تم رده</div>
+                            <div class="kpi-value" id="kpiRepEscReturned" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card warning">
+                            <div class="kpi-label">إجمالي المتبقي</div>
+                            <div class="kpi-value" id="kpiRepEscRemaining" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card success">
+                            <div class="kpi-label">نسبة الرد</div>
+                            <div class="kpi-value" id="kpiRepEscRate">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-toolbar">
+                            <div class="table-toolbar-left">
+                                <input type="text" class="form-control table-search" id="searchRepEsc" placeholder="بحث في تقرير التعليات...">
+                                <select class="form-select" id="repEscDescFilter" style="min-width: 160px;">
+                                    <option value="">وصف التعليّة: الكل</option>
+                                </select>
+                                <select class="form-select" id="repEscStatusFilter" style="min-width: 160px;">
+                                    <option value="">حالة الرد: الكل</option>
+                                    <option value="لم يتم الرد">لم يتم الرد</option>
+                                    <option value="الرد جزئيًا">الرد جزئيًا</option>
+                                    <option value="تم الرد">تم الرد</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepEsc', 'تقرير_التعليات')">📊 تصدير Excel</button>
+                                <button class="btn btn-primary btn-sm" onclick="printReportSection('repEscalationsView', 'تقرير التعليات')">🖨️ طباعة</button>
+                            </div>
+                        </div>
+
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblRepEsc">
+                                <thead>
+                                    <tr>
+                                        <th onclick="sortTable('tblRepEsc', 0)">رقم المستخلص</th>
+                                        <th onclick="sortTable('tblRepEsc', 1)">المالك</th>
+                                        <th onclick="sortTable('tblRepEsc', 2)">المشروع</th>
+                                        <th onclick="sortTable('tblRepEsc', 3)">العقد</th>
+                                        <th onclick="sortTable('tblRepEsc', 4)">تاريخ المستخلص</th>
+                                        <th onclick="sortTable('tblRepEsc', 5)">وصف التعلية</th>
+                                        <th onclick="sortTable('tblRepEsc', 6)">قيمة التعلية</th>
+                                        <th onclick="sortTable('tblRepEsc', 7)">حالة الرد</th>
+                                        <th onclick="sortTable('tblRepEsc', 8)">تاريخ الرد</th>
+                                        <th onclick="sortTable('tblRepEsc', 9)">قيمة الرد</th>
+                                        <th onclick="sortTable('tblRepEsc', 10)">المتبقي من التعلية</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr style="background: #f1f5f9; font-weight: 700;">
+                                        <td><strong>عدد التعليات: <span id="repEscFootCount">0</span></strong></td>
+                                        <td colspan="5">الإجمالي العام</td>
+                                        <td id="repEscFootTotal">0.00</td>
+                                        <td colspan="2"></td>
+                                        <td id="repEscFootReturned" style="color: var(--success);">0.00</td>
+                                        <td id="repEscFootRemaining" style="color: var(--warning);">0.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. REPORT: ACCRUALS AND INVOICES -->
+                <div id="repInvoicesView" class="tab-content">
+                    <div class="kpi-grid" style="margin-bottom: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+                        <div class="kpi-card info">
+                            <div class="kpi-label">عدد المستخلصات</div>
+                            <div class="kpi-value" id="kpiRepInvCount">0</div>
+                        </div>
+                        <div class="kpi-card success">
+                            <div class="kpi-label">إجمالي المستخلصات</div>
+                            <div class="kpi-value" id="kpiRepInvGross" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card success">
+                            <div class="kpi-label">إجمالي الصافي</div>
+                            <div class="kpi-value" id="kpiRepInvNet" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card warning">
+                            <div class="kpi-label">تحت التحصيل</div>
+                            <div class="kpi-value" id="kpiRepInvPending" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card warning">
+                            <div class="kpi-label">المستحق حالياً</div>
+                            <div class="kpi-value" id="kpiRepInvDueNow" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card danger">
+                            <div class="kpi-label">المتأخر</div>
+                            <div class="kpi-value" id="kpiRepInvOverdue" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card success">
+                            <div class="kpi-label">تم الصرف</div>
+                            <div class="kpi-value" id="kpiRepInvPaid" data-full="0.00">0.00</div>
+                        </div>
+                        <div class="kpi-card info">
+                            <div class="kpi-label">متوسط مدة الصرف</div>
+                            <div class="kpi-value" id="kpiRepInvAvgPayDays">0</div>
+                            <div class="kpi-sub">يوم</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-toolbar">
+                            <div class="table-toolbar-left">
+                                <input type="text" class="form-control table-search" id="searchRepInv" placeholder="بحث في تقرير المستحقات...">
+                                <select class="form-select" id="repInvPaymentStatusFilter" style="min-width: 160px;">
+                                    <option value="">حالة الصرف: الكل</option>
+                                    <option value="Pending">معلق</option>
+                                    <option value="Paid">مدفوع</option>
+                                    <option value="Partial">جزئي</option>
+                                </select>
+                                <select class="form-select" id="repInvLastStatusFilter" style="min-width: 160px;">
+                                    <option value="">آخر حالة: الكل</option>
+                                    <option value="Draft">مسودة</option>
+                                    <option value="Review">مراجعة</option>
+                                    <option value="Approved">معتمد</option>
+                                    <option value="Rejected">مرفوض</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepInv', 'تقرير_المستحقات_والمستخلصات')">📊 تصدير Excel</button>
+                                <button class="btn btn-primary btn-sm" onclick="printReportSection('repInvoicesView', 'تقرير المستحقات (المستخلصات)')">🖨️ طباعة</button>
+                            </div>
+                        </div>
+
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblRepInv">
+                                <thead>
+                                    <tr>
+                                        <th onclick="sortTable('tblRepInv', 0)">رقم المستخلص</th>
+                                        <th onclick="sortTable('tblRepInv', 1)">المالك</th>
+                                        <th onclick="sortTable('tblRepInv', 2)">المشروع</th>
+                                        <th onclick="sortTable('tblRepInv', 3)">العقد</th>
+                                        <th onclick="sortTable('tblRepInv', 4)">تاريخ المستخلص</th>
+                                        <th onclick="sortTable('tblRepInv', 5)">تاريخ الاستحقاق</th>
+                                        <th onclick="sortTable('tblRepInv', 6)">مدة الصرف التعاقدية</th>
+                                        <th onclick="sortTable('tblRepInv', 7)">الأيام منذ الاستحقاق</th>
+                                        <th onclick="sortTable('tblRepInv', 8)">حالة المستخلص</th>
+                                        <th onclick="sortTable('tblRepInv', 9)">حالة الصرف</th>
+                                        <th onclick="sortTable('tblRepInv', 10)">إجمالي المستخلص</th>
+                                        <th onclick="sortTable('tblRepInv', 11)">الصافي النقدي</th>
+                                        <th onclick="sortTable('tblRepInv', 12)">تاريخ الصرف</th>
+                                        <th onclick="sortTable('tblRepInv', 13)">مدة الصرف الفعلية</th>
+                                        <th onclick="sortTable('tblRepInv', 14)">التأخير عن مدة العقد</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                    <tr style="background: #f1f5f9; font-weight: 700;">
+                                        <td><strong>عدد المستخلصات: <span id="repInvFootCount">0</span></strong></td>
+                                        <td colspan="9">الإجمالي العام / المتوسطات</td>
+                                        <td id="repInvFootGross">0.00</td>
+                                        <td id="repInvFootNet" style="color: var(--primary);">0.00</td>
+                                        <td></td>
+                                        <td id="repInvFootAvgDays">0 يوم</td>
+                                        <td id="repInvFootAvgDelay" style="color: var(--danger);">0 يوم</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+

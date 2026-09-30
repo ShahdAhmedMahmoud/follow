@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "نظام إدارة المستخلصات والعقود";
+}
+
+@* ===== Login ===== *@
+<partial name="~/Views/Shared/Partials/_Login.cshtml" />
+
+@* ===== Application shell ===== *@
+<div id="app-wrapper" style="display:none">
+    <partial name="~/Views/Shared/Partials/_Sidebar.cshtml" />
+
+    <main id="main-container">
+        <partial name="~/Views/Shared/Partials/_Header.cshtml" />
+        <partial name="~/Views/Shared/Partials/_GlobalFilters.cshtml" />
+
+        <div id="content-area">
+            <partial name="~/Views/Shared/Partials/_Dashboard.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Owners.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Projects.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Contracts.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Invoices.cshtml" />
+            <partial name="~/Views/Shared/Partials/_SocialInsurance.cshtml" />
+            <partial name="~/Views/Shared/Partials/_ExecPosition.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Escalations.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Reports.cshtml" />
+            <partial name="~/Views/Shared/Partials/_ImportExport.cshtml" />
+            <partial name="~/Views/Shared/Partials/_Accounts.cshtml" />
+            <partial name="~/Views/Shared/Partials/_CostControl.cshtml" />
+        </div>
+    </main>
+</div>
+
+@* ===== Modals (outside app-wrapper so they overlay everything) ===== *@
+<partial name="~/Views/Shared/Partials/_Modals.cshtml" />

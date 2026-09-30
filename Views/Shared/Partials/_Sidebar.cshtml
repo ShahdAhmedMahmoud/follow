@@ -1,0 +1,45 @@
+@* Sidebar navigation *@
+    <aside id="sidebar">
+        <div class="sidebar-brand">
+            <button type="button" class="sidebar-toggle-btn" id="btnSidebarToggle" title="طي/توسيع القائمة" aria-label="طي القائمة">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+            </button>
+            <span class="sidebar-brand-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </span>
+            <div class="sidebar-brand-text">
+                <span class="sidebar-brand-title">Follow Up Control</span>
+                <span class="sidebar-brand-sub">إدارة المستخلصات والدفعات</span>
+            </div>
+            <button type="button" class="sidebar-close-btn" id="btnSidebarClose" title="إغلاق القائمة" aria-label="إغلاق القائمة">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-module-header">الرئيسية</li>
+            <li class="sidebar-item"><a class="sidebar-link active" data-page="dashboardView" data-tooltip="لوحة المتابعة"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span><span class="sidebar-label">لوحة المتابعة</span></a></li>
+
+            <li class="sidebar-module-header">البيانات الأساسية</li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="ownersView" data-tooltip="المالك"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="sidebar-label">المالك</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="projectsView" data-tooltip="المشروعات"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></span><span class="sidebar-label">المشروعات</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="contractsView" data-tooltip="العقود"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span><span class="sidebar-label">العقود</span></a></li>
+
+            <li class="sidebar-module-header">العمليات</li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="invoicesView" data-tooltip="المستخلصات"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span class="sidebar-label">المستخلصات</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="execPositionView" data-tooltip="الموقف التنفيذي"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg></span><span class="sidebar-label">الموقف التنفيذي</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="costControlView" data-tooltip="مراقبة تكاليف العقود"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></span><span class="sidebar-label">مراقبة التكاليف</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="escalationsView" data-tooltip="التعليات"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><span class="sidebar-label">التعليات</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="socialInsuranceView" data-tooltip="التأمينات الاجتماعية"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="sidebar-label">التأمينات الاجتماعية</span></a></li>
+
+            <li class="sidebar-module-header">التقارير والتصدير</li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="reportsView" data-tooltip="التقارير"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span class="sidebar-label">التقارير</span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="importExportView" data-tooltip="التصدير والاستيراد"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span><span class="sidebar-label">التصدير والاستيراد</span></a></li>
+
+            <li class="sidebar-module-header">الحسابات</li>
+            <li class="sidebar-item"><a class="sidebar-link" data-page="accountsView" data-tooltip="الحسابات والصلاحيات"><span class="sidebar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="sidebar-label">الحسابات والصلاحيات</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="sidebar-user-chip" id="sidebarUserChip" title="الحساب الحالي">م</div>
+            <div class="sidebar-footer-text">Construction ERP v1.0</div>
+        </div>
+    </aside>

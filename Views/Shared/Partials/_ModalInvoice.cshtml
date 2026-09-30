@@ -1,0 +1,172 @@
+@* modalInvoice *@
+<div class="modal-overlay" id="modalInvoice">
+    <div class="modal-card">
+        <div class="modal-header"><h3 class="modal-title" id="lblInvoiceModal">مستخلص جديد</h3><button class="modal-close">&times;</button></div>
+        <div class="modal-body">
+            <form id="formInvoice">
+                <input type="hidden" id="invoiceId">
+                
+                <div class="nav-tabs">
+                    <div class="tab-item active" data-tab="tabInvBasic">البيانات الأساسية</div>
+                    <div class="tab-item" data-tab="tabInvItems">مكونات المستخلص (الأعمال)</div>
+                    <div class="tab-item" data-tab="tabInvDeductions">الاستقطاعات والخصومات</div>
+                    <div class="tab-item" data-tab="tabInvPayment">تفاصيل السداد</div>
+                </div>
+
+                <!-- TAB 1: BASIC -->
+                <div id="tabInvBasic" class="tab-content active">
+                    <div class="form-grid">
+                        <div class="form-group"><label>المالك *</label><select class="form-select" id="invOwnerId" required></select></div>
+                        <div class="form-group"><label>المشروع *</label><select class="form-select" id="invProjectId" required></select></div>
+                        <div class="form-group"><label>العقد *</label><select class="form-select" id="invContractId" required></select></div>
+                        <div class="form-group"><label>رقم المستخلص *</label><input type="text" class="form-control" id="invNumber" required></div>
+                        <div class="form-group"><label>تاريخ المستخلص *</label><input type="date" class="form-control" id="invDate" required lang="ar"></div>
+                        <div class="form-group"><label>تاريخ الاستحقاق (تلقائي)</label><input type="date" class="form-control" id="invDueDate" readonly lang="ar"></div>
+                        <div class="form-group">
+                            <label>حالة المستخلص</label>
+                            <select class="form-select" id="invStatus">
+                                <option value="Draft">مسودة</option>
+                                <option value="Review">مراجعة</option>
+                                <option value="Approved">معتمد</option>
+                                <option value="Rejected">مرفوض</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: ITEMS -->
+                <div id="tabInvItems" class="tab-content">
+                    <div class="table-container" style="margin-bottom: 1.5rem;">
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblCumulativeItems">
+                                <thead>
+                                    <tr>
+                                        <th>البند</th>
+                                        <th>القيمة السابقة</th>
+                                        <th>قيمة المستخلص الحالي</th>
+                                        <th>الإجمالي حتى تاريخه</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-item-key="workVolume">
+                                        <td><strong>حجم الأعمال</strong></td>
+                                        <td><input type="number" step="any" class="form-control inv-prev-val" id="invWorkVolume_prev" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-curr-val" id="invWorkVolume_curr" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-cum-val inv-summary-calc" id="invWorkVolume" value="0"></td>
+                                    </tr>
+                                    <tr data-item-key="variationOrders">
+                                        <td><strong>أعمال إضافية (VO)</strong></td>
+                                        <td><input type="number" step="any" class="form-control inv-prev-val" id="invVariationOrders_prev" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-curr-val" id="invVariationOrders_curr" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-cum-val inv-summary-calc" id="invVariationOrders" value="0"></td>
+                                    </tr>
+                                    <tr data-item-key="materials">
+                                        <td><strong>التشوينات</strong></td>
+                                        <td><input type="number" step="any" class="form-control inv-prev-val" id="invMaterials_prev" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-curr-val" id="invMaterials_curr" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-cum-val inv-summary-calc" id="invMaterials" value="0"></td>
+                                    </tr>
+                                    <tr data-item-key="claims">
+                                        <td><strong>التعويضات</strong></td>
+                                        <td><input type="number" step="any" class="form-control inv-prev-val" id="invClaims_prev" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-curr-val" id="invClaims_curr" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-cum-val inv-summary-calc" id="invClaims" value="0"></td>
+                                    </tr>
+                                    <tr data-item-key="vat">
+                                        <td><strong>ضريبة القيمة المضافة</strong></td>
+                                        <td><input type="number" step="any" class="form-control inv-prev-val" id="invVat_prev" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-curr-val" id="invVat_curr" readonly value="0"></td>
+                                        <td><input type="number" step="any" class="form-control inv-cum-val inv-summary-calc" id="invVat" value="0"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <h4>تفاصيل البنود التفصيلية (اختياري)</h4>
+                        <button type="button" class="btn btn-secondary btn-sm" id="btnAddInvItem">+ إضافة بند تفصيلي</button>
+                    </div>
+                    <div class="data-table-wrapper">
+                        <table class="data-table" id="tblInvItems">
+                            <thead>
+                                <tr>
+                                    <th>الوصف</th>
+                                    <th>الكمية</th>
+                                    <th>الفئة</th>
+                                    <th>الإجمالي الحالي</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 1rem; text-align: left; font-weight: 700; font-size: 1.1rem; color: var(--primary);">
+                        إجمالي المستخلص (المكونات الحالية): <span id="lblItemsTotal">0.00</span>
+                    </div>
+                </div>
+
+                <!-- TAB 3: DEDUCTIONS -->
+                <div id="tabInvDeductions" class="tab-content">
+                    <div style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="margin:0;">الاستقطاعات والخصومات</h4>
+                        <div style="display:flex;gap:8px;align-items:center;">
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnOpenDeductionLibrary">📚 مكتبة الاستقطاعات</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="btnAddInvDeduction">+ إضافة استقطاع</button>
+                        </div>
+                    </div>
+
+                    <div id="deductionCardsContainer" class="deduction-cards-container">
+                        <!-- Deduction cards will be dynamically inserted here -->
+                    </div>
+
+                    <div id="deductionEmptyState" class="deduction-empty-state">
+                        <div style="font-size:2rem;margin-bottom:8px;">📋</div>
+                        <div style="font-weight:600;">لا توجد استقطاعات</div>
+                        <div style="color:var(--gray);font-size:0.85rem;margin-top:4px;">اضغط "إضافة استقطاع" لبدء إضافة الاستقطاعات</div>
+                    </div>
+
+                    <div class="deduction-summary">
+                        <div class="deduction-summary-row">
+                            <span class="deduction-summary-label">إجمالي الاستقطاعات</span>
+                            <span class="deduction-summary-value" id="lblDeductionsTotal">0.00</span>
+                        </div>
+                        <div class="deduction-summary-row deduction-summary-net">
+                            <span class="deduction-summary-label">الصافي المستحق</span>
+                            <span class="deduction-summary-value deduction-net-value" id="lblNetTotal">0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: PAYMENT -->
+                <div id="tabInvPayment" class="tab-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>حالة السداد</label>
+                            <select class="form-select" id="invPaymentStatus">
+                                <option value="Pending">معلق</option>
+                                <option value="Paid">مدفوع بالكامل</option>
+                                <option value="Partial">مدفوع جزئياً</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>المبلغ المدفوع</label>
+                            <input type="number" step="any" class="form-control" id="invPaidAmount" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ السداد</label>
+                            <input type="date" class="form-control" id="invPaymentDate" lang="ar">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary modal-cancel">إلغاء</button>
+            <button class="btn btn-primary" id="btnSaveInvoice">حفظ المستخلص</button>
+        </div>
+    </div>
+</div>
+
+<!-- DEDUCTION LIBRARY MODAL -->

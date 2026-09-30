@@ -1,0 +1,46 @@
+@* Accounts & permissions page *@
+            <!-- ACCOUNTS & PERMISSIONS -->
+            <div id="accountsView" class="page-view">
+                <div class="account-profile-card">
+                    <h3 style="margin-bottom:1rem;">الملف الشخصي للحساب الحالي</h3>
+                    <div class="account-profile-grid" id="currentAccountProfile">
+                        <div class="account-field"><label>اسم المستخدم</label><div class="value" id="accUsername">—</div></div>
+                        <div class="account-field"><label>الاسم المعروض</label><div class="value" id="accDisplayName">—</div></div>
+                        <div class="account-field"><label>البريد الإلكتروني</label><div class="value" id="accEmail">—</div></div>
+                        <div class="account-field"><label>الدور</label><div class="value" id="accRole">—</div></div>
+                        <div class="account-field"><label>الحالة</label><div class="value" id="accStatus">—</div></div>
+                    </div>
+                </div>
+                <div class="users-table-wrap" style="margin-bottom:1.25rem;">
+                    <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
+                        <h3 style="margin:0;font-size:1rem;">إدارة المستخدمين</h3>
+                        <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+                            <input type="text" class="form-control table-search" id="searchUsers" placeholder="بحث عن مستخدم..." style="min-width:180px;">
+                            <button type="button" class="btn btn-primary btn-sm" id="btnAddUser">+ إضافة مستخدم</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table" id="tblUsers">
+                            <thead><tr>
+                                <th>اسم المستخدم</th>
+                                <th>الاسم</th>
+                                <th>البريد</th>
+                                <th>الدور</th>
+                                <th>الحالة</th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>إجراءات</th>
+                            </tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="pagination-users"></div>
+                </div>
+                <div class="account-profile-card">
+                    <h3 style="margin-bottom:1rem;">الصلاحيات حسب الوحدة</h3>
+                    <p style="color:var(--gray);font-size:0.85rem;margin-bottom:1rem;">حدد مستخدماً من الجدول أعلاه لعرض/تعديل صلاحياته. الصلاحيات تُطبَّق فعلياً في الواجهة وفي الـ API.</p>
+                    <div class="permissions-grid" id="permissionsGrid"></div>
+                    <div style="margin-top:1rem;">
+                        <button type="button" class="btn btn-primary" id="btnSavePermissions">حفظ الصلاحيات</button>
+                    </div>
+                </div>
+            </div>

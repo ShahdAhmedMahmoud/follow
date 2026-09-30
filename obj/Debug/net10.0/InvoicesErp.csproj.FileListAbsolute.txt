@@ -1,0 +1,894 @@
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.Build.Locator.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.IO.Redist.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Buffers.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Collections.Immutable.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.CommandLine.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Memory.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Numerics.Vectors.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Runtime.CompilerServices.Unsafe.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Threading.Tasks.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\cs\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\de\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\es\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\fr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\it\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ja\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ko\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pl\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pt-BR\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ru\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\tr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hans\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hant\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.Build.Locator.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.Collections.Immutable.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.CommandLine.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\cs\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\de\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\es\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\fr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\it\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ja\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ko\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pl\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pt-BR\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ru\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\tr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Development.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Production.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.runtime.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.endpoints.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.exe
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.deps.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.runtimeconfig.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.pdb
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Identity.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Humanizer.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Tasks.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Utilities.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.NET.StringTools.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.OpenApi.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Mono.TextTemplating.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.ClientModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.CodeDom.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Convention.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Hosting.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Runtime.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.TypedParts.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Formats.Nrbf.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Memory.Data.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Reflection.MetadataLoadContext.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Resources.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Permissions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Windows.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.AssemblyReference.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rpswa.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfoInputs.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.CoreCompileInputs.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\scopedcss\bundle\InvoicesErp.styles.css
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\xblwtzcjr8-{0}-5sj9cfkqaj-5sj9cfkqaj.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\bzmb53kqgp-{0}-yba4zamokl-yba4zamokl.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.development.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\swae.build.ex.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\Invoices.CE65A2DF.Up2Date
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\refint\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.pdb
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.genruntimeconfig.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\ref\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\y9bgumrwjm-{0}-vjomm7adux-vjomm7adux.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\6qu0cv78wo-{0}-jcvdy1o7ff-jcvdy1o7ff.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.Build.Locator.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.IO.Redist.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Buffers.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Collections.Immutable.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.CommandLine.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Memory.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Numerics.Vectors.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Runtime.CompilerServices.Unsafe.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Threading.Tasks.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\cs\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\de\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\es\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\fr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\it\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ja\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ko\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pl\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pt-BR\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ru\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\tr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hans\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hant\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.Build.Locator.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.Collections.Immutable.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.CommandLine.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\cs\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\de\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\es\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\fr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\it\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ja\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ko\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pl\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pt-BR\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ru\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\tr\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Development.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Production.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.endpoints.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.runtime.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.exe
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.deps.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.runtimeconfig.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.pdb
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Identity.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Humanizer.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Tasks.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Utilities.Core.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.NET.StringTools.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.OpenApi.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Mono.TextTemplating.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Newtonsoft.Json.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.ClientModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.CodeDom.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Convention.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Hosting.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Runtime.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.TypedParts.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Formats.Nrbf.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Memory.Data.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Reflection.MetadataLoadContext.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Resources.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Permissions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Windows.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.AssemblyReference.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rpswa.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfoInputs.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.CoreCompileInputs.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cs
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\scopedcss\bundle\InvoicesErp.styles.css
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\y9bgumrwjm-{0}-vjomm7adux-vjomm7adux.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\bzmb53kqgp-{0}-yba4zamokl-yba4zamokl.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.development.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\swae.build.ex.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\Invoices.CE65A2DF.Up2Date
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\refint\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.pdb
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.genruntimeconfig.cache
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\ref\InvoicesErp.dll
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\xblwtzcjr8-{0}-f7o17vsim4-f7o17vsim4.gz
+E:\Final Pro للمستخلصات\MVC2\InvoicesErp-Final_SOLID\Final\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\6qu0cv78wo-{0}-mc3lb5381s-mc3lb5381s.gz
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.AssemblyReference.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.GeneratedMSBuildEditorConfig.editorconfig
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfoInputs.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.AssemblyInfo.cs
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.csproj.CoreCompileInputs.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cs
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cs
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\refint\InvoicesErp.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.pdb
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.Build.Locator.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Microsoft.IO.Redist.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\Newtonsoft.Json.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Buffers.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Collections.Immutable.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.CommandLine.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Memory.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Numerics.Vectors.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Runtime.CompilerServices.Unsafe.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\System.Threading.Tasks.Extensions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\cs\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\de\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\es\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\fr\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\it\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ja\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ko\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pl\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\pt-BR\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\ru\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\tr\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hans\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-net472\zh-Hant\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.Build.Locator.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\Newtonsoft.Json.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.Collections.Immutable.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\System.CommandLine.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\cs\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\de\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\es\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\fr\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\it\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ja\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ko\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pl\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\pt-BR\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\ru\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\tr\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Development.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\appsettings.Production.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.runtime.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.staticwebassets.endpoints.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.exe
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.deps.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.runtimeconfig.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\InvoicesErp.pdb
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Core.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Azure.Identity.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Humanizer.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Tasks.Core.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Build.Utilities.Core.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.NET.StringTools.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.OpenApi.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Mono.TextTemplating.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Newtonsoft.Json.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.ClientModel.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.CodeDom.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Convention.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Hosting.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.Runtime.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Composition.TypedParts.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Formats.Nrbf.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Memory.Data.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Reflection.MetadataLoadContext.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Resources.Extensions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Security.Permissions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\System.Windows.Extensions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\scopedcss\bundle\InvoicesErp.styles.css
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\xblwtzcjr8-{0}-f7o17vsim4-f7o17vsim4.gz
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\bzmb53kqgp-{0}-yba4zamokl-yba4zamokl.gz
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.development.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\swae.build.ex.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\Invoices.CE65A2DF.Up2Date
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\InvoicesErp.genruntimeconfig.cache
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\ref\InvoicesErp.dll
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\ifjlwto80d-{0}-bd1ymftehs-bd1ymftehs.gz
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\y9bgumrwjm-{0}-j6coau2m5y-j6coau2m5y.gz
+D:\followUp\InvoicesErp-CostControl-Updated\InvoicesErp-CostControl-Updated\InvoicesErp\InvoicesErp\obj\Debug\net10.0\compressed\6qu0cv78wo-{0}-yuwqt1q6ma-yuwqt1q6ma.gz
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\Microsoft.Build.Locator.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.exe.config
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\Microsoft.IO.Redist.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\Newtonsoft.Json.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Buffers.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Collections.Immutable.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.CommandLine.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Memory.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Numerics.Vectors.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Runtime.CompilerServices.Unsafe.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\System.Threading.Tasks.Extensions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\cs\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\de\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\es\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\fr\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\it\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\ja\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\ko\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\pl\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\pt-BR\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\ru\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\tr\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\zh-Hans\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-net472\zh-Hant\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.Build.Locator.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.deps.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\Newtonsoft.Json.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\System.Collections.Immutable.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\System.CommandLine.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\cs\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\de\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\es\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\fr\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\it\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\ja\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\ko\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\pl\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\pt-BR\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\ru\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\tr\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\appsettings.Production.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\appsettings.Development.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\appsettings.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.staticwebassets.runtime.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.staticwebassets.endpoints.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.exe
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.deps.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.runtimeconfig.json
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\InvoicesErp.pdb
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Azure.Core.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Azure.Identity.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Humanizer.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Build.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Build.Tasks.Core.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Build.Utilities.Core.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Data.SqlClient.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Identity.Client.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.NET.StringTools.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.OpenApi.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Microsoft.SqlServer.Server.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Mono.TextTemplating.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Newtonsoft.Json.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.ClientModel.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.CodeDom.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Composition.Convention.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Composition.Hosting.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Composition.Runtime.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Composition.TypedParts.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Configuration.ConfigurationManager.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Formats.Nrbf.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Memory.Data.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Reflection.MetadataLoadContext.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Resources.Extensions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Security.Cryptography.ProtectedData.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Security.Permissions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\System.Windows.Extensions.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\cs\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\de\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\es\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\fr\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\it\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ja\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ko\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pl\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\ru\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\tr\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\alshorouk\followup\followUp\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.csproj.AssemblyReference.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\rpswa.dswa.cache.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.GeneratedMSBuildEditorConfig.editorconfig
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.AssemblyInfoInputs.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.AssemblyInfo.cs
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.csproj.CoreCompileInputs.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cs
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.MvcApplicationPartsAssemblyInfo.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.RazorAssemblyInfo.cs
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\rjimswa.dswa.cache.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\scopedcss\bundle\InvoicesErp.styles.css
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\compressed\xblwtzcjr8-{0}-tpnrtaezrr-tpnrtaezrr.gz
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\compressed\bzmb53kqgp-{0}-ib70t9tue1-ib70t9tue1.gz
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\staticwebassets.build.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\staticwebassets.build.json.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\staticwebassets.development.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\swae.build.ex.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\Invoices.CE65A2DF.Up2Date
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.dll
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\refint\InvoicesErp.dll
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.pdb
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\InvoicesErp.genruntimeconfig.cache
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\ref\InvoicesErp.dll
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\compressed\ifjlwto80d-{0}-kyr36axj8k-kyr36axj8k.gz
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\compressed\y9bgumrwjm-{0}-1gtlklcli3-1gtlklcli3.gz
+E:\alshorouk\followup\followUp\obj\Debug\net10.0\compressed\6qu0cv78wo-{0}-085r0ymrkd-085r0ymrkd.gz

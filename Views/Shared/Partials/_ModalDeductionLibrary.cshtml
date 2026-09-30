@@ -1,0 +1,25 @@
+@* modalDeductionLibrary *@
+<div class="modal-overlay" id="modalDeductionLibrary">
+    <div class="modal-card" style="max-width: 650px;">
+        <div class="modal-header"><h3 class="modal-title">📚 مكتبة الاستقطاعات</h3><button class="modal-close" type="button" id="btnCloseDeductionLibrary">&times;</button></div>
+        <div class="modal-body">
+            <div style="display:flex;gap:8px;align-items:end;margin-bottom:12px;">
+                <div class="form-group" style="flex:1;margin:0;">
+                    <label for="deductionLibrarySearch">بحث</label>
+                    <input type="text" class="form-control library-search" id="deductionLibrarySearch" placeholder="بحث في الاستقطاعات...">
+                </div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:end;margin-bottom:16px;">
+                <div class="form-group" style="flex:1;margin:0;">
+                    <label for="deductionLibraryName">اسم الاستقطاع الجديد</label>
+                    <input type="text" class="form-control" id="deductionLibraryName" placeholder="مثال: تأمينات اجتماعية">
+                </div>
+                <button type="button" class="btn btn-primary" id="btnSaveDeductionLibraryItem">+ إضافة للمكتبة</button>
+            </div>
+            <div id="deductionLibraryList"></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary" id="btnCancelDeductionLibrary">إغلاق</button></div>
+    </div>
+</div>
+
+<!-- SOCIAL INSURANCE CONTRACT MODAL -->

@@ -1,0 +1,70 @@
+@* Contract Cost Control / Budget & Cost Control *@
+<div id="costControlView" class="page-view">
+    <div class="page-header-row">
+        <div>
+            <h2 class="page-title">مراقبة تكاليف العقود</h2>
+            <p class="page-subtitle">Contract Cost Control — Budget &amp; Cost Control</p>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem">
+        <div class="card-body" style="display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end">
+            <div class="form-group" style="min-width:220px;flex:1">
+                <label for="ccProjectSelect">المشروع</label>
+                <select id="ccProjectSelect" class="form-control">
+                    <option value="">— اختر المشروع —</option>
+                </select>
+            </div>
+            <div class="form-group" style="min-width:220px;flex:1">
+                <label for="ccContractSelect">العقد</label>
+                <select id="ccContractSelect" class="form-control" disabled>
+                    <option value="">— اختر العقد —</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="ccLoadBtn" disabled>تحميل</button>
+        </div>
+    </div>
+
+    <div id="ccContractMeta" class="card" style="margin-bottom:1rem;display:none">
+        <div class="card-body" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem">
+            <div>
+                <div class="text-muted" style="font-size:0.8rem">قيمة العقد الأصلية</div>
+                <div id="ccOriginalValue" class="fw-bold">—</div>
+            </div>
+            <div>
+                <div class="text-muted" style="font-size:0.8rem">قيمة العقد المعدل</div>
+                <div id="ccRevisedValue" class="fw-bold">—</div>
+            </div>
+            <div>
+                <div class="text-muted" style="font-size:0.8rem">الموقف التنفيذي (قيمة)</div>
+                <div id="ccProgressAmount" class="fw-bold">—</div>
+            </div>
+            <div>
+                <div class="text-muted" style="font-size:0.8rem">نسبة التنفيذ</div>
+                <div id="ccProgressPct" class="fw-bold">—</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ccEmptyState" class="card" style="display:none">
+        <div class="card-body text-center text-muted" style="padding:2rem">
+            اختر مشروعاً وعقداً ثم اضغط تحميل لفتح مراقبة التكاليف.
+        </div>
+    </div>
+
+    <div id="ccMainArea" style="display:none">
+        <div class="cc-items-toolbar no-print" style="display:flex;justify-content:flex-end;margin-bottom:0.75rem">
+            <button type="button" class="btn btn-primary" id="ccAddMainItemBtn">+ إضافة بند أساسي</button>
+        </div>
+        <div id="ccItemsContainer"></div>
+
+        <div class="card cc-summary-card" id="ccSummaryCard" style="margin-top:1.25rem">
+            <div class="card-header"><strong>Summary</strong></div>
+            <div class="card-body" id="ccSummaryWrap">
+                <div id="ccSummaryGrid">
+                    <!-- filled by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

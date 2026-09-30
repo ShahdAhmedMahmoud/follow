@@ -1,0 +1,69 @@
+@* Social insurance page *@
+            <!-- SOCIAL INSURANCE -->
+            <div id="socialInsuranceView" class="page-view">
+                <div class="kpi-grid" id="socialInsuranceKpiBar" style="margin-bottom: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));">
+                    <div class="kpi-card info"><div class="kpi-label">العقود المتابعة</div><div class="kpi-value" id="siKpiContracts">0</div><div class="kpi-sub">عقود مرتبطة بملفات التأمينات</div></div>
+                    <div class="kpi-card success"><div class="kpi-label">ملفات مكتملة</div><div class="kpi-value" id="siKpiReady">0</div><div class="kpi-sub">المستندات الأساسية مكتملة</div></div>
+                    <div class="kpi-card warning"><div class="kpi-label">ملفات تحتاج إجراء</div><div class="kpi-value" id="siKpiPending">0</div><div class="kpi-sub">ترجمة / مقايسة / فتح ملف</div></div>
+                    <div class="kpi-card danger"><div class="kpi-label">اعتراضات</div><div class="kpi-value" id="siKpiObjections">0</div><div class="kpi-sub">ملفات عليها اعتراض أو مراجعة</div></div>
+                    <div class="kpi-card info"><div class="kpi-label">تعلية التأمينات المطلوبة</div><div class="kpi-value" id="siKpiDue" data-full="0.00">0.00</div><div class="kpi-sub">إجمالي الاستقطاعات المطلوب سدادها</div></div>
+                    <div class="kpi-card warning"><div class="kpi-label">المتبقي للسداد</div><div class="kpi-value" id="siKpiOutstanding" data-full="0.00">0.00</div><div class="kpi-sub">بعد خصم المدفوع</div></div>
+                </div>
+
+                <div class="table-container" style="margin-bottom: 1.5rem;">
+                    <div class="table-toolbar">
+                        <div class="table-toolbar-left">
+                            <input type="text" class="form-control table-search" id="searchSocialInsurance" placeholder="بحث في جميع الأعمدة...">
+                        </div>
+                        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;">
+                            <select class="form-select" id="siFilterFileStatus" style="min-width:170px;">
+                                <option value="">كل حالات الملف</option>
+                                <option value="لم يبدأ">لم يبدأ</option><option value="قيد التجهيز">قيد التجهيز</option><option value="تم فتح الملف">تم فتح الملف</option><option value="مكتمل">مكتمل</option>
+                            </select>
+                            <select class="form-select" id="siFilterPaymentStatus" style="min-width:170px;">
+                                <option value="">كل حالات السداد</option>
+                                <option value="غير مسدد">غير مسدد</option><option value="مسدد جزئياً">مسدد جزئياً</option><option value="مسدد">مسدد</option>
+                            </select>
+                            <button class="btn btn-secondary btn-sm" id="btnRefreshSocialInsurance">تحديث</button>
+                            <button class="btn btn-primary btn-sm" id="btnExportSocialInsurance">تصدير Excel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-tabs" style="margin-bottom:1rem;">
+                    <div class="tab-item active" data-tab="siContractsTab">1- ملفات التأمينات حسب العقد</div>
+                    <div class="tab-item" data-tab="siInvoicesTab">2- مستخلصات وتعلية التأمينات</div>
+                </div>
+
+                <div id="siContractsTab" class="tab-content active">
+                    <div class="table-container">
+                        <div class="table-toolbar"><div><strong>متابعة ملف التأمينات من التعاقد</strong><div style="font-size:.8rem;color:var(--gray);margin-top:.25rem;">ترجمة العقد + المقايسة + فتح الملف + نسبة الملف + الاعتراضات</div></div></div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblSocialInsuranceContracts">
+                                <thead><tr>
+                                    <th>المالك</th><th>المشروع</th><th>العقد</th><th>تاريخ التعاقد</th><th>ترجمة العقد</th><th>المقايسة</th><th>حالة الملف</th><th>رقم الملف</th><th>النسبة %</th><th>الاعتراض</th><th>تعلية المستخلصات</th><th>المتبقي للسداد</th><th>إجراءات</th>
+                                </tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div id="siContractsPagination"></div>
+                    </div>
+                </div>
+
+                <div id="siInvoicesTab" class="tab-content">
+                    <div class="table-container">
+                        <div class="table-toolbar"><div><strong>موقف التأمينات الاجتماعية لكل مستخلص</strong><div style="font-size:.8rem;color:var(--gray);margin-top:.25rem;">يظهر تلقائياً عند وجود استقطاع من مكتبة الاستقطاعات باسم تأمينات اجتماعية / تعلية تأمينات اجتماعية</div></div></div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table" id="tblSocialInsuranceInvoices">
+                                <thead><tr>
+                                    <th>رقم المستخلص</th><th>التاريخ</th><th>المالك</th><th>المشروع</th><th>العقد</th><th>استقطاع التأمينات</th><th>حالة السداد</th><th>المدفوع</th><th>المتبقي</th><th>تاريخ السداد</th><th>مرجع السداد</th><th>إجراء</th>
+                                </tr></thead>
+                                <tbody></tbody>
+                                <tfoot><tr><td colspan="5">الإجمالي</td><td id="siFootDue">0.00</td><td></td><td id="siFootPaid">0.00</td><td id="siFootOutstanding">0.00</td><td colspan="3"></td></tr></tfoot>
+                            </table>
+                        </div>
+                        <div id="siInvoicesPagination"></div>
+                    </div>
+                </div>
+            </div>
+

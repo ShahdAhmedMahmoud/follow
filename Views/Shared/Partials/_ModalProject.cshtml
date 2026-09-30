@@ -1,0 +1,18 @@
+@* modalProject *@
+<div class="modal-overlay" id="modalProject">
+    <div class="modal-card" style="max-width: 600px;">
+        <div class="modal-header"><h3 class="modal-title" id="lblProjectModal">إضافة مشروع</h3><button class="modal-close">&times;</button></div>
+        <div class="modal-body">
+            <form id="formProject" class="form-grid">
+                <input type="hidden" id="projectId">
+                <div class="form-group span-full"><label>المالك *</label><select class="form-select" id="projectOwnerId" required></select></div>
+                <div class="form-group span-full"><label>اسم المشروع *</label><input type="text" class="form-control" id="projectName" required></div>
+                <div class="form-group"><label>تاريخ البدء</label><input type="date" class="form-control" id="projectStartDate" lang="ar"></div>
+                <div class="form-group"><label>الحالة</label><select class="form-select" id="projectStatus"><option value="Active">نشط</option><option value="Completed">مكتمل</option><option value="OnHold">متوقف</option></select></div>
+            </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary modal-cancel">إلغاء</button><button class="btn btn-primary" id="btnSaveProject">حفظ</button></div>
+    </div>
+</div>
+
+<!-- CONTRACT MODAL -->

@@ -1,0 +1,28 @@
+@* modalSocialInsurance *@
+<div class="modal-overlay" id="modalSocialInsurance">
+    <div class="modal-card" style="max-width:1000px;">
+        <div class="modal-header"><h3 class="modal-title">ملف التأمينات الاجتماعية — <span id="siModalContractName"></span></h3><button class="modal-close" type="button" id="btnCloseSocialInsurance">&times;</button></div>
+        <div class="modal-body">
+            <input type="hidden" id="siContractId">
+            <div class="form-grid">
+                <div class="form-group"><label>تاريخ التعاقد</label><input type="date" class="form-control" id="siContractSignDate" disabled lang="ar"></div>
+                <div class="form-group"><label>حالة ترجمة العقد</label><select class="form-select" id="siTranslationStatus"><option>لم تبدأ</option><option>قيد الترجمة</option><option>مكتملة</option><option>غير مطلوبة</option></select></div>
+                <div class="form-group"><label>موقف المقايسة اللازمة للملف</label><select class="form-select" id="siBoqStatus"><option>لم يتم تجهيزها</option><option>قيد التجهيز</option><option>جاهزة</option><option>غير مطلوبة</option></select></div>
+                <div class="form-group"><label>حالة ملف التأمينات</label><select class="form-select" id="siFileStatus"><option>لم يبدأ</option><option>قيد التجهيز</option><option>تم فتح الملف</option><option>مكتمل</option></select></div>
+                <div class="form-group"><label>رقم ملف التأمينات</label><input type="text" class="form-control" id="siFileNumber" placeholder="رقم الملف إن وجد"></div>
+                <div class="form-group"><label>نسبة الملف %</label><input type="number" step="any" class="form-control" id="siFileRate" value="0" min="0"></div>
+                <div class="form-group"><label>حالة الاعتراض</label><select class="form-select" id="siObjectionStatus"><option>لا يوجد اعتراض</option><option>تم الاعتراض</option><option>قيد المراجعة</option><option>تم قبول الاعتراض</option><option>تم رفض الاعتراض</option></select></div>
+                <div class="form-group"><label>تاريخ الاعتراض</label><input type="date" class="form-control" id="siObjectionDate" lang="ar"></div>
+                <div class="form-group"><label>تاريخ فتح الملف</label><input type="date" class="form-control" id="siOpeningDate" lang="ar"></div>
+                <div class="form-group span-full"><label>ملاحظات وإجراءات المتابعة</label><textarea class="form-control" id="siNotes" rows="4" placeholder="المستندات الناقصة، ملاحظات الهيئة، مواعيد المتابعة..." style="resize:vertical;"></textarea></div>
+            </div>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--light);border:1px solid var(--border);border-radius:8px;">
+                <strong>قائمة جاهزية الملف</strong>
+                <div id="siChecklistPreview" style="margin-top:.75rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;"></div>
+            </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary" id="btnCancelSocialInsurance">إلغاء</button><button type="button" class="btn btn-primary" id="btnSaveSocialInsurance">حفظ ملف التأمينات</button></div>
+    </div>
+</div>
+
+<!-- SOCIAL INSURANCE PAYMENT MODAL -->

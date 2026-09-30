@@ -1,0 +1,21 @@
+@* modalSocialInsurancePayment *@
+<div class="modal-overlay" id="modalSocialInsurancePayment">
+    <div class="modal-card" style="max-width:650px;">
+        <div class="modal-header"><h3 class="modal-title">سداد تأمينات المستخلص</h3><button class="modal-close" type="button" id="btnCloseSocialInsurancePayment">&times;</button></div>
+        <div class="modal-body">
+            <input type="hidden" id="siPaymentInvoiceId">
+            <div id="siPaymentInvoiceInfo" style="margin-bottom:1rem;padding:1rem;background:var(--light);border-radius:8px;"></div>
+            <div class="form-grid">
+                <div class="form-group"><label>إجمالي تعلية التأمينات</label><input type="number" class="form-control" id="siPaymentDue" disabled></div>
+                <div class="form-group"><label>حالة السداد</label><select class="form-select" id="siPaymentStatus"><option>غير مسدد</option><option>مسدد جزئياً</option><option>مسدد</option></select></div>
+                <div class="form-group"><label>المبلغ المدفوع</label><input type="number" step="any" min="0" class="form-control" id="siPaymentPaid"></div>
+                <div class="form-group"><label>تاريخ السداد</label><input type="date" class="form-control" id="siPaymentDate" lang="ar"></div>
+                <div class="form-group span-full"><label>مرجع السداد / إيصال</label><input type="text" class="form-control" id="siPaymentReference" placeholder="رقم الإيصال أو المرجع"></div>
+                <div class="form-group span-full"><label>ملاحظات</label><textarea class="form-control" id="siPaymentNotes" rows="3"></textarea></div>
+            </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary" id="btnCancelSocialInsurancePayment">إلغاء</button><button type="button" class="btn btn-primary" id="btnSaveSocialInsurancePayment">حفظ السداد</button></div>
+    </div>
+</div>
+
+<!-- PROGRESS BAR MODAL -->

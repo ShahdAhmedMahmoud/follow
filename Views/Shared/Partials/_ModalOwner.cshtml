@@ -1,0 +1,17 @@
+@* modalOwner *@
+<div class="modal-overlay" id="modalOwner">
+    <div class="modal-card" style="max-width: 500px;">
+        <div class="modal-header"><h3 class="modal-title" id="lblOwnerModal">إضافة مالك</h3><button class="modal-close">&times;</button></div>
+        <div class="modal-body">
+            <form id="formOwner" class="form-grid">
+                <input type="hidden" id="ownerId">
+                <div class="form-group span-full"><label>اسم المالك *</label><input type="text" class="form-control" id="ownerName" required></div>
+                <div class="form-group span-full"><label>رقم الهاتف</label><input type="text" class="form-control" id="ownerPhone"></div>
+                <div class="form-group span-full"><label>البريد الإلكتروني</label><input type="email" class="form-control" id="ownerEmail"></div>
+            </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary modal-cancel">إلغاء</button><button class="btn btn-primary" id="btnSaveOwner">حفظ</button></div>
+    </div>
+</div>
+
+<!-- PROJECT MODAL -->

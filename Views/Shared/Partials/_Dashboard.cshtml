@@ -1,0 +1,82 @@
+@* Dashboard page *@
+            <!-- DASHBOARD -->
+            <div id="dashboardView" class="page-view active">
+                <div class="dashboard-toolbar mc-dashboard-header">
+                    <div>
+                        <div class="dashboard-toolbar-title">لوحة المتابعة التنفيذية</div>
+                        <div class="dashboard-toolbar-sub">نظرة شاملة على العقود والتنفيذ والمستخلصات والتحصيل والمخاطر</div>
+                    </div>
+                    <div class="mc-header-actions">
+                        <div id="mcActiveFilters" class="mc-active-filters"></div>
+                        <div class="mc-last-updated">آخر تحديث<strong id="mcLastUpdated">—</strong></div>
+                        <button class="btn btn-secondary btn-sm" id="btnRefreshDashboard">↻ تحديث لوحة المتابعة</button>
+                    </div>
+                </div>
+
+                <section class="mc-section mc-overview">
+                    <div class="mc-section-head"><div><h3>أين نحن الآن؟</h3><p>ملخص تنفيذي سريع للمحفظة ضمن الفلاتر الحالية</p></div><div id="mcManagementSummary" class="mc-summary-line"></div></div>
+                    <div class="kpi-grid mc-primary-kpis">
+                        <div class="kpi-card info mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><div class="kpi-label">إجمالي قيمة العقود</div></div><div class="kpi-value" id="kpiTotalContractValue">0.00</div><div class="kpi-sub">المحفظة المفلترة</div></div>
+                        <div class="kpi-card info mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><div class="kpi-label">الموقف التنفيذي</div></div><div class="kpi-value" id="kpiTotalExecValue">0.00</div><div class="kpi-sub">آخر موقف لكل عقد</div></div>
+                        <div class="kpi-card success mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></span><div class="kpi-label">قيمة المستخلصات</div></div><div class="kpi-value" id="kpiGross">0.00</div><div class="kpi-sub">القيمه</div></div>
+                        <div class="kpi-card success mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M16 13h3"/></svg></span><div class="kpi-label">الصافي النقدي</div></div><div class="kpi-value" id="kpiNet">0.00</div><div class="kpi-sub">وفق حساب النظام الحالي</div></div>
+                        <div class="kpi-card success mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></span><div class="kpi-label">المحصل فعليًا</div></div><div class="kpi-value" id="kpiPaid">0.00</div><div class="kpi-sub">المدفوعات المسجلة</div></div>
+                        <div class="kpi-card warning mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div class="kpi-label">المستحق القائم</div></div><div class="kpi-value" id="kpiPending">0.00</div><div class="kpi-sub">غير محصل حتى الآن</div></div>
+                        <div class="kpi-card danger mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 9v5"/><path d="M12 16.5h.01"/></svg></span><div class="kpi-label">المتأخر</div></div><div class="kpi-value" id="kpiOverdue">0.00</div><div class="kpi-sub">تجاوز تاريخ الاستحقاق</div></div>
+                        <div class="kpi-card warning mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span><div class="kpi-label">المتبقي من العقود</div></div><div class="kpi-value" id="kpiRemainingContracts">0.00</div><div class="kpi-sub">قيمة غير منفذة</div></div>
+                    </div>
+                    <div class="mc-secondary-kpis">
+                        <div class="kpi-card info"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19L19 5"/><circle cx="7.5" cy="7.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/></svg></span><div class="kpi-label">نسبة التنفيذ</div></div><div class="kpi-value" id="kpiExecRate">0%</div><div class="kpi-sub">Execution / Contract</div></div>
+                        <div class="kpi-card success"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19L19 5"/><circle cx="7.5" cy="7.5" r="2"/><circle cx="16.5" cy="16.5" r="2"/></svg></span><div class="kpi-label">نسبة التحصيل</div></div><div class="kpi-value" id="kpiCollectionRate">0%</div><div class="kpi-sub">Paid / Net</div></div>
+                        <div class="kpi-card info"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div class="kpi-label">عدد العقود</div></div><div class="kpi-value" id="kpiContractsCount">0</div><div class="kpi-sub">عقود فريدة</div></div>
+                        <div class="kpi-card info"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18"/><rect x="14" y="9" width="6" height="12"/><path d="M7 7h2M7 11h2M7 15h2"/></svg></span><div class="kpi-label">عدد المشروعات</div></div><div class="kpi-value" id="kpiProjectsCount">0</div><div class="kpi-sub">مشروعات فريدة</div></div>
+                        <div class="kpi-card"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div class="kpi-label">متوسط مدة الصرف</div></div><div class="kpi-value" id="kpiAvgPaymentDays">0</div><div class="kpi-sub">يوم</div></div>
+                        <div class="kpi-card info"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16V8M8 12l4-4 4 4"/></svg></span><div class="kpi-label">إجمالي التعليات</div></div><div class="kpi-value" id="kpiTotalEscalations">0.00</div><div class="kpi-sub">قيمة التعليات</div></div>
+                        <div class="kpi-card warning"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg></span><div class="kpi-label">التعليات غير المردودة</div></div><div class="kpi-value" id="kpiUnreturnedEscalations">0.00</div><div class="kpi-sub">قيد المراجعة</div></div>
+                        <div class="kpi-card danger"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="kpi-label">تأمينات اجتماعية مستحقة</div></div><div class="kpi-value" id="kpiSocialInsuranceOutstanding">0.00</div><div class="kpi-sub">السداد من شاشة التأمينات</div></div>
+                    </div>
+                </section>
+
+                <section class="mc-section">
+                    <div class="mc-section-head"><div><h3>التنفيذ والفوترة</h3><p>مقارنة قيمة العقد مع آخر موقف تنفيذي وقيمة المستخلصات</p></div></div>
+                    <div class="mc-gap-strip" id="mcExecutionBillingGap"></div>
+                    <div class="charts-grid mc-charts-grid">
+                        <div class="chart-container mc-chart-wide"><div class="chart-title">قيمة العقود مقابل الموقف التنفيذي</div><div class="chart-body"><canvas id="chartContractVsExecution"></canvas></div></div>
+                        <div class="chart-container mc-chart-wide"><div class="chart-title">الموقف التنفيذي مقابل قيمة المستخلصات</div><div class="chart-body"><canvas id="chartExecVsInv"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">أعلى العقود حسب نسبة التنفيذ</div><div class="chart-body"><canvas id="chartContractExecution"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">الاتجاه الشهري للمستخلصات الحالية</div><div class="chart-body"><canvas id="chartMonthlyTrend"></canvas></div></div>
+                    </div>
+                </section>
+
+                <section class="mc-section">
+                    <div class="mc-section-head"><div><h3>التحصيل والمستحقات</h3><p>السيولة المحصلة، الرصيد القائم، والتأخير حسب عمر المستحق</p></div></div>
+                    <div class="charts-grid mc-charts-grid">
+                        <div class="chart-container"><div class="chart-title">المحصل مقابل المستحق القائم</div><div class="chart-body"><canvas id="chartPaymentAmounts"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">أعمار المستحقات غير المحصلة</div><div class="chart-body"><canvas id="chartAgingOutstanding"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">حالات المستخلصات</div><div class="chart-body"><canvas id="chartInvoicesStatus"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">توزيع قيمة المستخلصات حسب المالك</div><div class="chart-body"><canvas id="chartOwnerInvoices"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">توزيع قيمة المستخلصات حسب المشروع</div><div class="chart-body"><canvas id="chartProjectInvoices"></canvas></div></div>
+                    </div>
+                </section>
+
+                <section class="mc-section mc-risk-section">
+                    <div class="mc-section-head"><div><h3>المخاطر والعقود التي تحتاج متابعة</h3><p>تحليل إداري للتركيز على العقود ذات الأولوية، دون تغيير حالة البيانات الأصلية</p></div></div>
+                    <div class="mc-risk-overview" id="mcRiskOverview">
+                        <div class="mc-risk-stat"><strong id="mcRiskCriticalCount">0</strong><span>عقود بمخاطر حرجة</span></div>
+                        <div class="mc-risk-stat"><strong id="mcRiskHighCount">0</strong><span>عقود بمخاطر مرتفعة</span></div>
+                        <div class="mc-risk-stat"><strong id="mcRiskGapCount">0</strong><span>عقود بفجوة تنفيذ غير مفوترة</span></div>
+                        <div class="mc-risk-stat"><strong id="mcRiskUnreturnedCount">0</strong><span>تعليات غير مردودة</span></div>
+                    </div>
+                    <div class="charts-grid mc-charts-grid">
+                        <div class="chart-container"><div class="chart-title">أعلى العقود حسب المستحق القائم</div><div class="chart-body"><canvas id="chartTopOutstanding"></canvas></div></div>
+                        <div class="chart-container"><div class="chart-title">التعليات حسب حالة الرد</div><div class="chart-body"><canvas id="chartEscalationsStatus"></canvas></div></div>
+                    </div>
+                    <div class="table-container mc-attention-container">
+                        <div class="table-toolbar"><div><h3 style="margin:0;">العقود التي تحتاج متابعة</h3><small class="mc-muted">مرتبة حسب مستوى المخاطر والأثر المالي</small></div></div>
+                        <div class="data-table-wrapper">
+                            <table class="data-table mc-attention-table"><thead><tr><th>العقد</th><th>المالك</th><th>المشروع</th><th>قيمة العقد</th><th>التنفيذ %</th><th>قيمة المستخلصات</th><th>التحصيل %</th><th>المستحق</th><th>المتأخر</th><th>الفجوة</th><th>المخاطر</th></tr></thead><tbody id="mcAttentionBody"></tbody></table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+

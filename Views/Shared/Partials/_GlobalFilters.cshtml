@@ -1,0 +1,22 @@
+@* Global filters bar *@
+        <div class="global-project-search">
+            <div class="global-project-search-control">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
+                <input type="search" class="form-control filter-ctrl" id="filterProjectName" aria-label="بحث باسم المشروع" placeholder="ابحث باسم المشروع..." autocomplete="off">
+            </div>
+        </div>
+        <section id="global-filters-bar" class="global-filters-section">
+            <button type="button" class="filters-toggle-btn" id="btnToggleFilters" aria-expanded="true" aria-controls="filtersPanelInner">
+                <span>الفلاتر</span>
+                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="filters-panel" id="filtersPanelInner">
+            <div class="filter-group"><label>المالك</label><select class="form-select filter-ctrl" id="filterOwner"><option value="">الكل</option></select></div>
+            <div class="filter-group"><label>المشروع</label><select class="form-select filter-ctrl" id="filterProject"><option value="">الكل</option></select></div>
+            <div class="filter-group"><label>العقد</label><select class="form-select filter-ctrl" id="filterContract"><option value="">الكل</option></select></div>
+            <button class="btn btn-secondary btn-sm" id="btnResetFilters" style="align-self: flex-end;">إعادة ضبط</button>
+            </div>
+        </section>

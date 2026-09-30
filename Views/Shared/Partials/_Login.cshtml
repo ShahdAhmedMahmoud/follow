@@ -1,0 +1,28 @@
+@* Login overlay *@
+<div id="login-overlay">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+      </div>
+    </div>
+    <div class="login-title">نظام إدارة المستخلصات</div>
+    <div class="login-subtitle">تسجيل الدخول للمتابعة</div>
+    <div class="login-error" id="loginError"></div>
+    <form id="loginForm" autocomplete="on" method="post" action="javascript:void(0);" onsubmit="return false;">
+      <div class="login-field">
+        <label for="loginUsername">اسم المستخدم</label>
+        <input type="text" id="loginUsername" name="username" required placeholder="أدخل اسم المستخدم" autocomplete="username" />
+      </div>
+      <div class="login-field">
+        <label for="loginPassword">كلمة المرور</label>
+        <div class="login-password-wrap">
+          <input type="password" id="loginPassword" name="password" required placeholder="أدخل كلمة المرور" autocomplete="current-password" />
+          <button type="button" class="login-toggle-pass" id="btnTogglePassword" title="إظهار/إخفاء">👁</button>
+        </div>
+      </div>
+      <button type="submit" class="login-btn" id="btnLogin">دخول</button>
+    </form>
+    
+  </div>
+</div>
