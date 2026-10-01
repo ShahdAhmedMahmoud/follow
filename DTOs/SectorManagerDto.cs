@@ -1,11 +1,18 @@
-namespace InvoicesErp.DTOs;
+﻿namespace InvoicesErp.DTOs;
 
-public record SectorManagerDto(
-    string? Id,
-    string Name,
-    string? Sector,
-    string? Phone = null,
-    string? Email = null,
-    string? Notes = null,
-    string Status = "Active",
-    int ProjectsCount = 0);
+public class SectorManagerDto
+{
+    public int SectorManagerId { get; set; }
+
+    public string FullName { get; set; } = "";
+
+    public string? Email { get; set; }
+
+    public string? Phone { get; set; }
+
+    public int SectorId { get; set; }
+
+    public string SectorName { get; set; } = "";
+
+    public bool IsActive { get; set; }
+}

@@ -20,6 +20,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<CostControl> CostControls => Set<CostControl>();
     public DbSet<CostControlItem> CostControlItems => Set<CostControlItem>();
     public DbSet<CostControlSubItem> CostControlSubItems => Set<CostControlSubItem>();
+
+    public DbSet<Sector> Sectors => Set<Sector>();
     public DbSet<SectorManager> SectorManagers => Set<SectorManager>();
 
     protected override void OnModelCreating(ModelBuilder b)
@@ -37,19 +39,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         b.Entity<SocialInsuranceContract>().Property(x => x.OpeningDate).HasColumnType("date");
         b.Entity<SocialInsurancePayment>().Property(x => x.PaymentDate).HasColumnType("date");
         b.Entity<EscalationResponse>().Property(x => x.ResponseDate).HasColumnType("date");
-
-        b.Entity<SectorManager>(e =>
-        {
-            e.HasKey(x => x.Id);
-            e.Property(x => x.Id).HasMaxLength(IdLen);
-            e.Property(x => x.Name).HasMaxLength(250).IsRequired();
-            e.Property(x => x.Sector).HasMaxLength(250);
-            e.Property(x => x.Phone).HasMaxLength(50);
-            e.Property(x => x.Email).HasMaxLength(150);
-            e.Property(x => x.Notes).HasMaxLength(500);
-            e.Property(x => x.Status).HasMaxLength(50);
-            e.HasIndex(x => x.Name);
-        });
+     
 
         b.Entity<Owner>(e =>
         {
@@ -65,11 +55,12 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.Id).HasMaxLength(IdLen);
             e.Property(x => x.OwnerId).HasMaxLength(IdLen).IsRequired();
             e.Property(x => x.Name).HasMaxLength(300).IsRequired();
-            e.Property(x => x.SectorManagerId).HasMaxLength(IdLen);
             e.HasOne(x => x.Owner).WithMany(x => x.Projects).HasForeignKey(x => x.OwnerId).OnDelete(DeleteBehavior.Restrict);
-            e.HasOne(x => x.SectorManager).WithMany(x => x.Projects).HasForeignKey(x => x.SectorManagerId).OnDelete(DeleteBehavior.SetNull);
             e.HasIndex(x => x.OwnerId);
-            e.HasIndex(x => x.SectorManagerId);
+            e.HasOne(x => x.Sector)
+            .WithMany(x => x.Projects)
+             .HasForeignKey(x => x.SectorId)
+                 .OnDelete(DeleteBehavior.SetNull);
         });
 
         b.Entity<Contract>(e =>
@@ -222,6 +213,58 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.ActualCost).HasPrecision(18, 2);
             e.HasIndex(x => x.CostControlItemId);
             e.HasOne(x => x.CostControlItem).WithMany(x => x.SubItems).HasForeignKey(x => x.CostControlItemId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        b.Entity<Sector>(e =>
+        {
+            e.HasKey(x => x.SectorId);
+
+            e.Property(x => x.Name)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            e.Property(x => x.Code)
+                .HasMaxLength(50);
+
+            e.Property(x => x.IsActive)
+                .HasDefaultValue(true);
+
+            e.Property(x => x.CreatedAt)
+                .HasDefaultValueSql("GETUTCDATE()");
+
+            e.HasOne(x => x.SectorManager)
+                .WithOne(x => x.Sector)
+                .HasForeignKey<SectorManager>(x => x.SectorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            e.HasMany(x => x.Projects)
+                .WithOne(x => x.Sector)
+                .HasForeignKey(x => x.SectorId)
+                .OnDelete(DeleteBehavior.SetNull);
+        });
+
+        b.Entity<SectorManager>(e =>
+        {
+            e.HasKey(x => x.SectorManagerId);
+
+            e.Property(x => x.FullName)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            e.Property(x => x.IsActive)
+                .HasDefaultValue(true);
+
+            e.Property(x => x.CreatedAt)
+                .HasDefaultValueSql("GETUTCDATE()");
+
+            e.HasOne(x => x.Sector)
+                .WithOne(x => x.SectorManager)
+                .HasForeignKey<SectorManager>(x => x.SectorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // يمنع وجود أكثر من مدير لنفس القطاع
+            e.HasIndex(x => x.SectorId)
+                .IsUnique();
         });
     }
 }

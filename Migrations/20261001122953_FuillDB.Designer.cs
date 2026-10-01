@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoicesErp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260916055137_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20261001122953_FuillDB")]
+    partial class FuillDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -515,6 +515,9 @@ namespace InvoicesErp.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
+                    b.Property<int?>("SectorId")
+                        .HasColumnType("int");
+
                     b.Property<DateOnly?>("StartDate")
                         .HasColumnType("date");
 
@@ -525,7 +528,81 @@ namespace InvoicesErp.Migrations
 
                     b.HasIndex("OwnerId");
 
+                    b.HasIndex("SectorId");
+
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("InvoicesErp.Models.Sector", b =>
+                {
+                    b.Property<int>("SectorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SectorId"));
+
+                    b.Property<string>("Code")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("SectorId");
+
+                    b.ToTable("Sectors");
+                });
+
+            modelBuilder.Entity("InvoicesErp.Models.SectorManager", b =>
+                {
+                    b.Property<int>("SectorManagerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SectorManagerId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SectorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SectorManagerId");
+
+                    b.HasIndex("SectorId")
+                        .IsUnique();
+
+                    b.ToTable("SectorManagers");
                 });
 
             modelBuilder.Entity("InvoicesErp.Models.SocialInsuranceContract", b =>
@@ -717,7 +794,25 @@ namespace InvoicesErp.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("InvoicesErp.Models.Sector", "Sector")
+                        .WithMany("Projects")
+                        .HasForeignKey("SectorId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.Navigation("Owner");
+
+                    b.Navigation("Sector");
+                });
+
+            modelBuilder.Entity("InvoicesErp.Models.SectorManager", b =>
+                {
+                    b.HasOne("InvoicesErp.Models.Sector", "Sector")
+                        .WithOne("SectorManager")
+                        .HasForeignKey("InvoicesErp.Models.SectorManager", "SectorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Sector");
                 });
 
             modelBuilder.Entity("InvoicesErp.Models.SocialInsuranceContract", b =>
@@ -788,6 +883,13 @@ namespace InvoicesErp.Migrations
             modelBuilder.Entity("InvoicesErp.Models.Project", b =>
                 {
                     b.Navigation("Contracts");
+                });
+
+            modelBuilder.Entity("InvoicesErp.Models.Sector", b =>
+                {
+                    b.Navigation("Projects");
+
+                    b.Navigation("SectorManager");
                 });
 #pragma warning restore 612, 618
         }

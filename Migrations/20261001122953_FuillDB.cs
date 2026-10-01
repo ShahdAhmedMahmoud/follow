@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InvoicesErp.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class FuillDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -58,6 +58,22 @@ namespace InvoicesErp.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sectors",
+                columns: table => new
+                {
+                    SectorId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sectors", x => x.SectorId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
@@ -65,7 +81,8 @@ namespace InvoicesErp.Migrations
                     OwnerId = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     StartDate = table.Column<DateOnly>(type: "date", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SectorId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,6 +92,36 @@ namespace InvoicesErp.Migrations
                         column: x => x.OwnerId,
                         principalTable: "Owners",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Projects_Sectors_SectorId",
+                        column: x => x.SectorId,
+                        principalTable: "Sectors",
+                        principalColumn: "SectorId",
+                        onDelete: ReferentialAction.SetNull);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SectorManagers",
+                columns: table => new
+                {
+                    SectorManagerId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SectorId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SectorManagers", x => x.SectorManagerId);
+                    table.ForeignKey(
+                        name: "FK_SectorManagers_Sectors_SectorId",
+                        column: x => x.SectorId,
+                        principalTable: "Sectors",
+                        principalColumn: "SectorId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -431,6 +478,17 @@ namespace InvoicesErp.Migrations
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Projects_SectorId",
+                table: "Projects",
+                column: "SectorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SectorManagers_SectorId",
+                table: "SectorManagers",
+                column: "SectorId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SocialInsurancePayments_ContractId",
                 table: "SocialInsurancePayments",
                 column: "ContractId");
@@ -458,6 +516,9 @@ namespace InvoicesErp.Migrations
                 name: "InvoiceItems");
 
             migrationBuilder.DropTable(
+                name: "SectorManagers");
+
+            migrationBuilder.DropTable(
                 name: "SocialInsuranceContracts");
 
             migrationBuilder.DropTable(
@@ -483,6 +544,9 @@ namespace InvoicesErp.Migrations
 
             migrationBuilder.DropTable(
                 name: "Owners");
+
+            migrationBuilder.DropTable(
+                name: "Sectors");
         }
     }
 }
