@@ -98,13 +98,28 @@ body.sidebar-mobile-open {
 #dashboardView .chart-body {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   min-height: 200px;
 }
 
 .chart-container,
 #dashboardView .chart-container {
   max-width: 100%;
+  min-width: 0;
   overflow: hidden;
+}
+
+#dashboardView .mc-contract-value-grid,
+#dashboardView .mc-contract-value-chart {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+#dashboardView .mc-contract-value-chart canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
 }
 
 /* Prevent 100vw overflow */
@@ -138,7 +153,11 @@ body.sidebar-mobile-open {
   }
 
   #dashboardView .mc-charts-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #dashboardView .mc-contract-value-chart .chart-body {
+    height: 250px;
   }
 }
 
@@ -182,6 +201,10 @@ body.sidebar-mobile-open {
   .chart-body,
   #dashboardView .chart-body {
     height: 260px;
+  }
+
+  #dashboardView .mc-contract-value-chart .chart-body {
+    height: 300px !important;
   }
 }
 
@@ -409,13 +432,17 @@ body.sidebar-mobile-open {
 
   .charts-grid,
   #dashboardView .mc-charts-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     gap: 0.85rem;
   }
 
   .chart-body,
   #dashboardView .chart-body {
     height: 240px !important;
+  }
+
+  #dashboardView .mc-contract-value-chart .chart-body {
+    height: 270px !important;
   }
 
   .table-responsive,
@@ -492,6 +519,10 @@ body.sidebar-mobile-open {
   .chart-body,
   #dashboardView .chart-body {
     height: 220px !important;
+  }
+
+  #dashboardView .mc-contract-value-chart .chart-body {
+    height: 250px !important;
   }
 
   .kpi-card {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\alshorouk\\followup\\followUp\\InvoicesErp.csproj": {}
+    "D:\\Follow\\follow\\InvoicesErp.csproj": {}
   },
   "projects": {
-    "E:\\alshorouk\\followup\\followUp\\InvoicesErp.csproj": {
+    "D:\\Follow\\follow\\InvoicesErp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\alshorouk\\followup\\followUp\\InvoicesErp.csproj",
+        "projectUniqueName": "D:\\Follow\\follow\\InvoicesErp.csproj",
         "projectName": "InvoicesErp",
-        "projectPath": "E:\\alshorouk\\followup\\followUp\\InvoicesErp.csproj",
-        "packagesPath": "C:\\Users\\SMSM-TECH\\.nuget\\packages\\",
-        "outputPath": "E:\\alshorouk\\followup\\followUp\\obj\\",
+        "projectPath": "D:\\Follow\\follow\\InvoicesErp.csproj",
+        "packagesPath": "C:\\Users\\Shahd.Ahmed\\.nuget\\packages\\",
+        "outputPath": "D:\\Follow\\follow\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SMSM-TECH\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Shahd.Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

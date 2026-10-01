@@ -39,7 +39,7 @@ public class ProjectsController(AppDbContext db) : ControllerBase
             "startdate" => desc ? q.OrderByDescending(x => x.StartDate) : q.OrderBy(x => x.StartDate),
             _ => desc ? q.OrderByDescending(x => x.Name) : q.OrderBy(x => x.Name)
         };
-        var projected = q.Select(x => new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        var projected = q.Select(x => new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorManagerId));
         if (page is null)
             return Ok(await projected.ToListAsync(ct));
         return Ok(await projected.ToPagedAsync(page.Value, pageSize ?? 25, ct));
@@ -50,7 +50,7 @@ public class ProjectsController(AppDbContext db) : ControllerBase
     public async Task<ActionResult<ProjectDto>> GetById(string id, CancellationToken ct)
     {
         var x = await db.Projects.FindAsync([id], ct);
-        return x is null ? NotFound() : Ok(new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        return x is null ? NotFound() : Ok(new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorManagerId));
     }
 
     [HttpPost]
@@ -60,10 +60,10 @@ public class ProjectsController(AppDbContext db) : ControllerBase
         if (!await db.Owners.AnyAsync(x => x.Id == dto.OwnerId, ct))
             return BadRequest(new { success = false, message = "المالك غير موجود" });
 
-        var x = new Project { Id = await GenerateIdAsync(), OwnerId = dto.OwnerId, Name = dto.Name.Trim(), StartDate = dto.StartDate, Status = dto.Status };
+        var x = new Project { Id = await GenerateIdAsync(), OwnerId = dto.OwnerId, Name = dto.Name.Trim(), StartDate = dto.StartDate, Status = dto.Status, SectorManagerId = dto.SectorManagerId };
         db.Add(x);
         await db.SaveChangesAsync(ct);
-        return CreatedAtAction(nameof(GetById), new { id = x.Id }, new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        return CreatedAtAction(nameof(GetById), new { id = x.Id }, new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorManagerId));
     }
 
     [HttpPut("{id}")]
@@ -76,6 +76,7 @@ public class ProjectsController(AppDbContext db) : ControllerBase
         x.Name = dto.Name.Trim();
         x.StartDate = dto.StartDate;
         x.Status = dto.Status;
+        x.SectorManagerId = dto.SectorManagerId;
         await db.SaveChangesAsync(ct);
         return NoContent();
     }
@@ -112,6 +113,29 @@ public class ProjectsController(AppDbContext db) : ControllerBase
         await db.SaveChangesAsync(ct);
         await tx.CommitAsync(ct);
         return NoContent();
+    }
+
+    /// <summary>Returns all active sector managers from the SectorManagers table.</summary>
+    [HttpGet("sector-managers")]
+    [RequirePermission(PermissionModules.Projects, PermissionActions.View)]
+    public async Task<IActionResult> GetSectorManagers(CancellationToken ct)
+    {
+        var managers = await db.SectorManagers
+            .AsNoTracking()
+            .Where(u => u.Status == "Active")
+            .OrderBy(u => u.Name)
+            .Select(u => new
+            {
+                id = u.Id,
+                name = u.Name,
+                sector = u.Sector,
+                phone = u.Phone,
+                email = u.Email,
+                displayName = string.IsNullOrWhiteSpace(u.Sector) ? u.Name : $"{u.Name} — {u.Sector}",
+                username = u.Sector ?? ""
+            })
+            .ToListAsync(ct);
+        return Ok(managers);
     }
 
     private async Task<string> GenerateIdAsync()

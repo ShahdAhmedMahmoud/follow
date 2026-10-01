@@ -1,0 +1,116 @@
+/* Dashboard charts — loaded AFTER site.css and mobile-fix.css */
+
+#dashboardView .mc-chart-card {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #d9deea;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+    min-width: 0;
+    max-width: 100%;
+}
+
+#dashboardView .mc-chart-header {
+    background: #b8c4ff;
+    color: #0f172a;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid #a9b7f5;
+}
+
+#dashboardView .mc-chart-body {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 380px;
+    padding: 0.75rem 0.75rem 0.5rem;
+}
+
+#dashboardView .mc-chart-body canvas {
+    display: block;
+}
+
+/* Horizontal scroll for the monthly chart (scroll stays inside the card) */
+#dashboardView .mc-chart-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    direction: ltr;
+    -webkit-overflow-scrolling: touch;
+}
+
+#dashboardView .mc-chart-scroll-inner {
+    position: relative;
+    height: 100%;
+    min-width: 100%;
+}
+
+#dashboardView .mc-chart-body[data-empty="true"] canvas {
+    visibility: hidden;
+}
+
+#dashboardView .mc-chart-body[data-empty="true"]::after {
+    content: "لا توجد بيانات كافية للعرض";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    #dashboardView .mc-chart-body { height: 340px; }
+}
+
+@media (max-width: 560px) {
+    #dashboardView .mc-chart-header { font-size: 0.85rem; padding: 0.5rem 0.75rem; }
+    #dashboardView .mc-chart-body { height: 310px; padding: 0.5rem 0.4rem 0.4rem; }
+}
+
+@media (max-width: 380px) {
+    #dashboardView .mc-chart-body { height: 280px; }
+}
+
+/* ---- Searchable sector manager combobox (used in project modal) ---- */
+.sector-manager-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    border: 1px solid #c9d1e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.12);
+    z-index: 9999;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-top: 2px;
+}
+
+.sector-manager-dropdown .sm-item {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #1e293b;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+}
+
+.sector-manager-dropdown .sm-item:last-child { border-bottom: none; }
+.sector-manager-dropdown .sm-item:hover,
+.sector-manager-dropdown .sm-item.active { background: #eff6ff; color: #1d4ed8; }
+.sector-manager-dropdown .sm-item.sm-clear { color: #64748b; font-style: italic; }
+.sector-manager-dropdown .sm-no-results {
+    padding: 0.75rem 1rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    text-align: center;
+}

@@ -3,7 +3,8 @@
  */
 
 import { erpApi } from "./api.js";
-
+import { renderDashboardCharts } from "./dashboard-charts.js?v=1";
+import { createMultiFilter } from "./multi-filter.js?v=1";
 // flatpickr loaded globally via CDN
 const flatpickr = window.flatpickr;
 
@@ -446,11 +447,12 @@ const state = {
   escalationsResponses: {},
   execPositions: [],
   deductionLibrary: [],
+  sectorManagers: [],  // list of { id, displayName, username } from /api/projects/sector-managers
   filters: {
-    ownerId: "",
-    projectId: "",
+    ownerIds: [],
+    projectIds: [],
     projectName: "",
-    contractId: "",
+    contractIds: [],
     escStatus: "",
     accPeriod: "",
   },
@@ -464,6 +466,59 @@ let filteredData = {
 };
 
 let chartInstances = {};
+
+const globalFilterUI = {};
+
+const FILTER_ICONS = {
+  owner:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>',
+  project:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="8" height="18"/><rect x="14" y="9" width="6" height="12"/><path d="M7 7h2M7 11h2M7 15h2"/></svg>',
+  contract:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg>',
+};
+
+let _applyFiltersTimer = null;
+// state updates immediately; the heavy re-render of all pages is debounced
+function scheduleApplyGlobalFilters(delay = 160) {
+  clearTimeout(_applyFiltersTimer);
+  _applyFiltersTimer = setTimeout(applyGlobalFilters, delay);
+}
+
+function initGlobalMultiFilters() {
+  const make = (selectId, key, cfg) => {
+    const el = document.getElementById(selectId);
+    if (!el) return null;
+    return createMultiFilter(el, {
+      ...cfg,
+      onChange: (ids) => {
+        state.filters[key] = ids;
+        if (key !== "contractIds") updateGlobalFilterDropdowns();
+        scheduleApplyGlobalFilters();
+      },
+    });
+  };
+
+  globalFilterUI.owner = make("filterOwner", "ownerIds", {
+    placeholder: "كل الملاك",
+    searchPlaceholder: "ابحث عن مالك...",
+    noItemsText: "لا يوجد ملاك",
+    icon: FILTER_ICONS.owner,
+  });
+  globalFilterUI.project = make("filterProject", "projectIds", {
+    placeholder: "كل المشروعات",
+    searchPlaceholder: "ابحث عن مشروع...",
+    noItemsText: "لا توجد مشروعات",
+    icon: FILTER_ICONS.project,
+  });
+  globalFilterUI.contract = make("filterContract", "contractIds", {
+    placeholder: "كل العقود",
+    searchPlaceholder: "ابحث عن عقد...",
+    noItemsText: "لا توجد عقود",
+    icon: FILTER_ICONS.contract,
+  });
+  updateGlobalFilterDropdowns();
+}
 
 // Presentation-only Chart.js defaults for the executive dashboard (RTL-aware
 // legends/tooltips, consistent typography). Does not touch any data logic.
@@ -1681,6 +1736,18 @@ async function initERP() {
   applyGlobalFilters();
   initFlatpickr();
   if (!loadedFromApi) clearDataState();
+  // Load sector managers list from database
+  loadSectorManagers();
+}
+
+async function loadSectorManagers() {
+  try {
+    const managers = await erpApi.projects.getSectorManagers();
+    state.sectorManagers = Array.isArray(managers) ? managers : [];
+  } catch (err) {
+    console.warn("Could not load sector managers:", err);
+    state.sectorManagers = [];
+  }
 }
 
 async function loadFromBackendOrLocal() {
@@ -1737,6 +1804,7 @@ function applyBootstrapToState(remote) {
     voAmount: parseFloat(c.voAmount ?? c.VoAmount) || 0,
     claimsAmount: parseFloat(c.claimsAmount ?? c.ClaimsAmount) || 0,
     vatAmount: parseFloat(c.vatAmount ?? c.VatAmount) || 0,
+    signDate: c.signDate ?? c.SignDate ?? null,
   }));
   state.invoices = Array.isArray(remote?.invoices) ? remote.invoices : [];
   state.deductionLibrary = Array.isArray(remote?.deductionLibrary)
@@ -1828,6 +1896,7 @@ function normalizeBootstrapPayload(raw) {
     name: _str(p.name),
     startDate: p.startDate || null,
     status: _str(p.status),
+    sectorManagerId: _str(p.sectorManagerId),
   }));
   const contracts = (raw.contracts || []).map((c) => ({
     id: _str(c.id),
@@ -2130,36 +2199,8 @@ function initCentralizedEventListeners() {
     });
   });
 
-  const fOwner = document.getElementById("filterOwner");
-  const fProject = document.getElementById("filterProject");
-  const fContract = document.getElementById("filterContract");
+  initGlobalMultiFilters();
   const fProjectName = document.getElementById("filterProjectName");
-
-  if (fOwner) {
-    fOwner.addEventListener("change", () => {
-      state.filters.ownerId = fOwner.value;
-      state.filters.projectId = "";
-      state.filters.contractId = "";
-      updateGlobalFilterDropdowns();
-      applyGlobalFilters();
-    });
-  }
-
-  if (fProject) {
-    fProject.addEventListener("change", () => {
-      state.filters.projectId = fProject.value;
-      state.filters.contractId = "";
-      updateGlobalFilterDropdowns();
-      applyGlobalFilters();
-    });
-  }
-
-  if (fContract) {
-    fContract.addEventListener("change", () => {
-      state.filters.contractId = fContract.value;
-      applyGlobalFilters();
-    });
-  }
 
   if (fProjectName) {
     fProjectName.addEventListener("input", () => {
@@ -2180,10 +2221,10 @@ function initCentralizedEventListeners() {
     btnResetFilters.addEventListener("click", () => {
       document.querySelectorAll(".filter-ctrl").forEach((c) => (c.value = ""));
       state.filters = {
-        ownerId: "",
-        projectId: "",
+        ownerIds: [],
+        projectIds: [],
         projectName: "",
-        contractId: "",
+        contractIds: [],
         escStatus: "",
         accPeriod: "",
       };
@@ -2770,35 +2811,42 @@ function initCentralizedEventListeners() {
 }
 
 function updateGlobalFilterDropdowns() {
-  const selectedOwner = state.filters.ownerId;
-  const selectedProject = state.filters.projectId;
+  const f = state.filters;
+  const ownerById = new Map(state.owners.map((o) => [o.id, o]));
+  const projectById = new Map(state.projects.map((p) => [p.id, p]));
 
+  const ownerItems = state.owners.map((o) => ({ id: o.id, label: o.name || o.id }));
+
+  // projects limited by the selected owners
   let availProjects = state.projects;
-  if (selectedOwner) {
-    availProjects = availProjects.filter((p) => p.ownerId === selectedOwner);
+  if (f.ownerIds.length) {
+    availProjects = availProjects.filter((p) => f.ownerIds.includes(p.ownerId));
   }
-  document.getElementById("filterProject").innerHTML =
-    '<option value="">الكل</option>' +
-    availProjects
-      .map((p) => `<option value="${p.id}">${p.name}</option>`)
-      .join("");
-  document.getElementById("filterProject").value = state.filters.projectId;
+  f.projectIds = f.projectIds.filter((id) => availProjects.some((p) => p.id === id));
+  const projectItems = availProjects.map((p) => ({
+    id: p.id,
+    label: p.name || p.id,
+    hint: (ownerById.get(p.ownerId) || {}).name || "",
+  }));
 
+  // contracts limited by the selected projects (or owners)
   let availContracts = state.contracts;
-  if (selectedProject) {
-    availContracts = availContracts.filter(
-      (c) => c.projectId === selectedProject,
-    );
-  } else if (selectedOwner) {
-    const pIds = availProjects.map((p) => p.id);
-    availContracts = availContracts.filter((c) => pIds.includes(c.projectId));
+  if (f.projectIds.length) {
+    availContracts = availContracts.filter((c) => f.projectIds.includes(c.projectId));
+  } else if (f.ownerIds.length) {
+    const pIds = new Set(availProjects.map((p) => p.id));
+    availContracts = availContracts.filter((c) => pIds.has(c.projectId));
   }
-  document.getElementById("filterContract").innerHTML =
-    '<option value="">الكل</option>' +
-    availContracts
-      .map((c) => `<option value="${c.id}">${c.name}</option>`)
-      .join("");
-  document.getElementById("filterContract").value = state.filters.contractId;
+  f.contractIds = f.contractIds.filter((id) => availContracts.some((c) => c.id === id));
+  const contractItems = availContracts.map((c) => ({
+    id: c.id,
+    label: c.name || c.id,
+    hint: (projectById.get(c.projectId) || {}).name || "",
+  }));
+
+  if (globalFilterUI.owner) globalFilterUI.owner.setOptions(ownerItems, f.ownerIds);
+  if (globalFilterUI.project) globalFilterUI.project.setOptions(projectItems, f.projectIds);
+  if (globalFilterUI.contract) globalFilterUI.contract.setOptions(contractItems, f.contractIds);
 }
 
 function populateModalProjects(ownerId) {
@@ -2829,7 +2877,11 @@ function applyGlobalFilters() {
     _resetPagination(t),
   );
 
-  const projectSearch = String(state.filters.projectName || "")
+  const f = state.filters;
+  // empty selection = no restriction ("all")
+  const inSel = (ids, id) => !ids.length || ids.includes(id);
+
+  const projectSearch = String(f.projectName || "")
     .trim()
     .toLocaleLowerCase();
   const matchesProjectName = (project) =>
@@ -2841,45 +2893,39 @@ function applyGlobalFilters() {
     state.projects.filter(matchesProjectName).map((project) => project.id),
   );
 
-  const invList = state.invoices.filter((inv) => {
+  const invoiceMatches = (inv) => {
     const contract = state.contracts.find((c) => c.id === inv.contractId) || {};
     const project =
       state.projects.find((p) => p.id === contract.projectId) || {};
     const owner = state.owners.find((o) => o.id === project.ownerId) || {};
 
-    if (state.filters.ownerId && owner.id !== state.filters.ownerId)
-      return false;
+    if (!inSel(f.ownerIds, owner.id)) return false;
     if (projectSearch && !matchingProjectIds.has(project.id)) return false;
-    if (state.filters.projectId && project.id !== state.filters.projectId)
-      return false;
-    if (state.filters.contractId && contract.id !== state.filters.contractId)
-      return false;
+    if (!inSel(f.projectIds, project.id)) return false;
+    if (!inSel(f.contractIds, contract.id)) return false;
     return true;
-  });
+  };
+
+  const invList = state.invoices.filter(invoiceMatches);
 
   const contractList = state.contracts.filter((c) => {
     const project = state.projects.find((p) => p.id === c.projectId) || {};
     if (projectSearch && !matchingProjectIds.has(project.id)) return false;
-    if (state.filters.contractId && c.id !== state.filters.contractId)
-      return false;
-    if (state.filters.projectId && c.projectId !== state.filters.projectId)
-      return false;
-    if (state.filters.ownerId && project.ownerId !== state.filters.ownerId)
-      return false;
+    if (!inSel(f.contractIds, c.id)) return false;
+    if (!inSel(f.projectIds, c.projectId)) return false;
+    if (!inSel(f.ownerIds, project.ownerId)) return false;
     return true;
   });
 
   const projectList = state.projects.filter((p) => {
     if (!matchesProjectName(p)) return false;
-    if (state.filters.projectId && p.id !== state.filters.projectId)
-      return false;
-    if (state.filters.ownerId && p.ownerId !== state.filters.ownerId)
-      return false;
+    if (!inSel(f.projectIds, p.id)) return false;
+    if (!inSel(f.ownerIds, p.ownerId)) return false;
     return true;
   });
 
   const ownerList = state.owners.filter((o) => {
-    if (state.filters.ownerId && o.id !== state.filters.ownerId) return false;
+    if (!inSel(f.ownerIds, o.id)) return false;
     if (
       projectSearch &&
       !state.projects.some(
@@ -2899,20 +2945,7 @@ function applyGlobalFilters() {
   };
 
   // التعليات: تظهر كل الاستقطاعات القابلة للمتابعة بغض النظر عن حالة المستخلص (مسودة/معتمد/...)
-  const invListForEscalations = state.invoices.filter((inv) => {
-    const contract = state.contracts.find((c) => c.id === inv.contractId) || {};
-    const project =
-      state.projects.find((p) => p.id === contract.projectId) || {};
-    const owner = state.owners.find((o) => o.id === project.ownerId) || {};
-    if (state.filters.ownerId && owner.id !== state.filters.ownerId)
-      return false;
-    if (projectSearch && !matchingProjectIds.has(project.id)) return false;
-    if (state.filters.projectId && project.id !== state.filters.projectId)
-      return false;
-    if (state.filters.contractId && contract.id !== state.filters.contractId)
-      return false;
-    return true;
-  });
+  const invListForEscalations = state.invoices.filter(invoiceMatches);
   const escData = { ...filteredData, invoices: invListForEscalations };
 
   renderDashboard(filteredData);
@@ -3207,14 +3240,7 @@ async function deleteAllOwners() {
 }
 
 function populateDropdowns() {
-  const ownerOptions =
-    '<option value="">الكل</option>' +
-    state.owners
-      .map((o) => `<option value="${o.id}">${o.name}</option>`)
-      .join("");
-  document.getElementById("filterOwner").innerHTML = ownerOptions;
-  document.getElementById("filterOwner").value = state.filters.ownerId;
-
+  // global owner / project / contract multi-selects
   updateGlobalFilterDropdowns();
 
   document.getElementById("projectOwnerId").innerHTML = state.owners
@@ -3608,20 +3634,17 @@ function updateDashboardMeta() {
   const chipsWrap = document.getElementById("mcActiveFilters");
   if (chipsWrap) {
     const f = state.filters || {};
+    const describe = (ids, list) => {
+      const names = ids.map((id) => (list.find((x) => x.id === id) || {}).name || id);
+      return names.length > 2
+        ? `${names.slice(0, 2).join("، ")} +${names.length - 2}`
+        : names.join("، ");
+    };
     const chips = [];
-    if (f.ownerId) {
-      const o = state.owners.find((x) => x.id === f.ownerId);
-      chips.push(`المالك: ${o ? o.name : f.ownerId}`);
-    }
-    if (f.projectId) {
-      const p = state.projects.find((x) => x.id === f.projectId);
-      chips.push(`المشروع: ${p ? p.name : f.projectId}`);
-    }
+    if (f.ownerIds.length) chips.push(`المالك: ${describe(f.ownerIds, state.owners)}`);
+    if (f.projectIds.length) chips.push(`المشروع: ${describe(f.projectIds, state.projects)}`);
     if (f.projectName) chips.push(`بحث المشروع: ${f.projectName}`);
-    if (f.contractId) {
-      const c = state.contracts.find((x) => x.id === f.contractId);
-      chips.push(`العقد: ${c ? c.name : f.contractId}`);
-    }
+    if (f.contractIds.length) chips.push(`العقد: ${describe(f.contractIds, state.contracts)}`);
     chipsWrap.innerHTML = chips.length
       ? chips
           .map((c) => `<span class="mc-filter-chip">${escapeHtml(c)}</span>`)
@@ -3630,193 +3653,34 @@ function updateDashboardMeta() {
   }
 }
 
+
+
 function renderCharts(data, context) {
   const {
     contracts,
     invoices,
-    contractMap,
     projectMap,
     ownerMap,
     latestExecutionByContract,
     executionTotal,
     today,
   } = context;
-  const money = (value) => fmtNum(value);
-  const topN = (map, n = 10) =>
-    Object.entries(map)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, n);
 
-  const MC_PALETTE = [
-    "#2563eb",
-    "#10b981",
-    "#f59e0b",
-    "#ef4444",
-    "#06b6d4",
-    "#8b5cf6",
-    "#64748b",
-    "#0f766e",
-    "#be123c",
-    "#7c3aed",
-  ];
-  const createChart = (
-    canvasId,
-    type,
-    labels,
-    values,
-    labelName,
-    options = {},
-  ) => {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas || typeof Chart === "undefined") return;
-    if (chartInstances[canvasId]) chartInstances[canvasId].destroy();
-    const hasData = values.some((v) => Number(v) !== 0);
-    const isDonut = type === "doughnut" || type === "pie";
-    const isBar = type === "bar";
-    chartInstances[canvasId] = new Chart(canvas.getContext("2d"), {
-      type,
-      data: {
-        labels: labels.length ? labels : ["لا توجد بيانات"],
-        datasets: [
-          {
-            label: labelName,
-            data: labels.length ? values : [0],
-            backgroundColor: options.colors || MC_PALETTE,
-            hoverBackgroundColor: options.colors || MC_PALETTE,
-            borderWidth: isDonut ? 2 : 0,
-            borderColor: isDonut ? "#ffffff" : undefined,
-            borderRadius: isBar ? 6 : 0,
-            borderSkipped: false,
-            barThickness: isBar && options.indexAxis === "y" ? 18 : undefined,
-            maxBarThickness: 42,
-            hoverOffset: isDonut ? 6 : 0,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        indexAxis: options.indexAxis || "x",
-        cutout: isDonut ? "62%" : undefined,
-        layout: { padding: 4 },
-        plugins: {
-          legend: {
-            position: "bottom",
-            display: options.legend !== false,
-            rtl: true,
-            labels: { usePointStyle: true, boxWidth: 8, padding: 14 },
-          },
-          tooltip: {
-            rtl: true,
-            callbacks: {
-              label: (ctx) =>
-                `${ctx.dataset.label || ctx.label || ""}: ${money(ctx.parsed?.y ?? ctx.parsed?.x ?? ctx.parsed ?? 0)}`,
-            },
-          },
-        },
-        scales:
-          options.scales === false
-            ? undefined
-            : {
-                x: {
-                  grid: {
-                    display: options.indexAxis === "y",
-                    color: "#eef1f6",
-                    drawBorder: false,
-                  },
-                  ticks:
-                    options.indexAxis === "y"
-                      ? { callback: (value) => fmtNumShort(value) }
-                      : { autoSkip: true, maxRotation: 0 },
-                },
-                y: {
-                  beginAtZero: true,
-                  grid: {
-                    display: options.indexAxis !== "y",
-                    color: "#eef1f6",
-                    drawBorder: false,
-                  },
-                  ticks: {
-                    callback: (value) =>
-                      options.indexAxis === "y" ? value : fmtNumShort(value),
-                  },
-                },
-              },
-      },
-    });
-    if (!hasData && canvas.parentElement) {
-      const body = canvas.parentElement;
-      body.setAttribute("data-empty", "true");
-    }
-  };
-
-  const ownerInvoiceMap = {};
-  const projectInvoiceMap = {};
-  invoices.forEach((inv) => {
-    const contract = contractMap.get(inv.contractId) || {};
-    const project = projectMap.get(contract.projectId) || {};
-    const owner = ownerMap.get(project.ownerId) || {};
-    const value = getInvoiceGross(inv);
-    ownerInvoiceMap[owner.name || "غير معروف"] =
-      (ownerInvoiceMap[owner.name || "غير معروف"] || 0) + value;
-    projectInvoiceMap[project.name || "غير معروف"] =
-      (projectInvoiceMap[project.name || "غير معروف"] || 0) + value;
+  const selectedProjects = state.filters.projectIds
+    .map((id) => state.projects.find((p) => p.id === id))
+    .filter(Boolean);
+  renderDashboardCharts({
+    contracts,
+    execPositions: state.execPositions,
+    getModifiedTotal: getContractModifiedTotal,
+    fmtNum,
+    scopeLabel:
+      selectedProjects.length === 1
+        ? selectedProjects[0].name
+        : selectedProjects.length > 1
+          ? `${selectedProjects.length} مشروعات`
+          : "",
   });
-
-  const ownerTop = topN(ownerInvoiceMap);
-  const projectTop = topN(projectInvoiceMap);
-  createChart(
-    "chartOwnerInvoices",
-    "bar",
-    ownerTop.map((x) => x[0]),
-    ownerTop.map((x) => x[1]),
-    "قيمة المستخلصات",
-    { indexAxis: "y", colors: ["#2563eb"] },
-  );
-  createChart(
-    "chartProjectInvoices",
-    "bar",
-    projectTop.map((x) => x[0]),
-    projectTop.map((x) => x[1]),
-    "قيمة المستخلصات",
-    { indexAxis: "y" },
-  );
-
-  const totalExec = contracts.reduce(
-    (s, c) => s + executionTotal(latestExecutionByContract.get(c.id)),
-    0,
-  );
-  createChart(
-    "chartContractVsExecution",
-    "bar",
-    ["قيمة العقود", "الموقف التنفيذي"],
-    [contracts.reduce((s, c) => s + (parseFloat(c.amount) || 0), 0), totalExec],
-    "القيمة",
-    { colors: ["#64748b", "#2563eb"] },
-  );
-
-  let invoiceTotal = invoices.reduce((s, inv) => s + getInvoiceGross(inv), 0);
-  createChart(
-    "chartExecVsInv",
-    "bar",
-    ["الموقف التنفيذي", "المستخلصات"],
-    [totalExec, invoiceTotal],
-    "القيمة",
-    { colors: ["#2563eb", "#10b981"] },
-  );
-
-  const statusMap = { Draft: 0, Review: 0, Approved: 0, Rejected: 0 };
-  invoices.forEach((inv) => {
-    const st = inv.status || "Draft";
-    statusMap[st] = (statusMap[st] || 0) + 1;
-  });
-  createChart(
-    "chartInvoicesStatus",
-    "doughnut",
-    ["مسودة", "مراجعة", "معتمد", "مرفوض"],
-    [statusMap.Draft, statusMap.Review, statusMap.Approved, statusMap.Rejected],
-    "عدد المستخلصات",
-  );
 
   const escStatusMap = {
     [ESC_STATUS_PENDING]: 0,
@@ -3832,160 +3696,6 @@ function renderCharts(data, context) {
       const status = normalizeEscalationStatus(response.responseStatus);
       escStatusMap[status] = (escStatusMap[status] || 0) + 1;
     }),
-  );
-  createChart(
-    "chartEscalationsStatus",
-    "doughnut",
-    Object.keys(escStatusMap),
-    Object.values(escStatusMap),
-    "التعليات",
-  );
-
-  const months = {};
-  invoices.forEach((inv) => {
-    const month = String(inv.date || "").slice(0, 7) || "بدون تاريخ";
-    const gross = getInvoiceGross(inv);
-    const net = getInvoiceNet(inv);
-    const paid = Math.max(0, parseFloat(inv.paidAmount) || 0);
-    if (!months[month]) months[month] = { gross: 0, net: 0, paid: 0 };
-    months[month].gross += gross;
-    months[month].net += net;
-    months[month].paid += paid;
-  });
-  const monthKeys = Object.keys(months).sort();
-  const monthlyCanvas = document.getElementById("chartMonthlyTrend");
-  if (monthlyCanvas) {
-    if (chartInstances.chartMonthlyTrend)
-      chartInstances.chartMonthlyTrend.destroy();
-    chartInstances.chartMonthlyTrend = new Chart(
-      monthlyCanvas.getContext("2d"),
-      {
-        type: "line",
-        data: {
-          labels: monthKeys,
-          datasets: [
-            {
-              label: "الإجمالي الحالي",
-              data: monthKeys.map((m) => months[m].gross),
-              borderColor: "#2563eb",
-              backgroundColor: "rgba(37,99,235,.08)",
-              tension: 0.35,
-              borderWidth: 2,
-              pointRadius: 3,
-              pointBackgroundColor: "#2563eb",
-              fill: true,
-            },
-            {
-              label: "الصافي",
-              data: monthKeys.map((m) => months[m].net),
-              borderColor: "#10b981",
-              backgroundColor: "rgba(16,185,129,.06)",
-              tension: 0.35,
-              borderWidth: 2,
-              pointRadius: 3,
-              pointBackgroundColor: "#10b981",
-              fill: true,
-            },
-            {
-              label: "المحصل",
-              data: monthKeys.map((m) => months[m].paid),
-              borderColor: "#f59e0b",
-              backgroundColor: "rgba(245,158,11,.06)",
-              tension: 0.35,
-              borderWidth: 2,
-              pointRadius: 3,
-              pointBackgroundColor: "#f59e0b",
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: "index", intersect: false },
-          plugins: {
-            legend: {
-              position: "bottom",
-              rtl: true,
-              labels: { usePointStyle: true, boxWidth: 8, padding: 14 },
-            },
-            tooltip: { rtl: true },
-          },
-          scales: {
-            x: { grid: { display: false } },
-            y: {
-              beginAtZero: true,
-              grid: { color: "#eef1f6", drawBorder: false },
-              ticks: { callback: (v) => fmtNumShort(v) },
-            },
-          },
-        },
-      },
-    );
-  }
-
-  let paid = 0,
-    outstanding = 0,
-    pending = 0,
-    overdue = 0;
-  const aging = { "0–30": 0, "31–60": 0, "61–90": 0, "91–180": 0, "181+": 0 };
-  invoices.forEach((inv) => {
-    const net = getInvoiceNet(inv);
-    const p = Math.max(0, parseFloat(inv.paidAmount) || 0);
-    const out = Math.max(0, net - p);
-    paid += p;
-    outstanding += out;
-    if (out > 0) {
-      const due = inv.dueDate ? new Date(inv.dueDate) : null;
-      if (due && !isNaN(due) && due < today) {
-        overdue += out;
-        const days = Math.floor((today - due) / 86400000);
-        if (days <= 30) aging["0–30"] += out;
-        else if (days <= 60) aging["31–60"] += out;
-        else if (days <= 90) aging["61–90"] += out;
-        else if (days <= 180) aging["91–180"] += out;
-        else aging["181+"] += out;
-      } else pending += out;
-    }
-  });
-  createChart(
-    "chartPaymentAmounts",
-    "doughnut",
-    ["المحصل", "قائم", "متأخر"],
-    [paid, Math.max(0, outstanding - overdue), overdue],
-    "القيمة",
-    { colors: ["#10b981", "#f59e0b", "#ef4444"] },
-  );
-  createChart(
-    "chartAgingOutstanding",
-    "bar",
-    Object.keys(aging),
-    Object.values(aging),
-    "المستحق",
-    {
-      indexAxis: "y",
-      colors: ["#06b6d4", "#2563eb", "#f59e0b", "#f97316", "#dc2626"],
-    },
-  );
-
-  const execRows = contracts
-    .map((c) => {
-      const contractValue = parseFloat(c.amount) || 0;
-      const execValue = executionTotal(latestExecutionByContract.get(c.id));
-      return {
-        name: c.name || c.id,
-        rate: contractValue ? (execValue / contractValue) * 100 : 0,
-      };
-    })
-    .sort((a, b) => b.rate - a.rate)
-    .slice(0, 10);
-  createChart(
-    "chartContractExecution",
-    "bar",
-    execRows.map((r) => r.name),
-    execRows.map((r) => Math.min(100, r.rate)),
-    "نسبة التنفيذ %",
-    { indexAxis: "y", colors: ["#2563eb"] },
   );
 
   const contractAnalytics = contracts.map((c) => {
@@ -4026,18 +3736,6 @@ function renderCharts(data, context) {
       collectionPct,
     };
   });
-  const outstandingTop = contractAnalytics
-    .filter((r) => r.outstandingValue > 0)
-    .sort((a, b) => b.outstandingValue - a.outstandingValue)
-    .slice(0, 10);
-  createChart(
-    "chartTopOutstanding",
-    "bar",
-    outstandingTop.map((r) => r.c.name || r.c.id),
-    outstandingTop.map((r) => r.outstandingValue),
-    "المستحق",
-    { indexAxis: "y", colors: ["#ef4444"] },
-  );
 
   const attentionBody = document.getElementById("mcAttentionBody");
   if (attentionBody) {
@@ -4200,8 +3898,10 @@ function renderProjects(data) {
           .filter((i) => c.id === i.contractId)
           .forEach((i) => (totalGross += getInvoiceGross(i))),
       );
+      const manager = (state.sectorManagers || []).find((m) => m.id === p.sectorManagerId);
+      const managerName = manager ? manager.displayName : "";
       const searchText =
-        `${p.id} ${p.name} ${owner.name} ${contractsOfProj.length} ${fmtNum(totalGross)} ${p.status || ""} ${fmtDisplayDate(p.startDate)}`.toLowerCase();
+        `${p.id} ${p.name} ${owner.name} ${managerName} ${contractsOfProj.length} ${fmtNum(totalGross)} ${p.status || ""} ${fmtDisplayDate(p.startDate)}`.toLowerCase();
       return searchText.includes(q);
     });
   }
@@ -4216,6 +3916,8 @@ function renderProjects(data) {
         const owner = data.owners.find((o) => o.id === p.ownerId) || {
           name: "-",
         };
+        const manager = (state.sectorManagers || []).find((m) => m.id === p.sectorManagerId);
+        const managerName = manager ? manager.displayName : "";
         const contractsOfProj = data.contracts.filter(
           (c) => c.projectId === p.id,
         );
@@ -4235,7 +3937,10 @@ function renderProjects(data) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
                 <td>${p.id}</td>
-                <td><strong>${p.name}</strong></td>
+                <td>
+                    <strong>${p.name}</strong>
+                    ${managerName ? `<div style="font-size:0.78rem;color:#64748b;margin-top:2px;">مدير القطاع: <strong>${managerName}</strong></div>` : ""}
+                </td>
                 <td>${owner.name}</td>
                 <td>${contractsOfProj.length}</td>
                 <td>${fmtNum(totalGross)}</td>
@@ -5987,27 +5692,14 @@ function printReportSection(tabId, title) {
   const header = document.createElement("div");
   header.className = "print-report-header";
 
+  const nameOf = (list, ids) =>
+    ids.map((id) => (list.find((x) => x.id === id) || {}).name || id).join("، ");
   const activeFilters = [];
-  const filterLabels = {
-    filterOwner: "المالك",
-    filterProject: "المشروع",
-    filterProjectName: "بحث باسم المشروع",
-    filterContract: "العقد",
-  };
-
-  Object.keys(filterLabels).forEach((id) => {
-    const el = document.getElementById(id);
-    if (!el || !el.value) return;
-
-    let value = el.value;
-    if (el.tagName === "SELECT") {
-      const selected = el.options[el.selectedIndex];
-      value = selected ? selected.textContent.trim() : value;
-    }
-    if (value && value !== "الكل") {
-      activeFilters.push(`${filterLabels[id]}: ${value}`);
-    }
-  });
+  const pf = state.filters;
+  if (pf.ownerIds.length) activeFilters.push(`المالك: ${nameOf(state.owners, pf.ownerIds)}`);
+  if (pf.projectIds.length) activeFilters.push(`المشروع: ${nameOf(state.projects, pf.projectIds)}`);
+  if (pf.projectName) activeFilters.push(`بحث باسم المشروع: ${pf.projectName}`);
+  if (pf.contractIds.length) activeFilters.push(`العقد: ${nameOf(state.contracts, pf.contractIds)}`);
 
   const now = new Date();
   const generatedAt = now.toLocaleString("ar-EG", {
@@ -6223,6 +5915,114 @@ async function deleteOwner(id) {
   }
 }
 
+/* ---- Sector Manager Combobox ---- */
+let _smInitialized = false;
+
+function setSectorManagerCombobox(managerId) {
+  const hiddenInput = document.getElementById("projectSectorManagerId");
+  const searchInput = document.getElementById("projectSectorManagerSearch");
+  if (!hiddenInput || !searchInput) return;
+  if (!managerId) {
+    hiddenInput.value = "";
+    searchInput.value = "";
+    return;
+  }
+  const mgr = state.sectorManagers.find((m) => m.id === managerId);
+  hiddenInput.value = managerId;
+  searchInput.value = mgr ? mgr.displayName : managerId;
+}
+
+function closeSectorManagerDropdown() {
+  const dropdown = document.getElementById("projectSectorManagerDropdown");
+  if (dropdown) dropdown.style.display = "none";
+}
+
+function initSectorManagerCombobox() {
+  const searchInput = document.getElementById("projectSectorManagerSearch");
+  const hiddenInput = document.getElementById("projectSectorManagerId");
+  const dropdown = document.getElementById("projectSectorManagerDropdown");
+  if (!searchInput || !hiddenInput || !dropdown) return;
+
+  // Remove previous listeners by cloning
+  const newInput = searchInput.cloneNode(true);
+  searchInput.parentNode.replaceChild(newInput, searchInput);
+  _smInitialized = false;
+
+  async function renderDropdown(query) {
+    if (!state.sectorManagers || !state.sectorManagers.length) {
+      await loadSectorManagers();
+    }
+    dropdown.innerHTML = "";
+    const q = (query || "").trim().toLowerCase();
+    const managers = state.sectorManagers || [];
+    let results = managers;
+
+    if (q) {
+      // If query matches current manager exactly, still show full list for easy re-selection
+      const currentMgr = hiddenInput.value ? managers.find((m) => m.id === hiddenInput.value) : null;
+      if (!currentMgr || currentMgr.displayName.toLowerCase() !== q) {
+        results = managers.filter(
+          (m) =>
+            m.displayName.toLowerCase().includes(q) ||
+            (m.username && m.username.toLowerCase().includes(q)),
+        );
+      }
+    }
+
+    if (hiddenInput.value) {
+      const clearItem = document.createElement("div");
+      clearItem.className = "sm-item sm-clear";
+      clearItem.textContent = "✕ مسح الاختيار";
+      clearItem.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        hiddenInput.value = "";
+        document.getElementById("projectSectorManagerSearch").value = "";
+        dropdown.style.display = "none";
+      });
+      dropdown.appendChild(clearItem);
+    }
+
+    if (!results.length) {
+      const noRes = document.createElement("div");
+      noRes.className = "sm-no-results";
+      noRes.textContent = "لا توجد نتائج";
+      dropdown.appendChild(noRes);
+    } else {
+      results.forEach((mgr) => {
+        const item = document.createElement("div");
+        item.className = "sm-item";
+        if (mgr.id === hiddenInput.value) item.classList.add("active");
+        item.textContent = mgr.displayName;
+        if (mgr.username && mgr.username !== mgr.displayName) {
+          item.textContent += ` (${mgr.username})`;
+        }
+        item.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          hiddenInput.value = mgr.id;
+          document.getElementById("projectSectorManagerSearch").value =
+            mgr.displayName;
+          dropdown.style.display = "none";
+        });
+        dropdown.appendChild(item);
+      });
+    }
+
+    dropdown.style.display = "block";
+  }
+
+  newInput.addEventListener("focus", () => {
+    newInput.select();
+    renderDropdown(newInput.value);
+  });
+  newInput.addEventListener("input", () => renderDropdown(newInput.value));
+  newInput.addEventListener("blur", () => {
+    setTimeout(() => {
+      dropdown.style.display = "none";
+      if (!newInput.value.trim()) hiddenInput.value = "";
+    }, 180);
+  });
+}
+
 function openProjectModal() {
   // Permission: create when opening empty form; edit when opening with id is handled by edit*
   if (!assertCan("projects", "create", "إضافة مشروع")) return;
@@ -6231,9 +6031,11 @@ function openProjectModal() {
   document.getElementById("projectName").value = "";
   setInputDate("projectStartDate", getTodayLocal());
   document.getElementById("projectStatus").value = "Active";
+  setSectorManagerCombobox(null);
   document.getElementById("lblProjectModal").innerText = "إضافة مشروع جديد";
   document.getElementById("modalProject").classList.add("active");
   initFlatpickr();
+  initSectorManagerCombobox();
 }
 
 function editProject(id) {
@@ -6245,9 +6047,11 @@ function editProject(id) {
   document.getElementById("projectName").value = p.name || "";
   setInputDate("projectStartDate", p.startDate);
   document.getElementById("projectStatus").value = p.status || "Active";
+  setSectorManagerCombobox(p.sectorManagerId || null);
   document.getElementById("lblProjectModal").innerText = "تعديل بيانات المشروع";
   document.getElementById("modalProject").classList.add("active");
   initFlatpickr();
+  initSectorManagerCombobox();
 }
 
 async function saveProject() {
@@ -6264,6 +6068,7 @@ async function saveProject() {
   const name = document.getElementById("projectName").value.trim();
   const startDate = document.getElementById("projectStartDate").value;
   const status = document.getElementById("projectStatus").value;
+  const sectorManagerId = document.getElementById("projectSectorManagerId")?.value || null;
 
   if (!ownerId || !name) {
     alert("يرجى استكمال الحقول المطلوبة");
@@ -6276,6 +6081,7 @@ async function saveProject() {
     name,
     startDate: startDate || null,
     status: status || "Active",
+    sectorManagerId: sectorManagerId || null,
   };
 
   try {
@@ -6292,6 +6098,7 @@ async function saveProject() {
   }
 
   document.getElementById("modalProject").classList.remove("active");
+  closeSectorManagerDropdown();
   populateDropdowns();
   applyGlobalFilters();
 }

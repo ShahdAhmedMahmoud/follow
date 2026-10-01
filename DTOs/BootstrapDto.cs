@@ -11,5 +11,6 @@ public class BootstrapDto
     public List<SocialInsurancePaymentDto>? SocialInsurancePayments { get; set; } = [];
     public List<EscalationDto>? Escalations { get; set; } = [];
     public List<DeductionLibraryDto>? DeductionLibrary { get; set; } = [];
+    public List<SectorManagerDto>? SectorManagers { get; set; } = [];
 }
 // ===== Contract Cost Control DTOs =====

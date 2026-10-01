@@ -28,7 +28,8 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     x.OwnerId,
                     x.Name,
                     x.StartDate,
-                    x.Status))
+                    x.Status,
+                    x.SectorManagerId))
                 .ToListAsync(ct),
 
             Contracts = await db.Contracts
@@ -149,6 +150,19 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                 .Select(x => new DeductionLibraryDto(
                     x.Id,
                     x.Name))
+                .ToListAsync(ct),
+
+            SectorManagers = await db.SectorManagers
+                .AsNoTracking()
+                .Select(x => new SectorManagerDto(
+                    x.Id,
+                    x.Name,
+                    x.Sector,
+                    x.Phone,
+                    x.Email,
+                    x.Notes,
+                    x.Status,
+                    x.Projects.Count))
                 .ToListAsync(ct)
         };
     }
@@ -281,7 +295,8 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     OwnerId = project.OwnerId!,
                     Name = project.Name!.Trim(),
                     StartDate = project.StartDate,
-                    Status = project.Status
+                    Status = project.Status,
+                    SectorManagerId = project.SectorManagerId
                 });
         }
 
@@ -860,6 +875,7 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     existing.Name = project.Name!.Trim();
                     existing.StartDate = project.StartDate;
                     existing.Status = project.Status;
+                    existing.SectorManagerId = project.SectorManagerId;
                 }
             }
             else
@@ -870,7 +886,8 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     OwnerId = ownerId,
                     Name = project.Name!.Trim(),
                     StartDate = project.StartDate,
-                    Status = project.Status
+                    Status = project.Status,
+                    SectorManagerId = project.SectorManagerId
                 });
                 existingProjectIds.Add(id);
             }

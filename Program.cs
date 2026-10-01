@@ -98,7 +98,114 @@ try
                 ALTER TABLE dbo.Contracts ADD ClaimsAmount DECIMAL(18,2) NOT NULL CONSTRAINT DF_Contracts_ClaimsAmount DEFAULT(0);
             IF COL_LENGTH('dbo.Contracts', 'VatAmount') IS NULL
                 ALTER TABLE dbo.Contracts ADD VatAmount DECIMAL(18,2) NOT NULL CONSTRAINT DF_Contracts_VatAmount DEFAULT(0);
+            IF COL_LENGTH('dbo.Projects', 'SectorManagerId') IS NULL
+                ALTER TABLE dbo.Projects ADD SectorManagerId NVARCHAR(64) NULL;
             """);
+
+        // Ensure SectorManagers table exists (backward compatible)
+        await db.Database.ExecuteSqlRawAsync("""
+            IF OBJECT_ID('dbo.SectorManagers', 'U') IS NULL
+            BEGIN
+                CREATE TABLE dbo.SectorManagers (
+                    Id NVARCHAR(64) NOT NULL PRIMARY KEY,
+                    Name NVARCHAR(250) NOT NULL,
+                    Sector NVARCHAR(250) NULL,
+                    Phone NVARCHAR(50) NULL,
+                    Email NVARCHAR(150) NULL,
+                    Notes NVARCHAR(500) NULL,
+                    Status NVARCHAR(50) NOT NULL CONSTRAINT DF_SectorManagers_Status DEFAULT('Active'),
+                    CreatedAt DATETIME2 NOT NULL CONSTRAINT DF_SectorManagers_CreatedAt DEFAULT(SYSUTCDATETIME())
+                );
+                CREATE INDEX IX_SectorManagers_Name ON dbo.SectorManagers(Name);
+            END
+            """);
+
+        if (!await db.SectorManagers.AnyAsync())
+        {
+            var seedManagers = new[]
+            {
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-001",
+                    Name = "م. أحمد محمود إبراهيم",
+                    Sector = "قطاع المشروعات الكبرى",
+                    Phone = "01012345671",
+                    Email = "ahmed.mahmoud@company.com",
+                    Notes = "مسؤول عن مشروعات البنية الإنشائية الكبرى",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                },
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-002",
+                    Name = "م. طارق عبد العزيز سالم",
+                    Sector = "قطاع الكباري والأنفاق",
+                    Phone = "01123456782",
+                    Email = "tarek.salem@company.com",
+                    Notes = "إدارة تنفيذ مشروعات الكباري والتقاطعات",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                },
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-003",
+                    Name = "م. خالد مصطفى الشريف",
+                    Sector = "قطاع البنية التحتية والمرافق",
+                    Phone = "01234567893",
+                    Email = "khaled.sherif@company.com",
+                    Notes = "شبكات المياه والصرف والكهرباء",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                },
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-004",
+                    Name = "م. هاني سمير عبد الرحمن",
+                    Sector = "قطاع المنشآت العامة والإسكان",
+                    Phone = "01098765434",
+                    Email = "hany.samir@company.com",
+                    Notes = "مباني إدارية وتجمعات سكنية",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                },
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-005",
+                    Name = "م. سارة كمال الدين",
+                    Sector = "قطاع الطرق والمحاور السريعة",
+                    Phone = "01156789125",
+                    Email = "sara.kamal@company.com",
+                    Notes = "رصف ومحاور النقل السريع",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                },
+                new InvoicesErp.Models.SectorManager
+                {
+                    Id = "SM-006",
+                    Name = "م. محمد وائل الدسوقي",
+                    Sector = "قطاع التطوير والتوريدات الكهروميكانيكية",
+                    Phone = "01223344556",
+                    Email = "m.desouky@company.com",
+                    Notes = "أعمال MEP والتوريدات الاستراتيجية",
+                    Status = "Active",
+                    CreatedAt = DateTime.UtcNow
+                }
+            };
+
+            db.SectorManagers.AddRange(seedManagers);
+            await db.SaveChangesAsync();
+
+            // Link existing projects that don't have sector managers to these managers
+            var existingProjects = await db.Projects.ToListAsync();
+            for (int i = 0; i < existingProjects.Count; i++)
+            {
+                if (string.IsNullOrEmpty(existingProjects[i].SectorManagerId))
+                {
+                    existingProjects[i].SectorManagerId = seedManagers[i % seedManagers.Length].Id;
+                }
+            }
+            await db.SaveChangesAsync();
+        }
 
         // Ensure Cost Control tables exist (backward compatible).
         await db.Database.ExecuteSqlRawAsync("""

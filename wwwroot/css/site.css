@@ -1182,6 +1182,8 @@
    Visual redesign. No IDs / JS behaviour are changed here.
    ========================================================== */
 #dashboardView {
+    max-width: 100%;
+    min-width: 0;
     --mc-navy: #0b1f3a;
     --mc-navy-soft: #16324f;
     --mc-blue: #2563eb;
@@ -1477,12 +1479,15 @@
 
 /* ---------- Charts ---------- */
 #dashboardView .mc-charts-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.1rem;
     margin-bottom: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
 }
 #dashboardView .mc-chart-wide {
-    grid-column: span 1;
+    grid-column: 1 / -1;
 }
 #dashboardView .chart-container {
     border: 1px solid var(--mc-border);
@@ -1491,6 +1496,11 @@
     padding: 1.15rem 1.25rem 1.3rem;
     margin-bottom: 0;
     position: relative;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: #fff;
 }
 #dashboardView .chart-title {
     min-height: 20px;
@@ -1513,6 +1523,34 @@
 #dashboardView .chart-body {
     height: 280px;
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#dashboardView .mc-contract-value-grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+#dashboardView .mc-contract-value-chart {
+    grid-column: 1 / -1;
+}
+#dashboardView .mc-contract-value-chart .chart-title {
+    font-size: .95rem;
+    margin-bottom: .55rem;
+    padding-bottom: .7rem;
+    border-bottom: 1px solid var(--mc-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#dashboardView .mc-contract-value-chart .chart-body {
+  height: 270px;
+}
+#dashboardView .mc-contract-value-chart canvas {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
 }
 
 /* ---------- Risk section ---------- */
@@ -1616,7 +1654,8 @@
 @media (max-width: 1250px) {
     #dashboardView .mc-primary-kpis { grid-template-columns: repeat(2, minmax(210px, 1fr)); }
     #dashboardView .mc-secondary-kpis { grid-template-columns: repeat(4, minmax(150px, 1fr)); }
-    #dashboardView .mc-charts-grid { grid-template-columns: 1fr; }
+    #dashboardView .mc-charts-grid { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-contract-value-chart .chart-body { height: 340px; }
 }
 @media (max-width: 900px) {
     #dashboardView .mc-dashboard-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -1624,7 +1663,10 @@
     #dashboardView .mc-section-head { align-items: flex-start; flex-direction: column; }
     #dashboardView .mc-summary-line { justify-content: flex-start; }
     #dashboardView .mc-primary-kpis,
-    #dashboardView .mc-charts-grid { grid-template-columns: 1fr; }
+    #dashboardView .mc-charts-grid { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-contract-value-chart { padding: 1rem 0.9rem 1.05rem; }
+    #dashboardView .mc-contract-value-chart .chart-title { font-size: .88rem; }
+    #dashboardView .mc-contract-value-chart .chart-body { height: 300px; }
     #dashboardView .mc-secondary-kpis { grid-template-columns: repeat(2, minmax(145px, 1fr)); }
     #dashboardView .mc-gap-strip { grid-template-columns: 1fr 1fr; }
     #dashboardView .mc-risk-overview { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
@@ -1636,6 +1678,14 @@
     #dashboardView .mc-primary-kpis .kpi-value { font-size: 1.4rem; }
     #dashboardView .mc-dashboard-header { padding: 1.1rem; }
     #dashboardView .mc-active-filters { max-width: 100%; justify-content: flex-start; }
+    #dashboardView .mc-contract-value-chart { padding: 0.85rem 0.7rem 0.9rem; }
+    #dashboardView .mc-contract-value-chart .chart-title { font-size: .82rem; padding-bottom: .5rem; margin-bottom: .4rem; }
+    #dashboardView .mc-contract-value-chart .chart-body { height: 260px; }
+}
+@media (max-width: 380px) {
+    #dashboardView .mc-contract-value-chart { padding: 0.7rem 0.55rem 0.75rem; }
+    #dashboardView .mc-contract-value-chart .chart-title { font-size: .78rem; }
+    #dashboardView .mc-contract-value-chart .chart-body { height: 230px; }
 }
 
 
@@ -5015,9 +5065,10 @@ html[dir="rtl"] #sidebar {
 @media (max-width: 700px) {
     .charts-grid,
     #dashboardView .mc-charts-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: minmax(0, 1fr) !important;
     }
     .chart-body { height: 240px; }
+    #dashboardView .mc-contract-value-chart .chart-body { height: 280px; }
 }
 
 

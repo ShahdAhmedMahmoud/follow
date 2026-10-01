@@ -9,6 +9,13 @@
                 <div class="form-group span-full"><label>اسم المشروع *</label><input type="text" class="form-control" id="projectName" required></div>
                 <div class="form-group"><label>تاريخ البدء</label><input type="date" class="form-control" id="projectStartDate" lang="ar"></div>
                 <div class="form-group"><label>الحالة</label><select class="form-select" id="projectStatus"><option value="Active">نشط</option><option value="Completed">مكتمل</option><option value="OnHold">متوقف</option></select></div>
+                <div class="form-group span-full" style="position:relative;">
+                    <label>مدير القطاع</label>
+                    <input type="hidden" id="projectSectorManagerId">
+                    <input type="text" class="form-control" id="projectSectorManagerSearch"
+                           placeholder="ابحث عن مدير القطاع..." autocomplete="off" autocorrect="off" spellcheck="false">
+                    <div id="projectSectorManagerDropdown" class="sector-manager-dropdown" style="display:none;"></div>
+                </div>
             </form>
         </div>
         <div class="modal-footer"><button class="btn btn-secondary modal-cancel">إلغاء</button><button class="btn btn-primary" id="btnSaveProject">حفظ</button></div>

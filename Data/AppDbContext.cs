@@ -20,6 +20,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<CostControl> CostControls => Set<CostControl>();
     public DbSet<CostControlItem> CostControlItems => Set<CostControlItem>();
     public DbSet<CostControlSubItem> CostControlSubItems => Set<CostControlSubItem>();
+    public DbSet<SectorManager> SectorManagers => Set<SectorManager>();
 
     protected override void OnModelCreating(ModelBuilder b)
     {
@@ -37,6 +38,19 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         b.Entity<SocialInsurancePayment>().Property(x => x.PaymentDate).HasColumnType("date");
         b.Entity<EscalationResponse>().Property(x => x.ResponseDate).HasColumnType("date");
 
+        b.Entity<SectorManager>(e =>
+        {
+            e.HasKey(x => x.Id);
+            e.Property(x => x.Id).HasMaxLength(IdLen);
+            e.Property(x => x.Name).HasMaxLength(250).IsRequired();
+            e.Property(x => x.Sector).HasMaxLength(250);
+            e.Property(x => x.Phone).HasMaxLength(50);
+            e.Property(x => x.Email).HasMaxLength(150);
+            e.Property(x => x.Notes).HasMaxLength(500);
+            e.Property(x => x.Status).HasMaxLength(50);
+            e.HasIndex(x => x.Name);
+        });
+
         b.Entity<Owner>(e =>
         {
             e.HasKey(x => x.Id);
@@ -51,8 +65,11 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.Id).HasMaxLength(IdLen);
             e.Property(x => x.OwnerId).HasMaxLength(IdLen).IsRequired();
             e.Property(x => x.Name).HasMaxLength(300).IsRequired();
+            e.Property(x => x.SectorManagerId).HasMaxLength(IdLen);
             e.HasOne(x => x.Owner).WithMany(x => x.Projects).HasForeignKey(x => x.OwnerId).OnDelete(DeleteBehavior.Restrict);
+            e.HasOne(x => x.SectorManager).WithMany(x => x.Projects).HasForeignKey(x => x.SectorManagerId).OnDelete(DeleteBehavior.SetNull);
             e.HasIndex(x => x.OwnerId);
+            e.HasIndex(x => x.SectorManagerId);
         });
 
         b.Entity<Contract>(e =>

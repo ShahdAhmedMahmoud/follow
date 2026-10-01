@@ -36,26 +36,28 @@
                         <div class="kpi-card danger"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="kpi-label">تأمينات اجتماعية مستحقة</div></div><div class="kpi-value" id="kpiSocialInsuranceOutstanding">0.00</div><div class="kpi-sub">السداد من شاشة التأمينات</div></div>
                     </div>
                 </section>
-
                 <section class="mc-section">
                     <div class="mc-section-head"><div><h3>التنفيذ والفوترة</h3><p>مقارنة قيمة العقد مع آخر موقف تنفيذي وقيمة المستخلصات</p></div></div>
                     <div class="mc-gap-strip" id="mcExecutionBillingGap"></div>
-                    <div class="charts-grid mc-charts-grid">
-                        <div class="chart-container mc-chart-wide"><div class="chart-title">قيمة العقود مقابل الموقف التنفيذي</div><div class="chart-body"><canvas id="chartContractVsExecution"></canvas></div></div>
-                        <div class="chart-container mc-chart-wide"><div class="chart-title">الموقف التنفيذي مقابل قيمة المستخلصات</div><div class="chart-body"><canvas id="chartExecVsInv"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">أعلى العقود حسب نسبة التنفيذ</div><div class="chart-body"><canvas id="chartContractExecution"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">الاتجاه الشهري للمستخلصات الحالية</div><div class="chart-body"><canvas id="chartMonthlyTrend"></canvas></div></div>
-                    </div>
-                </section>
 
-                <section class="mc-section">
-                    <div class="mc-section-head"><div><h3>التحصيل والمستحقات</h3><p>السيولة المحصلة، الرصيد القائم، والتأخير حسب عمر المستحق</p></div></div>
                     <div class="charts-grid mc-charts-grid">
-                        <div class="chart-container"><div class="chart-title">المحصل مقابل المستحق القائم</div><div class="chart-body"><canvas id="chartPaymentAmounts"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">أعمار المستحقات غير المحصلة</div><div class="chart-body"><canvas id="chartAgingOutstanding"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">حالات المستخلصات</div><div class="chart-body"><canvas id="chartInvoicesStatus"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">توزيع قيمة المستخلصات حسب المالك</div><div class="chart-body"><canvas id="chartOwnerInvoices"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">توزيع قيمة المستخلصات حسب المشروع</div><div class="chart-body"><canvas id="chartProjectInvoices"></canvas></div></div>
+
+                        <div class="chart-container mc-chart-card">
+                            <div class="mc-chart-header">قيمة التعاقد</div>
+                            <div class="mc-chart-body" id="mcChartContractValueBody">
+                                <canvas id="mcChartContractValue" role="img" aria-label="قيمة التعاقد"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-container mc-chart-card">
+                            <div class="mc-chart-header" id="mcExecPositionTitle">الموقف التنفيذي التراكمي</div>
+                            <div class="mc-chart-body mc-chart-scroll" id="mcChartExecPositionScroll">
+                                <div class="mc-chart-scroll-inner" id="mcChartExecPositionInner">
+                                    <canvas id="mcChartExecPosition" role="img" aria-label="الموقف التنفيذي التراكمي"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -66,10 +68,6 @@
                         <div class="mc-risk-stat"><strong id="mcRiskHighCount">0</strong><span>عقود بمخاطر مرتفعة</span></div>
                         <div class="mc-risk-stat"><strong id="mcRiskGapCount">0</strong><span>عقود بفجوة تنفيذ غير مفوترة</span></div>
                         <div class="mc-risk-stat"><strong id="mcRiskUnreturnedCount">0</strong><span>تعليات غير مردودة</span></div>
-                    </div>
-                    <div class="charts-grid mc-charts-grid">
-                        <div class="chart-container"><div class="chart-title">أعلى العقود حسب المستحق القائم</div><div class="chart-body"><canvas id="chartTopOutstanding"></canvas></div></div>
-                        <div class="chart-container"><div class="chart-title">التعليات حسب حالة الرد</div><div class="chart-body"><canvas id="chartEscalationsStatus"></canvas></div></div>
                     </div>
                     <div class="table-container mc-attention-container">
                         <div class="table-toolbar"><div><h3 style="margin:0;">العقود التي تحتاج متابعة</h3><small class="mc-muted">مرتبة حسب مستوى المخاطر والأثر المالي</small></div></div>

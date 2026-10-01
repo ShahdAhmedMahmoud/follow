@@ -5,4 +5,5 @@ public record ProjectDto(
     string? OwnerId,
     string? Name,
     DateOnly? StartDate,
-    string? Status);
+    string? Status,
+    string? SectorManagerId = null);
