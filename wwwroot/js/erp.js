@@ -4041,7 +4041,7 @@ function renderContracts(data) {
         contractAmt > 0 ? Math.min(100, (totalGross / contractAmt) * 100) : 0;
       const modTotal = getContractModifiedTotal(c);
       const searchText =
-        `${c.id} ${c.name} ${proj.name} ${fmtNum(contractAmt)} ${fmtNum(modTotal)} ${fmtNum(totalGross)} ${fmtNum(execRate, 1)}% ${c.paymentTerms || 45} ${c.status || ""}`.toLowerCase();
+        `${c.id} ${c.name} ${proj.name} ${fmtNum(contractAmt)} ${fmtNum(modTotal)} ${fmtNum(totalGross)} ${fmtNum(execRate, 1)}% ${c.paymentTerms || 45} ${fmtDisplayDate(c.endDate)} ${c.status || ""}`.toLowerCase();
       return searchText.includes(q);
     });
   }
@@ -4081,6 +4081,7 @@ function renderContracts(data) {
                 <td>${fmtNum(totalGross)}</td>
                 <td>${fmtNum(execRate, 1)}%</td>
                 <td>${c.paymentTerms || 45}</td>
+                <td>${fmtDisplayDate(c.endDate)}</td>
                 <td>${statusBadge}</td>
                 <td>
                     <div class="row-actions">
@@ -6200,6 +6201,10 @@ function openContractModal() {
   setInputDate("contractSignDate", getTodayLocal());
   const contractDurationEl = document.getElementById("contractDuration");
   if (contractDurationEl) contractDurationEl.value = "";
+  const contractEndDateEl =
+    document.getElementById("contractEndDate") ||
+    document.getElementById("EndDate");
+  if (contractEndDateEl) contractEndDateEl.value = "";
   document.getElementById("contractStatus").value = "Active";
   document.getElementById("lblContractModal").innerText = "إضافة عقد جديد";
   document.getElementById("modalContract").classList.add("active");
@@ -6227,6 +6232,12 @@ function editContract(id) {
       c.contractDuration !== undefined && c.contractDuration !== null
         ? c.contractDuration
         : "";
+  const contractEndDateEl =
+    document.getElementById("contractEndDate") ||
+    document.getElementById("EndDate");
+  if (contractEndDateEl) {
+    contractEndDateEl.value = c.endDate ? fmtDisplayDate(c.endDate) : "-";
+  }
   document.getElementById("contractStatus").value = c.status || "Active";
   document.getElementById("lblContractModal").innerText = "تعديل بيانات العقد";
   document.getElementById("modalContract").classList.add("active");
@@ -6297,12 +6308,26 @@ async function saveContract() {
   };
 
   try {
+    let savedContract = null;
     if (id) {
-      await erpApi.contracts.update(id, dto);
+      savedContract = await erpApi.contracts.update(id, dto);
     } else {
-      await erpApi.contracts.create(dto);
+      savedContract = await erpApi.contracts.create(dto);
     }
     await syncStateFromBackend();
+    const contractEndDateEl =
+      document.getElementById("contractEndDate") ||
+      document.getElementById("EndDate");
+    if (contractEndDateEl) {
+      const currentContract = state.contracts.find(
+        (x) => x.id === (id || savedContract?.id),
+      );
+      if (currentContract?.endDate) {
+        contractEndDateEl.value = fmtDisplayDate(currentContract.endDate);
+      } else if (savedContract?.endDate) {
+        contractEndDateEl.value = fmtDisplayDate(savedContract.endDate);
+      }
+    }
   } catch (error) {
     console.error("Save contract failed:", error);
     alert("حدث خطأ أثناء حفظ العقد: " + (error.message || ""));
