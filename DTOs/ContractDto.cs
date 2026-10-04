@@ -13,4 +13,4 @@ public record ContractDto(
     DateOnly? SignDate,
     string? Status,
     int ContractDuration,
-    DateOnly? EndDate); // <--- تأكد إنها موجودة هنا في النهاية (الباراميتر رقم 13)
+    DateOnly? EndDate); // <-
