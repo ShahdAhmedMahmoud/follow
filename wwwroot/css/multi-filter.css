@@ -288,3 +288,213 @@ body.mf-sheet-open { overflow: hidden !important; }
 @media (prefers-reduced-motion: reduce) {
     .mf-panel, .mf-backdrop, .mf-check, .mf-chevron { animation: none !important; transition: none !important; }
 }
+
+/* ================================================================
+   Reports Page: Stable Filters Toolbar & Independent Layout
+   Prevents filters from shrinking, collapsing, or clipping
+   regardless of table row count (100, 10, 1, or 0 records).
+   ================================================================ */
+
+#reportsView {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+}
+
+#reportsView .tab-content {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Dedicated filters toolbar card above the table */
+.reports-toolbar-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+  background: #ffffff !important;
+  border: 1px solid #e8eef5 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+  padding: 0.95rem 1.15rem !important;
+  margin-bottom: 1rem !important;
+  overflow: visible !important; /* Never clip multi-select dropdowns */
+  position: relative;
+  z-index: 30; /* Keep above table content so dropdowns float cleanly */
+}
+
+.reports-toolbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.85rem 1.25rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Group containing Search + all Filters */
+.reports-filters-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  flex: 1 1 0%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Individual filter groups (Search or Multi-select) */
+.reports-toolbar-card .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 200px;
+  min-width: 180px;
+  max-width: 320px;
+  box-sizing: border-box;
+}
+
+.reports-toolbar-card .filter-group label {
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  text-align: right;
+  margin: 0;
+  user-select: none;
+  line-height: 1.2;
+}
+
+/* Search input wrapper with icon matching Global Filters pattern */
+.reports-search-group {
+  flex: 1 1 240px !important;
+  min-width: 200px !important;
+  max-width: 340px !important;
+}
+
+.reports-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.reports-search-icon {
+  position: absolute;
+  inset-inline-start: 0.65rem;
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.reports-search-input {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 38px !important;
+  height: 38px !important;
+  padding: 0.3rem 0.65rem !important;
+  padding-inline-start: 2rem !important;
+  border-radius: 9px !important;
+  border: 1px solid #cbd5e1 !important;
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  font-size: 0.85rem !important;
+  box-sizing: border-box;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.reports-search-input:hover {
+  background: #fff !important;
+  border-color: #94a3b8 !important;
+}
+
+.reports-search-input:focus {
+  background: #fff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14) !important;
+  outline: none !important;
+}
+
+/* Actions group: Export Excel & Print buttons */
+.reports-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-inline-start: auto;
+  align-self: flex-end;
+  box-sizing: border-box;
+}
+
+.reports-actions-group .btn {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 9px;
+  white-space: nowrap;
+}
+
+/* Independent table container below toolbar */
+.reports-table-container {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+  background: #ffffff !important;
+  border: 1px solid #e8eef5 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  padding: 1rem 1.1rem 1.15rem !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.reports-table-container .data-table-wrapper {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  box-sizing: border-box;
+}
+
+.reports-table-container table.data-table {
+  width: 100% !important;
+  min-width: 900px;
+}
+
+/* Print handling: Hide toolbar when printing report */
+@media print {
+  .reports-toolbar-card {
+    display: none !important;
+  }
+}
+body.printing-report .reports-toolbar-card {
+  display: none !important;
+}
+
+/* Tablet & Mobile responsiveness */
+@media (max-width: 768px) {
+  .reports-toolbar-card {
+    padding: 0.75rem 0.85rem !important;
+  }
+  .reports-toolbar-card .filter-group,
+  .reports-search-group {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .reports-actions-group {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .reports-actions-group .btn {
+    flex: 1;
+  }
+}

@@ -33,7 +33,7 @@ const FLATPICKR_DATE_FORMAT = "d/m/Y"; // flatpickr's d=day, m=month, Y=4-digit 
  * maps any legacy value already saved in the database onto the
  * canonical one so existing records keep displaying correctly.
  * ─────────────────────────────────────────────────────────────── */
-const ESC_STATUS_PENDING = "لم يتم الرد";
+const ESC_STATUS_PENDING = "غير قابلة للرد";
 const ESC_STATUS_PARTIAL = "الرد جزئيًا";
 const ESC_STATUS_DONE = "تم الرد";
 const ESC_FILTER_ALL = "all";
@@ -469,6 +469,9 @@ let chartInstances = {};
 
 const globalFilterUI = {};
 
+// Multi-filter instances for the Reports page
+const repFilterUI = {};
+
 const FILTER_ICONS = {
   owner:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>',
@@ -518,6 +521,76 @@ function initGlobalMultiFilters() {
     icon: FILTER_ICONS.contract,
   });
   updateGlobalFilterDropdowns();
+}
+
+function initRepMultiFilters() {
+  const makeRep = (selectId, cfg, onChange) => {
+    const el = document.getElementById(selectId);
+    if (!el) return null;
+    return createMultiFilter(el, { ...cfg, onChange });
+  };
+
+  repFilterUI.escDesc = makeRep(
+    "repEscDescFilter",
+    {
+      placeholder: "كل الأوصاف",
+      searchPlaceholder: "ابحث عن وصف...",
+      noItemsText: "لا توجد أوصاف",
+    },
+    () => { filterRepEscRows(); updateRepEscFooter(); }
+  );
+
+  repFilterUI.escStatus = makeRep(
+    "repEscStatusFilter",
+    {
+      placeholder: "كل الحالات",
+      searchPlaceholder: "ابحث عن حالة...",
+      noItemsText: "لا توجد حالات",
+    },
+    () => { filterRepEscRows(); updateRepEscFooter(); }
+  );
+  if (repFilterUI.escStatus) {
+    repFilterUI.escStatus.setOptions([
+      { id: "لم يتم الرد",  label: "لم يتم الرد" },
+      { id: "الرد جزئيًا", label: "الرد جزئيًا" },
+      { id: "تم الرد",     label: "تم الرد" },
+    ]);
+  }
+
+  repFilterUI.invPayStatus = makeRep(
+    "repInvPaymentStatusFilter",
+    {
+      placeholder: "كل حالات الصرف",
+      searchPlaceholder: "ابحث عن حالة...",
+      noItemsText: "لا توجد حالات",
+    },
+    () => { filterRepInvRows(); updateRepInvFooter(); }
+  );
+  if (repFilterUI.invPayStatus) {
+    repFilterUI.invPayStatus.setOptions([
+      { id: "Pending", label: "معلق" },
+      { id: "Paid",    label: "مدفوع" },
+      { id: "Partial", label: "جزئي" },
+    ]);
+  }
+
+  repFilterUI.invLastStatus = makeRep(
+    "repInvLastStatusFilter",
+    {
+      placeholder: "كل حالات المستخلص",
+      searchPlaceholder: "ابحث عن حالة...",
+      noItemsText: "لا توجد حالات",
+    },
+    () => { filterRepInvRows(); updateRepInvFooter(); }
+  );
+  if (repFilterUI.invLastStatus) {
+    repFilterUI.invLastStatus.setOptions([
+      { id: "Draft",    label: "مسودة" },
+      { id: "Review",   label: "مراجعة" },
+      { id: "Approved", label: "معتمد" },
+      { id: "Rejected", label: "مرفوض" },
+    ]);
+  }
 }
 
 // Presentation-only Chart.js defaults for the executive dashboard (RTL-aware
@@ -1805,6 +1878,8 @@ function applyBootstrapToState(remote) {
     claimsAmount: parseFloat(c.claimsAmount ?? c.ClaimsAmount) || 0,
     vatAmount: parseFloat(c.vatAmount ?? c.VatAmount) || 0,
     signDate: c.signDate ?? c.SignDate ?? null,
+    contractDuration: parseInt(c.contractDuration ?? c.ContractDuration) || 0,
+    endDate: c.endDate ?? c.EndDate ?? null,
   }));
   state.invoices = Array.isArray(remote?.invoices) ? remote.invoices : [];
   state.deductionLibrary = Array.isArray(remote?.deductionLibrary)
@@ -1909,6 +1984,8 @@ function normalizeBootstrapPayload(raw) {
     vatAmount: _dec(c.vatAmount),
     paymentTerms: _int(c.paymentTerms),
     signDate: c.signDate || null,
+    contractDuration: _int(c.contractDuration),
+    endDate: c.endDate || null,
     status: _str(c.status),
   }));
   const invoices = (raw.invoices || []).map(normalizeInvoiceForApi);
@@ -2282,39 +2359,17 @@ function initCentralizedEventListeners() {
   bindSearch("searchEscalations", "tblEscalations", filterEscalationsByStatus);
 
   bindSearch("searchRepExec", "tblRepExec", updateRepExecFooter);
-  bindSearch("searchRepEsc", "tblRepEsc", updateRepEscFooter);
-  bindSearch("searchRepInv", "tblRepInv", updateRepInvFooter);
+  bindSearch("searchRepEsc", "tblRepEsc", () => {
+    filterRepEscRows();
+    updateRepEscFooter();
+  });
+  bindSearch("searchRepInv", "tblRepInv", () => {
+    filterRepInvRows();
+    updateRepInvFooter();
+  });
 
-  // Report filter event listeners
-  const repEscDescFilter = document.getElementById("repEscDescFilter");
-  const repEscStatusFilter = document.getElementById("repEscStatusFilter");
-  const repInvPaymentStatusFilter = document.getElementById(
-    "repInvPaymentStatusFilter",
-  );
-  const repInvLastStatusFilter = document.getElementById(
-    "repInvLastStatusFilter",
-  );
-
-  if (repEscDescFilter)
-    repEscDescFilter.addEventListener("change", () => {
-      filterRepEscRows();
-      updateRepEscFooter();
-    });
-  if (repEscStatusFilter)
-    repEscStatusFilter.addEventListener("change", () => {
-      filterRepEscRows();
-      updateRepEscFooter();
-    });
-  if (repInvPaymentStatusFilter)
-    repInvPaymentStatusFilter.addEventListener("change", () => {
-      filterRepInvRows();
-      updateRepInvFooter();
-    });
-  if (repInvLastStatusFilter)
-    repInvLastStatusFilter.addEventListener("change", () => {
-      filterRepInvRows();
-      updateRepInvFooter();
-    });
+  // Report page multi-select filters (Search + Multi-Select, same pattern as global filters)
+  initRepMultiFilters();
 
   const btnAddOwner = document.getElementById("btnAddOwner");
   if (btnAddOwner)
@@ -3601,7 +3656,7 @@ function renderDashboard(data) {
   if (gap) {
     const gapValue = totalExecValue - totalGross;
     const gapLabel =
-      gapValue >= 0 ? "فجوة التنفيذ غير المفوتر" : "الفوترة أعلى من التنفيذ";
+      gapValue >= 0 ? "قيمة المستحق من الموقف التنفيذي" : "الفوترة أعلى من التنفيذ";
     gap.innerHTML = `<div><strong>${gapLabel}</strong><span>${fmtNum(gapValue)}</span></div><div><small>التنفيذ / العقد</small><strong>${fmtNum(execRate, 1)}%</strong></div><div><small>المستخلصات / العقد</small><strong>${fmtNum(totalContractValue ? (totalGross / totalContractValue) * 100 : 0, 1)}%</strong></div><div><small>المستخلصات / التنفيذ</small><strong>${fmtNum(totalExecValue ? (totalGross / totalExecValue) * 100 : 0, 1)}%</strong></div>`;
   }
 
@@ -4631,7 +4686,7 @@ function ensureEscStatusFilterUI() {
             <label for="escPageStatusFilter" style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:0.25rem">حالة الرد</label>
             <select class="form-select" id="escPageStatusFilter">
                 <option value="${ESC_FILTER_ALL}">الكل</option>
-                <option value="${ESC_FILTER_NOT_REPLIED}">لم يتم الرد</option>
+                <option value="${ESC_FILTER_NOT_REPLIED}">غير قابلة للرد</option>
                 <option value="${ESC_FILTER_REPLYABLE}">قابلة للرد</option>
             </select>
         </div>
@@ -5206,9 +5261,7 @@ function updateRepEscFooter() {
 
 // Report filter functions
 function populateRepEscDescFilter() {
-  const select = document.getElementById("repEscDescFilter");
-  if (!select) return;
-  const currentVal = select.value;
+  // Build option list from data
   const descriptions = new Set();
   let hasSocialInsurance = false;
   state.invoices.forEach((inv) => {
@@ -5223,38 +5276,51 @@ function populateRepEscDescFilter() {
       });
     }
   });
-  let html = '<option value="">وصف التعليّة: الكل</option>';
+
+  const items = [];
   if (hasSocialInsurance) {
-    html +=
-      '<option value="تعلية تأمينات اجتماعية">تعلية تأمينات اجتماعية</option>';
+    items.push({ id: "تعلية تأمينات اجتماعية", label: "تعلية تأمينات اجتماعية" });
   }
-  html += Array.from(descriptions)
+  Array.from(descriptions)
     .sort()
-    .map((d) => `<option value="${escapeHtml(d)}">${escapeHtml(d)}</option>`)
-    .join("");
-  select.innerHTML = html;
-  if (currentVal) select.value = currentVal;
+    .forEach((d) => items.push({ id: d, label: d }));
+
+  if (repFilterUI.escDesc) {
+    // Update the multi-filter widget with fresh options (preserves existing selection)
+    repFilterUI.escDesc.setOptions(items);
+  } else {
+    // Fallback: update the raw <select> if multi-filter wasn't initialised yet
+    const select = document.getElementById("repEscDescFilter");
+    if (!select) return;
+    let html = '<option value="">الكل</option>';
+    html += items
+      .map((i) => `<option value="${escapeHtml(i.id)}">${escapeHtml(i.label)}</option>`)
+      .join("");
+    select.innerHTML = html;
+  }
 }
 
 function filterRepEscRows() {
-  const descFilter = (
-    document.getElementById("repEscDescFilter")?.value || ""
-  ).trim();
-  const statusFilter = (
-    document.getElementById("repEscStatusFilter")?.value || ""
-  ).trim();
+  const query = (document.getElementById("searchRepEsc")?.value || "").toLowerCase().trim();
+  // Read multi-selected values; empty array means "show all"
+  const descValues = repFilterUI.escDesc ? repFilterUI.escDesc.getSelected() : [];
+  const statusValues = repFilterUI.escStatus ? repFilterUI.escStatus.getSelected() : [];
   const rows = document.querySelectorAll("#tblRepEsc tbody tr");
   rows.forEach((r) => {
     if (r.querySelector("td[colspan]")) return;
     let show = true;
-    if (descFilter) {
-      const descCell = r.children[5]?.textContent.trim() || "";
-      if (!descCell.includes(descFilter)) show = false;
+    if (query) {
+      const text = r.textContent.toLowerCase();
+      if (!text.includes(query)) show = false;
     }
-    if (statusFilter && show) {
+    if (descValues.length > 0 && show) {
+      const descCell = r.children[5]?.textContent.trim() || "";
+      if (!descValues.some((v) => descCell.includes(v))) show = false;
+    }
+    if (statusValues.length > 0 && show) {
       const statusCell = r.children[7]?.textContent.trim() || "";
-      // match exact or contains (للباجات)
-      if (statusCell !== statusFilter && !statusCell.includes(statusFilter))
+      // match if any selected status is found in the cell
+      if (!statusValues.some((v) => statusCell === v || statusCell.includes(v)))
         show = false;
     }
     r.style.display = show ? "" : "none";
@@ -5262,36 +5328,31 @@ function filterRepEscRows() {
 }
 
 function filterRepInvRows() {
-  const paymentStatusFilter = (
-    document.getElementById("repInvPaymentStatusFilter")?.value || ""
-  ).trim();
-  const lastStatusFilter = (
-    document.getElementById("repInvLastStatusFilter")?.value || ""
-  ).trim();
+  const query = (document.getElementById("searchRepInv")?.value || "").toLowerCase().trim();
+  const payStatusMap = { Pending: "معلق", Paid: "مدفوع", Partial: "جزئي" };
+  const lastStatusMap = { Draft: "مسودة", Review: "مراجعة", Approved: "معتمد", Rejected: "مرفوض" };
+  // Read multi-selected values; empty array means "show all"
+  const payValues    = repFilterUI.invPayStatus   ? repFilterUI.invPayStatus.getSelected()   : [];
+  const lastValues   = repFilterUI.invLastStatus  ? repFilterUI.invLastStatus.getSelected()  : [];
+  // Resolve enum IDs to Arabic display strings for matching against table cells
+  const payResolved  = payValues.map((v) => payStatusMap[v] || v);
+  const lastResolved = lastValues.map((v) => lastStatusMap[v] || v);
   const rows = document.querySelectorAll("#tblRepInv tbody tr");
   rows.forEach((r) => {
+    if (r.querySelector("td[colspan]")) return;
     let show = true;
-    if (paymentStatusFilter) {
+    if (query) {
+      const text = r.textContent.toLowerCase();
+      if (!text.includes(query)) show = false;
+    }
+    if (payResolved.length > 0 && show) {
       const payStatusCell = r.children[9]?.textContent.trim() || "";
-      const payStatusMap = { Pending: "معلق", Paid: "مدفوع", Partial: "جزئي" };
-      if (
-        payStatusCell !== payStatusMap[paymentStatusFilter] &&
-        payStatusCell !== paymentStatusFilter
-      )
+      if (!payResolved.some((v) => payStatusCell === v || payStatusCell.includes(v)))
         show = false;
     }
-    if (lastStatusFilter && show) {
+    if (lastResolved.length > 0 && show) {
       const lastStatusCell = r.children[8]?.textContent.trim() || "";
-      const lastStatusMap = {
-        Draft: "مسودة",
-        Review: "مراجعة",
-        Approved: "معتمد",
-        Rejected: "مرفوض",
-      };
-      if (
-        lastStatusCell !== lastStatusMap[lastStatusFilter] &&
-        lastStatusCell !== lastStatusFilter
-      )
+      if (!lastResolved.some((v) => lastStatusCell === v || lastStatusCell.includes(v)))
         show = false;
     }
     r.style.display = show ? "" : "none";
@@ -6137,6 +6198,8 @@ function openContractModal() {
   document.getElementById("contractVatAmount").value = "0";
   document.getElementById("contractPaymentTerms").value = "30";
   setInputDate("contractSignDate", getTodayLocal());
+  const contractDurationEl = document.getElementById("contractDuration");
+  if (contractDurationEl) contractDurationEl.value = "";
   document.getElementById("contractStatus").value = "Active";
   document.getElementById("lblContractModal").innerText = "إضافة عقد جديد";
   document.getElementById("modalContract").classList.add("active");
@@ -6158,6 +6221,12 @@ function editContract(id) {
   document.getElementById("contractVatAmount").value = c.vatAmount ?? 0;
   document.getElementById("contractPaymentTerms").value = c.paymentTerms || 45;
   setInputDate("contractSignDate", c.signDate);
+  const contractDurationEl = document.getElementById("contractDuration");
+  if (contractDurationEl)
+    contractDurationEl.value =
+      c.contractDuration !== undefined && c.contractDuration !== null
+        ? c.contractDuration
+        : "";
   document.getElementById("contractStatus").value = c.status || "Active";
   document.getElementById("lblContractModal").innerText = "تعديل بيانات العقد";
   document.getElementById("modalContract").classList.add("active");
@@ -6188,6 +6257,15 @@ async function saveContract() {
   const paymentTerms =
     parseInt(document.getElementById("contractPaymentTerms").value) || 45;
   const signDate = document.getElementById("contractSignDate").value;
+  const durationRaw = document.getElementById("contractDuration")
+    ? document.getElementById("contractDuration").value.trim()
+    : "";
+  const contractDuration =
+    durationRaw === "" ? 0 : parseInt(durationRaw, 10);
+  if (Number.isNaN(contractDuration) || contractDuration < 0) {
+    alert("مدة التعاقد يجب أن تكون رقماً صالحاً (أكبر من أو يساوي صفر).");
+    return;
+  }
   const status = document.getElementById("contractStatus").value;
 
   if (!projectId || !name || amount <= 0) {
@@ -6214,6 +6292,7 @@ async function saveContract() {
       : 0,
     paymentTerms,
     signDate: signDate || null,
+    contractDuration,
     status: status || "Active",
   };
 
@@ -6852,7 +6931,7 @@ function addInvDeductionRow(data = null) {
                 <div class="deduction-calculated-amount ded-amount">0.00</div>
             </div>
             <div class="form-group">
-                <label>متابعة في التعليات (إعادة / استرداد)</label>
+                <label>متابعة في التعليات (يرد/ لا يرد)</label>
                 <div class="deduction-toggle-wrapper">
                     <label class="deduction-toggle">
                         <input type="checkbox" class="ded-refund" ${isFollowUpChecked ? "checked" : ""}>

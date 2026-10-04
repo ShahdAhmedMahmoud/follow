@@ -9,16 +9,28 @@
 
                 <!-- 1. REPORT: EXECUTIVE POSITION -->
                 <div id="repExecPositionView" class="tab-content active">
-                    <div class="table-container">
-                        <div class="table-toolbar">
-                            <div class="table-toolbar-left">
-                                <input type="text" class="form-control table-search" id="searchRepExec" placeholder="بحث في تقرير الموقف التنفيذي...">
+                    <div class="reports-toolbar-card">
+                        <div class="reports-toolbar-inner">
+                            <div class="reports-filters-group">
+                                <div class="filter-group reports-search-group">
+                                    <label for="searchRepExec">بحث في التقرير</label>
+                                    <div class="reports-search-input-wrap">
+                                        <svg class="reports-search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="7"></circle>
+                                            <path d="m20 20-4-4"></path>
+                                        </svg>
+                                        <input type="search" class="form-control table-search reports-search-input" id="searchRepExec" placeholder="بحث في تقرير الموقف التنفيذي..." autocomplete="off">
+                                    </div>
+                                </div>
                             </div>
-                            <div style="display: flex; gap: 0.5rem;">
+                            <div class="reports-actions-group">
                                 <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepExec', 'تقرير_الموقف_التنفيذي')">📊 تصدير Excel</button>
                                 <button class="btn btn-primary btn-sm" onclick="printReportSection('repExecPositionView', 'تقرير الموقف التنفيذي')">🖨️ طباعة</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="table-container reports-table-container">
 
                         <div class="data-table-wrapper">
                             <table class="data-table" id="tblRepExec">
@@ -114,25 +126,42 @@
                         </div>
                     </div>
 
-                    <div class="table-container">
-                        <div class="table-toolbar">
-                            <div class="table-toolbar-left">
-                                <input type="text" class="form-control table-search" id="searchRepEsc" placeholder="بحث في تقرير التعليات...">
-                                <select class="form-select" id="repEscDescFilter" style="min-width: 160px;">
-                                    <option value="">وصف التعليّة: الكل</option>
-                                </select>
-                                <select class="form-select" id="repEscStatusFilter" style="min-width: 160px;">
-                                    <option value="">حالة الرد: الكل</option>
-                                    <option value="لم يتم الرد">لم يتم الرد</option>
-                                    <option value="الرد جزئيًا">الرد جزئيًا</option>
-                                    <option value="تم الرد">تم الرد</option>
-                                </select>
+                    <div class="reports-toolbar-card">
+                        <div class="reports-toolbar-inner">
+                            <div class="reports-filters-group">
+                                <div class="filter-group reports-search-group">
+                                    <label for="searchRepEsc">بحث في التقرير</label>
+                                    <div class="reports-search-input-wrap">
+                                        <svg class="reports-search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="7"></circle>
+                                            <path d="m20 20-4-4"></path>
+                                        </svg>
+                                        <input type="search" class="form-control table-search reports-search-input" id="searchRepEsc" placeholder="بحث في تقرير التعليات..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="repEscDescFilter">وصف التعليّة</label>
+                                    <select id="repEscDescFilter">
+                                        <option value="">الكل</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="repEscStatusFilter">حالة الرد</label>
+                                    <select id="repEscStatusFilter">
+                                        <option value="لم يتم الرد">لم يتم الرد</option>
+                                        <option value="الرد جزئيًا">الرد جزئيًا</option>
+                                        <option value="تم الرد">تم الرد</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div style="display: flex; gap: 0.5rem;">
+                            <div class="reports-actions-group">
                                 <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepEsc', 'تقرير_التعليات')">📊 تصدير Excel</button>
                                 <button class="btn btn-primary btn-sm" onclick="printReportSection('repEscalationsView', 'تقرير التعليات')">🖨️ طباعة</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="table-container reports-table-container">
 
                         <div class="data-table-wrapper">
                             <table class="data-table" id="tblRepEsc">
@@ -205,29 +234,45 @@
                         </div>
                     </div>
 
-                    <div class="table-container">
-                        <div class="table-toolbar">
-                            <div class="table-toolbar-left">
-                                <input type="text" class="form-control table-search" id="searchRepInv" placeholder="بحث في تقرير المستحقات...">
-                                <select class="form-select" id="repInvPaymentStatusFilter" style="min-width: 160px;">
-                                    <option value="">حالة الصرف: الكل</option>
-                                    <option value="Pending">معلق</option>
-                                    <option value="Paid">مدفوع</option>
-                                    <option value="Partial">جزئي</option>
-                                </select>
-                                <select class="form-select" id="repInvLastStatusFilter" style="min-width: 160px;">
-                                    <option value="">آخر حالة: الكل</option>
-                                    <option value="Draft">مسودة</option>
-                                    <option value="Review">مراجعة</option>
-                                    <option value="Approved">معتمد</option>
-                                    <option value="Rejected">مرفوض</option>
-                                </select>
+                    <div class="reports-toolbar-card">
+                        <div class="reports-toolbar-inner">
+                            <div class="reports-filters-group">
+                                <div class="filter-group reports-search-group">
+                                    <label for="searchRepInv">بحث في التقرير</label>
+                                    <div class="reports-search-input-wrap">
+                                        <svg class="reports-search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="7"></circle>
+                                            <path d="m20 20-4-4"></path>
+                                        </svg>
+                                        <input type="search" class="form-control table-search reports-search-input" id="searchRepInv" placeholder="بحث في تقرير المستحقات..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="repInvPaymentStatusFilter">حالة الصرف</label>
+                                    <select id="repInvPaymentStatusFilter">
+                                        <option value="Pending">معلق</option>
+                                        <option value="Paid">مدفوع</option>
+                                        <option value="Partial">جزئي</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="repInvLastStatusFilter">حالة المستخلص</label>
+                                    <select id="repInvLastStatusFilter">
+                                        <option value="Draft">مسودة</option>
+                                        <option value="Review">مراجعة</option>
+                                        <option value="Approved">معتمد</option>
+                                        <option value="Rejected">مرفوض</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div style="display: flex; gap: 0.5rem;">
+                            <div class="reports-actions-group">
                                 <button class="btn btn-secondary btn-sm" onclick="exportTableToExcel('tblRepInv', 'تقرير_المستحقات_والمستخلصات')">📊 تصدير Excel</button>
                                 <button class="btn btn-primary btn-sm" onclick="printReportSection('repInvoicesView', 'تقرير المستحقات (المستخلصات)')">🖨️ طباعة</button>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="table-container reports-table-container">
 
                         <div class="data-table-wrapper">
                             <table class="data-table" id="tblRepInv">
