@@ -17,6 +17,8 @@
                     <div class="mc-section-head"><div><h3>أين نحن الآن؟</h3><p>ملخص تنفيذي سريع للمحفظة ضمن الفلاتر الحالية</p></div><div id="mcManagementSummary" class="mc-summary-line"></div></div>
                     <div class="kpi-grid mc-primary-kpis">
                         <div class="kpi-card info mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></span><div class="kpi-label">إجمالي قيمة العقود</div></div><div class="kpi-value" id="kpiTotalContractValue">0.00</div><div class="kpi-sub">المحفظة المفلترة</div></div>
+                        <div class="kpi-card info mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M6 3v6M18 3v6M5 12h14M5 17h14"/></svg></span><div class="kpi-label">إجمالي قيمة العقود المعدلة</div></div><div class="kpi-value" id="kpiTotalModifiedContractValue">0.00</div><div class="kpi-sub">قيمة العقد المعدل ضمن الفلاتر</div></div>
+                        <div class="kpi-card warning mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h16"/><path d="M8 3v4M16 10v4M12 17v4"/></svg></span><div class="kpi-label">المتبقي للتنفيذ</div></div><div class="kpi-value" id="kpiRemainingExecution">0.00</div><div class="kpi-sub">الموقف التنفيذي − قيمة العقد المعدل</div></div>
                         
                         <div class="kpi-card info mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><div class="kpi-label">الموقف التنفيذي</div></div><div class="kpi-value" id="kpiTotalExecValue">0.00</div><div class="kpi-sub">آخر موقف لكل عقد</div></div>
                         <div class="kpi-card success mc-kpi-primary"><div class="mc-kpi-head"><span class="mc-kpi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></span><div class="kpi-label">قيمة المستخلصات</div></div><div class="kpi-value" id="kpiGross">0.00</div><div class="kpi-sub">القيمه</div></div>
@@ -42,23 +44,58 @@
                     <div class="mc-gap-strip" id="mcExecutionBillingGap"></div>
 
                     <div class="charts-grid mc-charts-grid">
-
-                        <div class="chart-container mc-chart-card">
+                        <div class="mc-comparison-row mc-cumulative-table-row">
+                            <div class="chart-container mc-chart-card mc-chart-primary">
+                                <div class="mc-chart-header" id="mcExecPositionTitle">الموقف التنفيذي التراكمي</div>
+                                <div class="mc-chart-body mc-chart-scroll" id="mcChartExecPositionScroll">
+                                    <div class="mc-chart-scroll-inner" id="mcChartExecPositionInner">
+                                        <canvas id="mcChartExecPosition" role="img" aria-label="الموقف التنفيذي التراكمي"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-container mc-chart-card mc-chart-compact">
+                                <div class="mc-chart-header">الموقف التنفيذي حسب المالك</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-owner-horizontal-body" id="mcOwnerExecBody"><div class="mc-chart-scroll-inner"><canvas id="mcOwnerExecChart" role="img" aria-label="الموقف التنفيذي حسب المالك"></canvas></div></div>
+                            </div>
+                        </div>
+                        <div class="mc-comparison-row mc-owner-manager-row">
+                            <div class="chart-container mc-chart-card mc-chart-primary">
+                                <div class="mc-chart-header">الموقف التنفيذي حسب المشروع</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-category-chart-scroll" id="mcProjectExecBody"><div class="mc-chart-scroll-inner"><canvas id="mcProjectExecChart" role="img" aria-label="الموقف التنفيذي حسب المشروع"></canvas></div></div>
+                            </div>
+                            <div class="chart-container mc-chart-card mc-chart-compact">
+                                <div class="mc-chart-header">الموقف التنفيذي حسب مدير القطاع</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-horizontal-chart-body" id="mcManagerExecBody"><div class="mc-chart-scroll-inner"><canvas id="mcManagerExecChart" role="img" aria-label="الموقف التنفيذي حسب مدير القطاع"></canvas></div></div>
+                            </div>
+                        </div>
+                        <div class="mc-comparison-row mc-remaining-table-row">
+                            <div class="chart-container mc-chart-card mc-chart-primary">
+                                <div class="mc-chart-header">المتبقي للتنفيذ حسب المالك</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-horizontal-chart-body" id="mcOwnerRemainingBody"><div class="mc-chart-scroll-inner"><canvas id="mcOwnerRemainingChart" role="img" aria-label="المتبقي للتنفيذ حسب المالك"></canvas></div></div>
+                            </div>
+                            <div class="chart-container mc-chart-card mc-remaining-table-card">
+                                <div class="mc-chart-header">تفاصيل الموقف التنفيذي والمستحقات حسب المشروع</div>
+                                <div class="mc-project-table-wrap">
+                                    <table class="mc-project-table"><thead><tr><th>اسم المشروع</th><th>إجمالي الموقف التنفيذي</th><th>قيمة العقد المعدل</th><th>المتبقي للتنفيذ</th><th>إجمالي المستخلصات</th><th>المستحق</th></tr></thead><tbody id="mcProjectExecutionTableBody"></tbody><tfoot id="mcProjectExecutionTableFoot"></tfoot></table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mc-comparison-row mc-owner-manager-row">
+                            <div class="chart-container mc-chart-card mc-chart-primary">
+                                <div class="mc-chart-header">المتبقي للتنفيذ حسب المشروع</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-horizontal-chart-body" id="mcProjectRemainingBody"><div class="mc-chart-scroll-inner"><canvas id="mcProjectRemainingChart" role="img" aria-label="المتبقي للتنفيذ حسب المشروع"></canvas></div></div>
+                            </div>
+                            <div class="chart-container mc-chart-card mc-chart-compact">
+                                <div class="mc-chart-header">المتبقي للتنفيذ حسب مدير القطاع</div>
+                                <div class="mc-chart-body mc-chart-scroll mc-horizontal-chart-body" id="mcManagerRemainingBody"><div class="mc-chart-scroll-inner"><canvas id="mcManagerRemainingChart" role="img" aria-label="المتبقي للتنفيذ حسب مدير القطاع"></canvas></div></div>
+                            </div>
+                        </div>
+                        <div class="chart-container mc-chart-card mc-chart-wide">
                             <div class="mc-chart-header">قيمة التعاقد</div>
                             <div class="mc-chart-body" id="mcChartContractValueBody">
                                 <canvas id="mcChartContractValue" role="img" aria-label="قيمة التعاقد"></canvas>
                             </div>
                         </div>
-
-                        <div class="chart-container mc-chart-card">
-                            <div class="mc-chart-header" id="mcExecPositionTitle">الموقف التنفيذي التراكمي</div>
-                            <div class="mc-chart-body mc-chart-scroll" id="mcChartExecPositionScroll">
-                                <div class="mc-chart-scroll-inner" id="mcChartExecPositionInner">
-                                    <canvas id="mcChartExecPosition" role="img" aria-label="الموقف التنفيذي التراكمي"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </section>
 

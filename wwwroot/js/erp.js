@@ -3,7 +3,7 @@
  */
 
 import { erpApi } from "./api.js";
-import { renderDashboardCharts } from "./dashboard-charts.js?v=1";
+import { renderDashboardCharts } from "./dashboard-charts.js?v=7";
 import { createMultiFilter } from "./multi-filter.js?v=1";
 // flatpickr loaded globally via CDN
 const flatpickr = window.flatpickr;
@@ -1802,6 +1802,7 @@ async function initERP() {
   showApp();
   restoreLastActivePage();
   const loadedFromApi = await loadFromBackendOrLocal();
+  await loadSectorManagers();
   ensureSocialInsuranceState();
   ensureDeductionLibraryInitialized();
   syncAllSocialInsuranceInvoices();
@@ -1809,14 +1810,19 @@ async function initERP() {
   applyGlobalFilters();
   initFlatpickr();
   if (!loadedFromApi) clearDataState();
-  // Load sector managers list from database
-  loadSectorManagers();
 }
 
 async function loadSectorManagers() {
   try {
     const managers = await erpApi.projects.getSectorManagers();
-    state.sectorManagers = Array.isArray(managers) ? managers : [];
+    state.sectorManagers = Array.isArray(managers)
+      ? managers.map((manager) => ({
+          ...manager,
+          id: String(manager.id ?? manager.Id ?? ""),
+          displayName:
+            manager.displayName ?? manager.DisplayName ?? manager.name ?? manager.Name ?? "",
+        }))
+      : [];
   } catch (err) {
     console.warn("Could not load sector managers:", err);
     state.sectorManagers = [];
@@ -1863,6 +1869,8 @@ function applyBootstrapToState(remote) {
       id: p.id ?? p.Id ?? "",
       ownerId: p.ownerId ?? p.OwnerId ?? "",
       name: p.name ?? p.Name ?? "",
+      // Normalize sectorManagerId to string so it matches state.sectorManagers[].id
+      sectorManagerId: p.sectorManagerId != null ? String(p.sectorManagerId) : null,
     }),
   );
   state.contracts = (
@@ -2141,6 +2149,8 @@ async function syncStateFromBackend() {
     const remote = await erpApi.bootstrap();
     applyBootstrapToState(remote || {});
     apiOnline = true;
+    // Keep sectorManagers fresh so project table lookups resolve correctly
+    await loadSectorManagers();
   } catch (error) {
     console.error("Failed to sync state from backend:", error);
     apiOnline = false;
@@ -3525,6 +3535,10 @@ function renderDashboard(data) {
     (sum, c) => sum + executionTotal(latestExecutionByContract.get(c.id)),
     0,
   );
+  const totalModifiedContractValue = contracts.reduce(
+    (sum, c) => sum + getContractModifiedTotal(c),
+    0,
+  );
 
   let totalGross = 0;
   let totalNet = 0;
@@ -3631,6 +3645,8 @@ function renderDashboard(data) {
   };
 
   setKpi("kpiTotalContractValue", totalContractValue);
+  setKpi("kpiTotalModifiedContractValue", totalModifiedContractValue);
+  setKpi("kpiRemainingExecution", totalExecValue - totalModifiedContractValue);
   setKpi("kpiTotalExecValue", totalExecValue);
   setKpi("kpiGross", totalGross);
   setKpi("kpiNet", totalNet);
@@ -3669,6 +3685,7 @@ function renderDashboard(data) {
     ownerMap,
     latestExecutionByContract,
     executionTotal,
+    getModifiedTotal: getContractModifiedTotal,
     today,
   });
 }
@@ -3714,6 +3731,7 @@ function renderCharts(data, context) {
   const {
     contracts,
     invoices,
+    contractMap,
     projectMap,
     ownerMap,
     latestExecutionByContract,
@@ -3729,6 +3747,15 @@ function renderCharts(data, context) {
     execPositions: state.execPositions,
     getModifiedTotal: getContractModifiedTotal,
     fmtNum,
+    projectMap,
+    ownerMap: new Map(state.owners.map((owner) => [owner.id, owner])),
+    sectorManagers: state.sectorManagers,
+    latestExecutionByContract,
+    executionTotal,
+    invoices,
+    contractMap,
+    getInvoiceGross,
+    getInvoiceNet,
     scopeLabel:
       selectedProjects.length === 1
         ? selectedProjects[0].name
@@ -3992,11 +4019,9 @@ function renderProjects(data) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
                 <td>${p.id}</td>
-                <td>
-                    <strong>${p.name}</strong>
-                    ${managerName ? `<div style="font-size:0.78rem;color:#64748b;margin-top:2px;">مدير القطاع: <strong>${managerName}</strong></div>` : ""}
-                </td>
+                <td><strong>${p.name}</strong></td>
                 <td>${owner.name}</td>
+                <td>${managerName ? `<span>${managerName}</span>` : '<span style="color:#94a3b8;">—</span>'}</td>
                 <td>${contractsOfProj.length}</td>
                 <td>${fmtNum(totalGross)}</td>
                 <td>${statusBadge}</td>

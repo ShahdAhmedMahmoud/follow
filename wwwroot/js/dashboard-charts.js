@@ -19,20 +19,22 @@ let resizeBound = false;
 /* ---------- smart number formatting helper (never returns 0bn) ---------- */
 export const fmtChartValue = (v) => {
   const n = Number(v) || 0;
-  if (n <= 0) return "";
-  if (n >= 1e9) {
-    const bn = (n / 1e9).toFixed(2).replace(/\.00$/, "").replace(/(\.\d)0$/, "$1");
-    return `${bn} Bn`;
+  if (n === 0) return "";
+  const abs = Math.abs(n);
+  const sign = n < 0 ? "−" : "";
+  if (abs >= 1e9) {
+    const bn = (abs / 1e9).toFixed(2).replace(/\.00$/, "").replace(/(\.\d)0$/, "$1");
+    return `${sign}${bn} Bn`;
   }
-  if (n >= 1e6) {
-    const m = (n / 1e6).toFixed(2).replace(/\.00$/, "").replace(/(\.\d)0$/, "$1");
-    return `${m} M`;
+  if (abs >= 1e6) {
+    const m = (abs / 1e6).toFixed(2).replace(/\.00$/, "").replace(/(\.\d)0$/, "$1");
+    return `${sign}${m} M`;
   }
-  if (n >= 1e3) {
-    const k = (n / 1e3).toFixed(1).replace(/\.0$/, "");
-    return `${k} K`;
+  if (abs >= 1e3) {
+    const k = (abs / 1e3).toFixed(1).replace(/\.0$/, "");
+    return `${sign}${k} K`;
   }
-  return String(Math.round(n));
+  return `${sign}${Math.round(abs)}`;
 };
 
 function parseDate(value) {
@@ -89,7 +91,7 @@ const valueLabelsPlugin = {
       meta.data.forEach((bar, i) => {
         if (!bar) return;
         const rawVal = Number(dataset.data[i]) || 0;
-        if (rawVal <= 0) return; // Do not draw label for 0/empty bars
+        if (rawVal === 0) return; // Do not draw label for 0/empty bars
         const labelText = format(rawVal);
         if (!labelText) return;
         if (Math.abs(bar.width || 0) < (opts.minBarWidth || 0)) return;
@@ -363,8 +365,8 @@ function sizeExecInner(view) {
 
 function applyExecLayout(chart, width, n) {
   const slotW = n ? width / n : 36;
-  chart.options.plugins.mcValueLabels.fontSize = slotW >= 46 ? 11 : slotW >= 40 ? 10 : 9;
-  chart.options.scales.x.ticks.font = { size: slotW >= 40 ? 11 : 10, weight: "600", family: FONT };
+  chart.options.plugins.mcValueLabels.fontSize = slotW >= 46 ? 13 : slotW >= 40 ? 12 : 11;
+  chart.options.scales.x.ticks.font = { size: slotW >= 40 ? 12 : 11, weight: "600", family: FONT };
 }
 
 function bindResizeOnce() {
@@ -443,7 +445,7 @@ function renderExecPositionChart(contracts, positions, helpers) {
             label: (ctx) => `الموقف التنفيذي: ${fmtNum(ctx.parsed.y || 0)}`,
           },
         },
-        mcValueLabels: { formatter: fmtChartValue, fontSize: 9, offset: 4, minBarWidth: 0 },
+        mcValueLabels: { formatter: fmtChartValue, fontSize: 11, offset: 5, minBarWidth: 0 },
         mcYearGroups: { groups: series.groups, fontSize: 12 },
       },
       scales: {
@@ -456,7 +458,7 @@ function renderExecPositionChart(contracts, positions, helpers) {
             minRotation: 90,
             padding: 4,
             color: "#111827",
-            font: { size: 10, weight: "600", family: FONT },
+            font: { size: 11, weight: "700", family: FONT },
           },
         },
         y: { display: false, beginAtZero: true, grace: "12%", grid: { display: false } },
@@ -480,6 +482,202 @@ function renderExecPositionChart(contracts, positions, helpers) {
   });
 }
 
+function renderCategoryExecutionChart(canvasId, bodyId, rows, fmtNum) {
+  const canvas = document.getElementById(canvasId);
+  const body = document.getElementById(bodyId);
+  if (!canvas || !body || typeof window.Chart === "undefined") return;
+  const key = canvasId;
+  destroyChart(key, canvas);
+  const sorted = rows.filter((r) => Number.isFinite(Number(r.value)) && Number(r.value) !== 0).sort((a, b) => b.value - a.value);
+  setEmpty(body, !sorted.length);
+  const inner = canvas.parentElement;
+  const slot = 54;
+  const count = Math.max(sorted.length, 1);
+  const viewportWidth = (inner && inner.parentElement && inner.parentElement.clientWidth) || body.clientWidth;
+  if (inner) inner.style.width = `${Math.max(viewportWidth, count * slot)}px`;
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  const chart = new window.Chart(canvas.getContext("2d"), {
+    type: "bar",
+    plugins: [valueLabelsPlugin],
+    data: {
+      labels: sorted.length ? sorted.map((r) => r.label) : [""],
+      datasets: [{ label: "إجمالي الموقف التنفيذي", data: sorted.length ? sorted.map((r) => r.value) : [0], backgroundColor: COLORS.position, borderWidth: 0, borderRadius: 0, categoryPercentage: 0.8, barPercentage: 0.9, maxBarThickness: 26, clip: false }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      resizeDelay: 80,
+      animation: { duration: 350 },
+      layout: { padding: { top: 24, right: 8, bottom: 36, left: 8 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { rtl: true, callbacks: { title: (items) => sorted[items?.[0]?.dataIndex]?.label || "", label: (ctx) => `الموقف التنفيذي: ${fmtNum(ctx.parsed.y || 0)}` } },
+        mcValueLabels: { formatter: fmtChartValue, fontSize: 11, offset: 5, minBarWidth: 0 },
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            autoSkip: false,
+            maxRotation: 90,
+            minRotation: 90,
+            padding: 4,
+            color: "#111827",
+            font: { family: FONT, size: 11, weight: "700" },
+            callback(value) {
+              const label = String(this.getLabelForValue(value));
+              return label.length > 24 ? `${label.slice(0, 23)}…` : label;
+            },
+          },
+        },
+        y: { display: false, beginAtZero: true, grace: "12%", grid: { display: false } },
+      },
+    },
+  });
+  instances[key] = chart;
+}
+
+function renderHorizontalExecutionChart(canvasId, bodyId, rows, fmtNum, measureLabel) {
+  const canvas = document.getElementById(canvasId);
+  const body = document.getElementById(bodyId);
+  if (!canvas || !body || typeof window.Chart === "undefined") return;
+  destroyChart(canvasId, canvas);
+  const inner = canvas.parentElement;
+  if (inner) {
+    inner.style.width = "100%";
+    inner.style.height = `${Math.max(body.clientHeight, rows.length * 38 + 20)}px`;
+  }
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  const sorted = rows.filter((row) => Number.isFinite(Number(row.value)) && Number(row.value) !== 0).sort((a, b) => b.value - a.value);
+  setEmpty(body, !sorted.length);
+  const chart = new window.Chart(canvas.getContext("2d"), {
+    type: "bar",
+    data: {
+      labels: sorted.length ? sorted.map((row) => row.label) : [""],
+      datasets: [{
+        data: sorted.length ? sorted.map((row) => Number(row.value) || 0) : [0],
+        backgroundColor: COLORS.position,
+        borderWidth: 0,
+        borderRadius: 0,
+        barThickness: 24,
+        maxBarThickness: 28,
+        categoryPercentage: 0.82,
+        barPercentage: 0.9,
+        clip: false,
+      }],
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      resizeDelay: 80,
+      animation: { duration: 350 },
+      layout: { padding: { top: 8, right: 72, bottom: 8, left: 4 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { rtl: true, callbacks: { label: (ctx) => `${measureLabel}: ${fmtNum(ctx.parsed.x || 0)}` } },
+      },
+      scales: {
+        x: { display: false, beginAtZero: true, grace: "5%", grid: { display: false }, border: { display: false } },
+        y: {
+          position: "left",
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            color: "#111827",
+            padding: 7,
+            font: { family: FONT, size: body.clientWidth < 320 ? 11 : 12, weight: "700" },
+            callback(value) {
+              const label = String(this.getLabelForValue(value));
+              return label.length > 25 ? `${label.slice(0, 24)}…` : label;
+            },
+          },
+        },
+      },
+    },
+    plugins: [{
+      id: `${canvasId}ValueLabels`,
+      afterDatasetsDraw(instance) {
+        const { ctx } = instance;
+        ctx.save();
+        ctx.font = `700 12px ${FONT}`;
+        ctx.fillStyle = "#111827";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+        instance.getDatasetMeta(0).data.forEach((bar, index) => {
+          const val = Number(sorted[index]?.value) || 0;
+          if (!val) return;
+          const label = fmtChartValue(val).replace(" Bn", "bn");
+          const width = ctx.measureText(label).width;
+          const candidate = val < 0 ? bar.x - width - 7 : bar.x + 7;
+          const x = Math.max(2, Math.min(candidate, instance.width - width - 2));
+          ctx.fillText(label, x, bar.y);
+        });
+        ctx.restore();
+      },
+    }],
+  });
+  instances[canvasId] = chart;
+}
+
+function buildExecutionBreakdowns(contracts, maps) {
+  const { projectMap, ownerMap, sectorManagers, latestExecutionByContract, executionTotal } = maps;
+  const grouped = { owners: new Map(), projects: new Map(), managers: new Map() };
+  contracts.forEach((contract) => {
+    const value = executionTotal(latestExecutionByContract.get(contract.id));
+    const revised = maps.getModifiedTotal(contract);
+    const project = projectMap.get(contract.projectId) || {};
+    const owner = ownerMap.get(project.ownerId) || {};
+    const manager = (sectorManagers || []).find((m) => String(m.id) === String(project.sectorManagerId)) || {};
+    const add = (map, key, label, amount, revised = 0) => {
+      const groupKey = key || "__unassigned";
+      const groupLabel = label || "غير محدد";
+      const item = map.get(groupKey) || { label: groupLabel, value: 0, revised: 0, remaining: 0, extracts: 0, due: 0 };
+      item.value += Number(amount) || 0;
+      item.revised += Number(revised) || 0;
+      item.remaining += (Number(amount) || 0) - (Number(revised) || 0);
+      map.set(groupKey, item);
+    };
+    add(grouped.owners, owner.id, owner.name, value, revised);
+    add(grouped.projects, project.id, project.name, value, revised);
+    add(grouped.managers, manager.id, manager.displayName, value, revised);
+  });
+  const projectsById = grouped.projects;
+  (maps.invoices || []).forEach((invoice) => {
+    const contract = maps.contractMap.get(invoice.contractId);
+    if (!contract) return;
+    const project = projectMap.get(contract.projectId) || {};
+    const row = projectsById.get(project.id || "__unassigned");
+    if (!row) return;
+    const net = Number(maps.getInvoiceNet(invoice)) || 0;
+    const paid = Math.max(0, Number.parseFloat(invoice.paidAmount) || 0);
+    row.extracts += Number(maps.getInvoiceGross(invoice)) || 0;
+    row.due += Math.max(0, net - paid);
+  });
+  return {
+    owners: [...grouped.owners.values()],
+    projects: [...grouped.projects.values()],
+    managers: [...grouped.managers.values()],
+  };
+}
+
+function renderProjectExecutionTable(rows, fmtNum) {
+  const body = document.getElementById("mcProjectExecutionTableBody");
+  const foot = document.getElementById("mcProjectExecutionTableFoot");
+  if (!body || !foot) return;
+  const sorted = [...rows].sort((a, b) => b.value - a.value);
+  body.innerHTML = sorted.map((row) => `<tr><td>${escapeChartHtml(row.label)}</td><td>${fmtNum(row.value)}</td><td>${fmtNum(row.revised)}</td><td>${fmtNum(row.remaining)}</td><td>${fmtNum(row.extracts)}</td><td>${fmtNum(row.due)}</td></tr>`).join("");
+  const total = sorted.reduce((acc, row) => ({ value: acc.value + row.value, revised: acc.revised + row.revised, remaining: acc.remaining + row.remaining, extracts: acc.extracts + row.extracts, due: acc.due + row.due }), { value: 0, revised: 0, remaining: 0, extracts: 0, due: 0 });
+  foot.innerHTML = sorted.length ? `<tr><th>الإجمالي</th><th>${fmtNum(total.value)}</th><th>${fmtNum(total.revised)}</th><th>${fmtNum(total.remaining)}</th><th>${fmtNum(total.extracts)}</th><th>${fmtNum(total.due)}</th></tr>` : "";
+}
+
+function escapeChartHtml(value) {
+  return String(value ?? "غير محدد").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
+}
+
 /* =====================================================================
  * Public entry point (called from erp.js → renderCharts)
  * ===================================================================== */
@@ -489,6 +687,15 @@ export function renderDashboardCharts({
   getModifiedTotal,
   fmtNum,
   scopeLabel,
+  projectMap = new Map(),
+  ownerMap = new Map(),
+  sectorManagers = [],
+  latestExecutionByContract = new Map(),
+  executionTotal = () => 0,
+  invoices = [],
+  contractMap = new Map(),
+  getInvoiceGross = () => 0,
+  getInvoiceNet = () => 0,
 }) {
   const list = Array.isArray(contracts) ? contracts : [];
   try {
@@ -500,5 +707,17 @@ export function renderDashboardCharts({
     renderExecPositionChart(list, execPositions || [], { fmtNum, scopeLabel });
   } catch (err) {
     console.error("Executive position chart failed:", err);
+  }
+  try {
+    const breakdowns = buildExecutionBreakdowns(list, { projectMap, ownerMap, sectorManagers, latestExecutionByContract, executionTotal, getModifiedTotal, invoices, contractMap, getInvoiceGross, getInvoiceNet });
+    renderHorizontalExecutionChart("mcOwnerExecChart", "mcOwnerExecBody", breakdowns.owners, fmtNum, "الموقف التنفيذي");
+    renderCategoryExecutionChart("mcProjectExecChart", "mcProjectExecBody", breakdowns.projects, fmtNum);
+    renderHorizontalExecutionChart("mcManagerExecChart", "mcManagerExecBody", breakdowns.managers, fmtNum, "الموقف التنفيذي");
+    renderHorizontalExecutionChart("mcOwnerRemainingChart", "mcOwnerRemainingBody", breakdowns.owners.map((r) => ({ label: r.label, value: r.remaining })), fmtNum, "المتبقي للتنفيذ");
+    renderHorizontalExecutionChart("mcProjectRemainingChart", "mcProjectRemainingBody", breakdowns.projects.map((r) => ({ label: r.label, value: r.remaining })), fmtNum, "المتبقي للتنفيذ");
+    renderHorizontalExecutionChart("mcManagerRemainingChart", "mcManagerRemainingBody", breakdowns.managers.map((r) => ({ label: r.label, value: r.remaining })), fmtNum, "المتبقي للتنفيذ");
+    renderProjectExecutionTable(breakdowns.projects, fmtNum);
+  } catch (err) {
+    console.error("Execution comparison charts failed:", err);
   }
 }
