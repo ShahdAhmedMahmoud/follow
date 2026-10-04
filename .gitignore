@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 # .NET build output
 bin/
 obj/
 
 # Visual Studio
+=======
+bin/
+obj/
+>>>>>>> 457c0da2e33a1bc1d4d24b44b993db6489c8a4aa
 .vs/
 *.user
 *.suo
