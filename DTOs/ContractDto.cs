@@ -11,4 +11,6 @@ public record ContractDto(
     decimal VatAmount,
     int PaymentTerms,
     DateOnly? SignDate,
-    string? Status);
+    string? Status,
+    int ContractDuration,
+    DateOnly? EndDate); // <--- تأكد إنها موجودة هنا في النهاية (الباراميتر رقم 13)

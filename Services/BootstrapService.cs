@@ -30,8 +30,7 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     x.StartDate,
                     x.Status))
                 .ToListAsync(ct),
-
-            Contracts = await db.Contracts
+             Contracts = await db.Contracts
                 .AsNoTracking()
                 .Select(x => new ContractDto(
                     x.Id,
@@ -44,7 +43,10 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     x.VatAmount,
                     x.PaymentTerms,
                     x.SignDate,
-                    x.Status))
+                    x.Status,
+                    x.ContractDuration,
+                    x.EndDate // <--- ضفناها هنا في الآخر
+                ))
                 .ToListAsync(ct),
 
             Invoices = await db.Invoices

@@ -39,7 +39,7 @@ public class ContractsController(AppDbContext db) : ControllerBase
             "signdate" => desc ? q.OrderByDescending(x => x.SignDate) : q.OrderBy(x => x.SignDate),
             _ => desc ? q.OrderByDescending(x => x.Name) : q.OrderBy(x => x.Name)
         };
-        var projected = q.Select(x => new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status));
+        var projected = q.Select(x => new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status, x.ContractDuration, x.EndDate));
         if (page is null)
             return Ok(await projected.ToListAsync(ct));
         return Ok(await projected.ToPagedAsync(page.Value, pageSize ?? 25, ct));
@@ -50,15 +50,19 @@ public class ContractsController(AppDbContext db) : ControllerBase
     public async Task<ActionResult<ContractDto>> GetById(string id, CancellationToken ct)
     {
         var x = await db.Contracts.FindAsync([id], ct);
-        return x is null ? NotFound() : Ok(new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status));
+        return x is null ? NotFound() : Ok(new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status, x.ContractDuration, x.EndDate));
     }
-
-    [HttpPost]
+[HttpPost]
     [RequirePermission(PermissionModules.Contracts, PermissionActions.Create)]
     public async Task<ActionResult<ContractDto>> Post(ContractDto dto, CancellationToken ct)
     {
         if (!await db.Projects.AnyAsync(x => x.Id == dto.ProjectId, ct))
             return BadRequest(new { success = false, message = "المشروع غير موجود" });
+
+        // حساب تاريخ الانتهاء تلقائياً (مثلاً بالشهور - AddMonths)
+        DateOnly? endDate = dto.SignDate.HasValue 
+            ? dto.SignDate.Value.AddMonths(dto.ContractDuration) 
+            : null;
 
         var x = new Contract
         {
@@ -72,12 +76,14 @@ public class ContractsController(AppDbContext db) : ControllerBase
             VatAmount = 0,
             PaymentTerms = dto.PaymentTerms,
             SignDate = dto.SignDate,
+            ContractDuration = dto.ContractDuration, // <--- حفظ المدة
+            EndDate = endDate,                       // <--- حفظ تاريخ الانتهاء المحسوب
             Status = dto.Status
         };
         db.Add(x);
         await db.SaveChangesAsync(ct);
         return CreatedAtAction(nameof(GetById), new { id = x.Id },
-            new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status));
+            new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status, x.ContractDuration, x.EndDate));
     }
 
     [HttpPut("{id}")]
@@ -86,6 +92,12 @@ public class ContractsController(AppDbContext db) : ControllerBase
     {
         var x = await db.Contracts.FindAsync([id], ct);
         if (x is null) return NotFound();
+
+        // إعادة حساب تاريخ الانتهاء في حالة التعديل
+        DateOnly? endDate = dto.SignDate.HasValue 
+            ? dto.SignDate.Value.AddMonths(dto.ContractDuration) 
+            : null;
+
         x.ProjectId = dto.ProjectId;
         x.Name = dto.Name.Trim();
         x.Amount = dto.Amount;
@@ -93,7 +105,10 @@ public class ContractsController(AppDbContext db) : ControllerBase
         x.ModifiedAmount = dto.ModifiedAmount < 0 ? 0 : dto.ModifiedAmount;
         x.PaymentTerms = dto.PaymentTerms;
         x.SignDate = dto.SignDate;
-        x.Status = dto.Status;
+        x.Status = dto.Status;  
+        x.ContractDuration = dto.ContractDuration; // <--- تحديث المدة
+        x.EndDate = endDate;                       // <--- تحديث تاريخ الانتهاء المحسوب
+
         await db.SaveChangesAsync(ct);
         return NoContent();
     }

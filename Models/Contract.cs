@@ -13,6 +13,8 @@ public class Contract
     public decimal VatAmount { get; set; }
     public int PaymentTerms { get; set; }
     public DateOnly? SignDate { get; set; }
+    public int ContractDuration { get; set; }
+    public DateOnly? EndDate { get; set; }
     public string? Status { get; set; }
     public Project Project { get; set; } = null!;
     public ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
