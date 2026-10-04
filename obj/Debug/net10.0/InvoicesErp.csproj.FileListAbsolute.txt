@@ -1543,4 +1543,3 @@ E:\New folder\follow\obj\Debug\net10.0\swae.build.ex.cache
 E:\New folder\follow\obj\Debug\net10.0\Invoices.CE65A2DF.Up2Date
 E:\New folder\follow\obj\Debug\net10.0\InvoicesErp.genruntimeconfig.cache
 E:\New folder\follow\obj\Debug\net10.0\ref\InvoicesErp.dll
-E:\New folder\follow\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
