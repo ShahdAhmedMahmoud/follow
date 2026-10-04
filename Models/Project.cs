@@ -8,8 +8,14 @@ public class Project
     public DateOnly? StartDate { get; set; }
     public string? Status { get; set; }
     public Owner Owner { get; set; } = null!;
-    public int? SectorId { get; set; }
 
+    /// <summary>Sector this project belongs to (derived from SectorManager when assigned).</summary>
+    public int? SectorId { get; set; }
     public Sector? Sector { get; set; }
+
+    /// <summary>Sector manager responsible for this project; must belong to the same Sector.</summary>
+    public int? SectorManagerId { get; set; }
+    public SectorManager? SectorManager { get; set; }
+
     public ICollection<Contract> Contracts { get; set; } = new List<Contract>();
 }
