@@ -28,7 +28,9 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     x.OwnerId,
                     x.Name,
                     x.StartDate,
-                    x.Status))
+                    x.Status,
+                    x.SectorId,
+                    x.SectorManagerId))
                 .ToListAsync(ct),
              Contracts = await db.Contracts
                 .AsNoTracking()
@@ -283,7 +285,9 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     OwnerId = project.OwnerId!,
                     Name = project.Name!.Trim(),
                     StartDate = project.StartDate,
-                    Status = project.Status
+                    Status = project.Status,
+                    SectorId = project.SectorId,
+                    SectorManagerId = project.SectorManagerId
                 });
         }
 
@@ -318,6 +322,11 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                 contract.Id,
                 generatedContractIds);
 
+            var duration = contract.ContractDuration > 0 ? contract.ContractDuration : 0;
+            DateOnly? endDate = contract.SignDate.HasValue && duration > 0
+                ? contract.SignDate.Value.AddDays(duration)
+                : null;
+
             db.Contracts.Add(
                 new Contract
                 {
@@ -331,6 +340,8 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     VatAmount = contract.VatAmount < 0 ? 0 : contract.VatAmount,
                     PaymentTerms = contract.PaymentTerms,
                     SignDate = contract.SignDate,
+                    ContractDuration = duration,
+                    EndDate = endDate,
                     Status = contract.Status
                 });
         }
@@ -862,6 +873,8 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     existing.Name = project.Name!.Trim();
                     existing.StartDate = project.StartDate;
                     existing.Status = project.Status;
+                    existing.SectorId = project.SectorId;
+                    existing.SectorManagerId = project.SectorManagerId;
                 }
             }
             else
@@ -872,7 +885,9 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     OwnerId = ownerId,
                     Name = project.Name!.Trim(),
                     StartDate = project.StartDate,
-                    Status = project.Status
+                    Status = project.Status,
+                    SectorId = project.SectorId,
+                    SectorManagerId = project.SectorManagerId
                 });
                 existingProjectIds.Add(id);
             }
@@ -910,6 +925,7 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                 var existing = await db.Contracts.FindAsync([id], ct);
                 if (existing is not null)
                 {
+                    var duration = contract.ContractDuration > 0 ? contract.ContractDuration : 0;
                     existing.ProjectId = contract.ProjectId;
                     existing.Name = contract.Name.Trim();
                     existing.Amount = contract.Amount;
@@ -919,11 +935,16 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     existing.VatAmount = contract.VatAmount < 0 ? 0 : contract.VatAmount;
                     existing.PaymentTerms = contract.PaymentTerms;
                     existing.SignDate = contract.SignDate;
+                    existing.ContractDuration = duration;
+                    existing.EndDate = contract.SignDate.HasValue && duration > 0
+                        ? contract.SignDate.Value.AddDays(duration)
+                        : null;
                     existing.Status = contract.Status;
                 }
             }
             else
             {
+                var duration = contract.ContractDuration > 0 ? contract.ContractDuration : 0;
                 db.Contracts.Add(new Contract
                 {
                     Id = id,
@@ -936,6 +957,10 @@ public class BootstrapService(AppDbContext db) : InvoicesErp.Interfaces.IBootstr
                     VatAmount = contract.VatAmount < 0 ? 0 : contract.VatAmount,
                     PaymentTerms = contract.PaymentTerms,
                     SignDate = contract.SignDate,
+                    ContractDuration = duration,
+                    EndDate = contract.SignDate.HasValue && duration > 0
+                        ? contract.SignDate.Value.AddDays(duration)
+                        : null,
                     Status = contract.Status
                 });
             }

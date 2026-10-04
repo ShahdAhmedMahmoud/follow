@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3puy53+pkz0=",
+  "dgSpecHash": "hnSYJ26crz8=",
   "success": true,
-  "projectFilePath": "E:\\New folder\\follow\\InvoicesErp.csproj",
+  "projectFilePath": "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\InvoicesErp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\it11\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\it11\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

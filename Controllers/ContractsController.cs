@@ -52,23 +52,32 @@ public class ContractsController(AppDbContext db) : ControllerBase
         var x = await db.Contracts.FindAsync([id], ct);
         return x is null ? NotFound() : Ok(new ContractDto(x.Id, x.ProjectId, x.Name, x.Amount, x.ModifiedAmount, x.VoAmount, x.ClaimsAmount, x.VatAmount, x.PaymentTerms, x.SignDate, x.Status, x.ContractDuration, x.EndDate));
     }
-[HttpPost]
+
+    [HttpPost]
     [RequirePermission(PermissionModules.Contracts, PermissionActions.Create)]
     public async Task<ActionResult<ContractDto>> Post(ContractDto dto, CancellationToken ct)
     {
+        if (string.IsNullOrWhiteSpace(dto.ProjectId))
+            return BadRequest(new { success = false, message = "معرف المشروع مطلوب" });
+
         if (!await db.Projects.AnyAsync(x => x.Id == dto.ProjectId, ct))
             return BadRequest(new { success = false, message = "المشروع غير موجود" });
 
-        // حساب تاريخ الانتهاء تلقائياً (مثلاً بالشهور - AddMonths)
-        DateOnly? endDate = dto.SignDate.HasValue 
-            ? dto.SignDate.Value.AddMonths(dto.ContractDuration) 
-            : null;
+        if (!dto.SignDate.HasValue)
+            return BadRequest(new { success = false, message = "تاريخ بداية العقد (تاريخ التوقيع) مطلوب" });
+
+        if (dto.ContractDuration <= 0)
+            return BadRequest(new { success = false, message = "مدة العقد يجب أن تكون أكبر من صفر (بالأيام)" });
+
+        // Backend calculates EndDate; client must not control it.
+        // Rule: EndDate = StartDate (SignDate) + DurationDays
+        var endDate = dto.SignDate.Value.AddDays(dto.ContractDuration);
 
         var x = new Contract
         {
             Id = await GenerateIdAsync(),
             ProjectId = dto.ProjectId,
-            Name = dto.Name.Trim(),
+            Name = (dto.Name ?? "").Trim(),
             Amount = dto.Amount,
             ModifiedAmount = dto.ModifiedAmount < 0 ? 0 : dto.ModifiedAmount,
             VoAmount = 0,
@@ -76,8 +85,8 @@ public class ContractsController(AppDbContext db) : ControllerBase
             VatAmount = 0,
             PaymentTerms = dto.PaymentTerms,
             SignDate = dto.SignDate,
-            ContractDuration = dto.ContractDuration, // <--- حفظ المدة
-            EndDate = endDate,                       // <--- حفظ تاريخ الانتهاء المحسوب
+            ContractDuration = dto.ContractDuration,
+            EndDate = endDate,
             Status = dto.Status
         };
         db.Add(x);
@@ -93,21 +102,31 @@ public class ContractsController(AppDbContext db) : ControllerBase
         var x = await db.Contracts.FindAsync([id], ct);
         if (x is null) return NotFound();
 
-        // إعادة حساب تاريخ الانتهاء في حالة التعديل
-        DateOnly? endDate = dto.SignDate.HasValue 
-            ? dto.SignDate.Value.AddMonths(dto.ContractDuration) 
-            : null;
+        if (string.IsNullOrWhiteSpace(dto.ProjectId))
+            return BadRequest(new { success = false, message = "معرف المشروع مطلوب" });
+
+        if (!await db.Projects.AnyAsync(p => p.Id == dto.ProjectId, ct))
+            return BadRequest(new { success = false, message = "المشروع غير موجود" });
+
+        if (!dto.SignDate.HasValue)
+            return BadRequest(new { success = false, message = "تاريخ بداية العقد (تاريخ التوقيع) مطلوب" });
+
+        if (dto.ContractDuration <= 0)
+            return BadRequest(new { success = false, message = "مدة العقد يجب أن تكون أكبر من صفر (بالأيام)" });
+
+        // Recalculate EndDate whenever SignDate or DurationDays is updated.
+        var endDate = dto.SignDate.Value.AddDays(dto.ContractDuration);
 
         x.ProjectId = dto.ProjectId;
-        x.Name = dto.Name.Trim();
+        x.Name = (dto.Name ?? "").Trim();
         x.Amount = dto.Amount;
         // Manual field only — VO/Claims/Vat stay driven by exec position
         x.ModifiedAmount = dto.ModifiedAmount < 0 ? 0 : dto.ModifiedAmount;
         x.PaymentTerms = dto.PaymentTerms;
         x.SignDate = dto.SignDate;
-        x.Status = dto.Status;  
-        x.ContractDuration = dto.ContractDuration; // <--- تحديث المدة
-        x.EndDate = endDate;                       // <--- تحديث تاريخ الانتهاء المحسوب
+        x.Status = dto.Status;
+        x.ContractDuration = dto.ContractDuration;
+        x.EndDate = endDate;
 
         await db.SaveChangesAsync(ct);
         return NoContent();

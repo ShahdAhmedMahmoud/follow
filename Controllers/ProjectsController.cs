@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using InvoicesErp.Data;
 using InvoicesErp.Models;
 using InvoicesErp.DTOs;
-
 using InvoicesErp.Auth;
 using InvoicesErp.Common;
 
@@ -39,7 +38,7 @@ public class ProjectsController(AppDbContext db) : ControllerBase
             "startdate" => desc ? q.OrderByDescending(x => x.StartDate) : q.OrderBy(x => x.StartDate),
             _ => desc ? q.OrderByDescending(x => x.Name) : q.OrderBy(x => x.Name)
         };
-        var projected = q.Select(x => new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        var projected = q.Select(x => new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorId, x.SectorManagerId));
         if (page is null)
             return Ok(await projected.ToListAsync(ct));
         return Ok(await projected.ToPagedAsync(page.Value, pageSize ?? 25, ct));
@@ -50,20 +49,64 @@ public class ProjectsController(AppDbContext db) : ControllerBase
     public async Task<ActionResult<ProjectDto>> GetById(string id, CancellationToken ct)
     {
         var x = await db.Projects.FindAsync([id], ct);
-        return x is null ? NotFound() : Ok(new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        return x is null
+            ? NotFound()
+            : Ok(new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorId, x.SectorManagerId));
+    }
+
+    /// <summary>
+    /// Active sector managers for project assignment (frontend: GET /api/projects/sector-managers).
+    /// </summary>
+    [HttpGet("sector-managers")]
+    [RequirePermission(PermissionModules.Projects, PermissionActions.View)]
+    public async Task<IActionResult> GetSectorManagers(CancellationToken ct)
+    {
+        var list = await db.SectorManagers
+            .AsNoTracking()
+            .Where(m => m.IsActive)
+            .Select(m => new
+            {
+                id = m.SectorManagerId.ToString(),
+                sectorManagerId = m.SectorManagerId,
+                fullName = m.FullName,
+                displayName = m.FullName,
+                sectorId = m.SectorId,
+                sectorName = m.Sector.Name,
+                isActive = m.IsActive
+            })
+            .OrderBy(m => m.fullName)
+            .ToListAsync(ct);
+        return Ok(list);
     }
 
     [HttpPost]
     [RequirePermission(PermissionModules.Projects, PermissionActions.Create)]
     public async Task<ActionResult<ProjectDto>> Post(ProjectDto dto, CancellationToken ct)
     {
+        if (string.IsNullOrWhiteSpace(dto.OwnerId))
+            return BadRequest(new { success = false, message = "معرف المالك مطلوب" });
+
         if (!await db.Owners.AnyAsync(x => x.Id == dto.OwnerId, ct))
             return BadRequest(new { success = false, message = "المالك غير موجود" });
 
-        var x = new Project { Id = await GenerateIdAsync(), OwnerId = dto.OwnerId, Name = dto.Name.Trim(), StartDate = dto.StartDate, Status = dto.Status };
+        var (ok, error, sectorId, sectorManagerId) = await ResolveSectorAssignmentAsync(dto.SectorId, dto.SectorManagerId, ct);
+        if (!ok)
+            return BadRequest(new { success = false, message = error });
+
+        var x = new Project
+        {
+            Id = await GenerateIdAsync(),
+            OwnerId = dto.OwnerId,
+            Name = (dto.Name ?? "").Trim(),
+            StartDate = dto.StartDate,
+            Status = dto.Status,
+            SectorId = sectorId,
+            SectorManagerId = sectorManagerId
+        };
         db.Add(x);
         await db.SaveChangesAsync(ct);
-        return CreatedAtAction(nameof(GetById), new { id = x.Id }, new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status));
+        return CreatedAtAction(nameof(GetById), new { id = x.Id },
+            new ProjectDto(x.Id, x.OwnerId, x.Name, x.StartDate, x.Status, x.SectorId, x.SectorManagerId));
     }
 
     [HttpPut("{id}")]
@@ -72,10 +115,23 @@ public class ProjectsController(AppDbContext db) : ControllerBase
     {
         var x = await db.Projects.FindAsync([id], ct);
         if (x is null) return NotFound();
+
+        if (string.IsNullOrWhiteSpace(dto.OwnerId))
+            return BadRequest(new { success = false, message = "معرف المالك مطلوب" });
+
+        if (!await db.Owners.AnyAsync(o => o.Id == dto.OwnerId, ct))
+            return BadRequest(new { success = false, message = "المالك غير موجود" });
+
+        var (ok, error, sectorId, sectorManagerId) = await ResolveSectorAssignmentAsync(dto.SectorId, dto.SectorManagerId, ct);
+        if (!ok)
+            return BadRequest(new { success = false, message = error });
+
         x.OwnerId = dto.OwnerId;
-        x.Name = dto.Name.Trim();
+        x.Name = (dto.Name ?? "").Trim();
         x.StartDate = dto.StartDate;
         x.Status = dto.Status;
+        x.SectorId = sectorId;
+        x.SectorManagerId = sectorManagerId;
         await db.SaveChangesAsync(ct);
         return NoContent();
     }
@@ -112,6 +168,53 @@ public class ProjectsController(AppDbContext db) : ControllerBase
         await db.SaveChangesAsync(ct);
         await tx.CommitAsync(ct);
         return NoContent();
+    }
+
+    /// <summary>
+    /// Enforces Sector → SectorManager → Project consistency.
+    /// </summary>
+    private async Task<(bool ok, string? error, int? sectorId, int? sectorManagerId)> ResolveSectorAssignmentAsync(
+        int? sectorId,
+        int? sectorManagerId,
+        CancellationToken ct)
+    {
+        if (sectorManagerId.HasValue)
+        {
+            var manager = await db.SectorManagers
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.SectorManagerId == sectorManagerId.Value, ct);
+
+            if (manager is null)
+                return (false, "مدير القطاع غير موجود", null, null);
+
+            if (!manager.IsActive)
+                return (false, "لا يمكن تعيين مدير قطاع غير نشط للمشروع", null, null);
+
+            if (sectorId.HasValue && sectorId.Value != manager.SectorId)
+            {
+                return (false,
+                    "مدير القطاع لا ينتمي إلى القطاع المحدد. يجب أن يكون المشروع ومدير القطاع ضمن نفس القطاع",
+                    null, null);
+            }
+
+            var sectorExists = await db.Sectors.AnyAsync(s => s.SectorId == manager.SectorId, ct);
+            if (!sectorExists)
+                return (false, "القطاع المرتبط بمدير القطاع غير موجود", null, null);
+
+            return (true, null, manager.SectorId, manager.SectorManagerId);
+        }
+
+        if (sectorId.HasValue)
+        {
+            var sector = await db.Sectors.AsNoTracking()
+                .FirstOrDefaultAsync(s => s.SectorId == sectorId.Value, ct);
+            if (sector is null)
+                return (false, "القطاع غير موجود", null, null);
+
+            return (true, null, sector.SectorId, null);
+        }
+
+        return (true, null, null, null);
     }
 
     private async Task<string> GenerateIdAsync()

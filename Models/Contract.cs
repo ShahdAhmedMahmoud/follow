@@ -12,8 +12,11 @@ public class Contract
     public decimal ClaimsAmount { get; set; }
     public decimal VatAmount { get; set; }
     public int PaymentTerms { get; set; }
+    /// <summary>Contract start date (sign date). Required for duration calculation.</summary>
     public DateOnly? SignDate { get; set; }
+    /// <summary>Contract duration in days. Must be greater than 0. EndDate = SignDate + ContractDuration.</summary>
     public int ContractDuration { get; set; }
+    /// <summary>Calculated by the backend: SignDate + ContractDuration (days). Not client-controlled.</summary>
     public DateOnly? EndDate { get; set; }
     public string? Status { get; set; }
     public Project Project { get; set; } = null!;
@@ -22,4 +25,3 @@ public class Contract
     public CostControl? CostControl { get; set; }
     public SocialInsuranceContract? SocialInsurance { get; set; }
 }
-

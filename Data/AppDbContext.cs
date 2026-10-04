@@ -31,6 +31,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         // Dates without time
         b.Entity<Project>().Property(x => x.StartDate).HasColumnType("date");
         b.Entity<Contract>().Property(x => x.SignDate).HasColumnType("date");
+        b.Entity<Contract>().Property(x => x.EndDate).HasColumnType("date");
         b.Entity<Invoice>().Property(x => x.Date).HasColumnType("date");
         b.Entity<Invoice>().Property(x => x.DueDate).HasColumnType("date");
         b.Entity<Invoice>().Property(x => x.PaymentDate).HasColumnType("date");
@@ -58,9 +59,15 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.HasOne(x => x.Owner).WithMany(x => x.Projects).HasForeignKey(x => x.OwnerId).OnDelete(DeleteBehavior.Restrict);
             e.HasIndex(x => x.OwnerId);
             e.HasOne(x => x.Sector)
-            .WithMany(x => x.Projects)
-             .HasForeignKey(x => x.SectorId)
-                 .OnDelete(DeleteBehavior.SetNull);
+                .WithMany(x => x.Projects)
+                .HasForeignKey(x => x.SectorId)
+                .OnDelete(DeleteBehavior.SetNull);
+            e.HasOne(x => x.SectorManager)
+                .WithMany()
+                .HasForeignKey(x => x.SectorManagerId)
+                .OnDelete(DeleteBehavior.SetNull);
+            e.HasIndex(x => x.SectorId);
+            e.HasIndex(x => x.SectorManagerId);
         });
 
         b.Entity<Contract>(e =>
@@ -74,6 +81,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.Property(x => x.VoAmount).HasPrecision(18, 2);
             e.Property(x => x.ClaimsAmount).HasPrecision(18, 2);
             e.Property(x => x.VatAmount).HasPrecision(18, 2);
+            // ContractDuration is duration in days; EndDate is calculated by the API as SignDate + DurationDays
+            e.Property(x => x.ContractDuration).IsRequired();
             e.HasOne(x => x.Project).WithMany(x => x.Contracts).HasForeignKey(x => x.ProjectId).OnDelete(DeleteBehavior.Restrict);
             e.HasIndex(x => x.ProjectId);
         });

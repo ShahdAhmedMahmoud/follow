@@ -130,6 +130,19 @@ public class SectorManagerService : ISectorManagerService
                 "This sector already has another manager.");
         }
 
+        // If sector is changing, keep Projects in sync (Sector → Manager → Project)
+        if (manager.SectorId != dto.SectorId)
+        {
+            var linkedProjects = await _context.Projects
+                .Where(p => p.SectorManagerId == id)
+                .ToListAsync();
+
+            foreach (var project in linkedProjects)
+            {
+                project.SectorId = dto.SectorId;
+            }
+        }
+
         manager.FullName = dto.FullName;
         manager.Email = dto.Email;
         manager.Phone = dto.Phone;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\New folder\\follow\\InvoicesErp.csproj": {}
+    "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\InvoicesErp.csproj": {}
   },
   "projects": {
-    "E:\\New folder\\follow\\InvoicesErp.csproj": {
+    "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\InvoicesErp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\New folder\\follow\\InvoicesErp.csproj",
+        "projectUniqueName": "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\InvoicesErp.csproj",
         "projectName": "InvoicesErp",
-        "projectPath": "E:\\New folder\\follow\\InvoicesErp.csproj",
+        "projectPath": "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\InvoicesErp.csproj",
         "packagesPath": "C:\\Users\\it11\\.nuget\\packages\\",
-        "outputPath": "E:\\New folder\\follow\\obj\\",
+        "outputPath": "E:\\Final Pro للمستخلصات\\follow-up-Git\\Follow-Up\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
