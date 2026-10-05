@@ -91,6 +91,7 @@ export const erpApi = {
   replaceBootstrap: (payload) => request('/bootstrap', { method: 'PUT', body: JSON.stringify(payload) }),
   upsertBootstrap: (payload) => request('/bootstrap?mode=upsert', { method: 'PUT', body: JSON.stringify(payload) }),
   owners: collection('owners'),
+  sectors: collection('sectors'),
   sectorManagers: collection('sector-managers'),
   projects: {
     ...collection('projects'),

@@ -22,4 +22,38 @@
     </div>
 </div>
 
+@* modalSector — POST /api/sectors (CreateSectorDto: Name, Code) *@
+<div class="modal-overlay" id="modalSector">
+    <div class="modal-card" style="max-width: 480px;">
+        <div class="modal-header"><h3 class="modal-title">إضافة قطاع</h3><button class="modal-close" type="button">&times;</button></div>
+        <div class="modal-body">
+            <form id="formSector" class="form-grid" novalidate>
+                <div class="form-group span-full"><label>اسم القطاع *</label><input type="text" class="form-control" id="sectorName" maxlength="200" required></div>
+                <div class="form-group span-full"><label>كود القطاع</label><input type="text" class="form-control" id="sectorCode" maxlength="50"></div>
+            </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary modal-cancel" type="button">إلغاء</button><button class="btn btn-primary" id="btnSaveSector" type="button">حفظ</button></div>
+    </div>
+</div>
+
+@* modalSectorManager — POST /api/sector-managers (CreateSectorManagerDto: FullName, Email, Phone, SectorId) *@
+<div class="modal-overlay" id="modalSectorManager">
+    <div class="modal-card" style="max-width: 520px;">
+        <div class="modal-header"><h3 class="modal-title">إضافة مدير قطاع</h3><button class="modal-close" type="button">&times;</button></div>
+        <div class="modal-body">
+            <form id="formSectorManager" class="form-grid" novalidate>
+                <div class="form-group span-full"><label>الاسم الكامل *</label><input type="text" class="form-control" id="sectorManagerFullName" maxlength="200" required></div>
+                <div class="form-group span-full">
+                    <label>القطاع *</label>
+                    <select class="form-select" id="sectorManagerSectorId" required></select>
+                    <small id="sectorManagerSectorHint" style="display:none;color:#b45309;margin-top:0.25rem;">لا توجد قطاعات متاحة (كل قطاع له مدير واحد فقط). أضف قطاعًا جديدًا أولًا.</small>
+                </div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" class="form-control" id="sectorManagerEmail" maxlength="200" dir="ltr"></div>
+                <div class="form-group"><label>رقم الهاتف</label><input type="tel" class="form-control" id="sectorManagerPhone" maxlength="50" dir="ltr"></div>
+            </form>
+        </div>
+        <div class="modal-footer"><button class="btn btn-secondary modal-cancel" type="button">إلغاء</button><button class="btn btn-primary" id="btnSaveSectorManager" type="button">حفظ</button></div>
+    </div>
+</div>
+
 <!-- CONTRACT MODAL -->

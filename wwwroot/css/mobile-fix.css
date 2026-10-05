@@ -612,3 +612,31 @@ body.sidebar-mobile-open {
     display: contents !important;
   }
 }
+
+/* Keep page content close to the shared filters without stacked top insets. */
+#content-area {
+  padding-top: 0 !important;
+}
+
+#importExportView {
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+#costControlView {
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+#importExportView > .form-grid,
+#costControlView > .page-header-row,
+#costControlView > .page-header-row .page-title {
+  margin-top: 0 !important;
+}
+
+#global-filters-bar {
+  margin-bottom: 0 !important;
+}

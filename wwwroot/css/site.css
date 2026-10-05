@@ -1735,9 +1735,11 @@ button { cursor: pointer; }
 ========================================================= */
 
 #importExportView {
-    padding: 18px 24px !important;
+    padding: 0 !important;
     box-sizing: border-box;
-    overflow-y: auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
 }
 
 /* أول عنصر داخل الصفحة */
@@ -5132,3 +5134,14 @@ html[dir="rtl"] #sidebar {
     }
 }
 
+/* Projects toolbar: action buttons group (responsive) */
+.table-toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+@media (max-width: 640px) {
+    .table-toolbar-actions { width: 100%; }
+    .table-toolbar-actions .btn { flex: 1 1 140px; }
+}

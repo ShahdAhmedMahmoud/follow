@@ -1,5 +1,270 @@
 /* Dashboard charts — loaded AFTER site.css and mobile-fix.css */
 
+#dashboardView .mc-disbursement-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3.25fr) minmax(270px, 1fr);
+    gap: 0.55rem;
+    align-items: stretch;
+    direction: ltr;
+    min-width: 0;
+}
+#dashboardView .mc-dashboard-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 0.7rem;
+    padding: 0.22rem;
+    overflow: visible;
+    border: 1px solid #d9deea;
+    border-radius: 9px;
+    background: #f6f9fd;
+    direction: ltr;
+}
+#dashboardView .mc-dashboard-tab {
+    flex: initial;
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    padding: 0.48rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: transparent;
+    color: #46586b;
+    font: 700 0.88rem/1.2 Tahoma, "Segoe UI", sans-serif;
+    cursor: pointer;
+    transition: background-color .16s ease, color .16s ease, border-color .16s ease, box-shadow .16s ease;
+}
+#dashboardView .mc-dashboard-tab:hover { background: #eaf3fc; color: #1c4f7a; }
+#dashboardView .mc-dashboard-tab[aria-selected="true"] {
+    border-color: #c7ddf3;
+    background: #fff;
+    color: #174f7d;
+    box-shadow: 0 1px 3px rgba(26, 67, 102, .1);
+}
+#dashboardView .mc-dashboard-tab:focus-visible { outline: 2px solid #3184c6; outline-offset: 2px; }
+#dashboardView .mc-dashboard-tab-panel[hidden] { display: none !important; }
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="progress"],
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="contracts"] {
+    display: grid;
+    gap: 0.75rem;
+    min-width: 0;
+}
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="invoices"] { min-width: 0; }
+#dashboardView .mc-restored-dashboard-charts { grid-template-columns: minmax(0, 1fr); }
+#dashboardView .mc-disbursement-section > .mc-section-head,
+#dashboardView .mc-disbursement-section > .mc-gap-strip { display: none; }
+
+#dashboardView .mc-disbursement-section {
+    padding: 0.7rem;
+}
+#dashboardView .mc-disbursement-section > .mc-section-head,
+#dashboardView .mc-disbursement-section > .mc-gap-strip {
+    display: none;
+}
+#dashboardView .mc-disbursement-main,
+#dashboardView .mc-disbursement-side {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    min-width: 0;
+    direction: rtl;
+}
+#dashboardView .mc-disbursement-side {
+    grid-template-rows: auto minmax(0, 1fr);
+}
+#dashboardView .mc-disbursement-monthly-card,
+#dashboardView .mc-disbursement-table-card,
+#dashboardView .mc-manager-disbursement-card,
+#dashboardView .mc-pending-count-card {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #d9deea;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+    min-width: 0;
+}
+#dashboardView .mc-disbursement-monthly-card .mc-chart-header,
+#dashboardView .mc-disbursement-table-card .mc-chart-header,
+#dashboardView .mc-manager-disbursement-card .mc-chart-header {
+    min-height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0.65rem;
+    background: #a9d4ff;
+    border-bottom: 1px solid #8fc4f8;
+    color: #152a3d;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-align: center;
+}
+#dashboardView .mc-disbursement-monthly-body {
+    height: 268px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    direction: ltr;
+    padding: 0.15rem 0.2rem 0.1rem;
+    -webkit-overflow-scrolling: touch;
+}
+#dashboardView .mc-disbursement-monthly-inner {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+}
+#dashboardView .mc-disbursement-monthly-inner canvas,
+#dashboardView .mc-manager-disbursement-inner canvas {
+    display: block;
+}
+#dashboardView .mc-pending-count-card {
+    min-height: 74px;
+    padding: 0.45rem 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.12rem;
+}
+#dashboardView .mc-pending-count-value {
+    color: #27313b;
+    font-size: 1.55rem;
+    line-height: 1.1;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+}
+#dashboardView .mc-pending-count-label {
+    color: #9b4f2b;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+#dashboardView .mc-manager-disbursement-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+#dashboardView .mc-manager-disbursement-body {
+    height: 560px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.25rem 0.2rem 0.35rem;
+    direction: ltr;
+    scrollbar-gutter: stable;
+}
+#dashboardView .mc-manager-disbursement-inner {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+#dashboardView .mc-disbursement-table-wrap {
+    width: 100%;
+    max-height: 280px;
+    overflow: auto;
+    direction: rtl;
+    -webkit-overflow-scrolling: touch;
+}
+#dashboardView .mc-disbursement-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    direction: rtl;
+    color: #24313d;
+    font-size: 0.8rem;
+}
+#dashboardView .mc-disbursement-table .mc-invoice-number-col { width: 23%; }
+#dashboardView .mc-disbursement-table .mc-expected-col,
+#dashboardView .mc-disbursement-table .mc-actual-col { width: 18%; }
+#dashboardView .mc-disbursement-table .mc-manager-col { width: 41%; }
+#dashboardView .mc-disbursement-table th:nth-child(1),
+#dashboardView .mc-disbursement-table td:nth-child(1) { width: 23%; }
+#dashboardView .mc-disbursement-table th:nth-child(2),
+#dashboardView .mc-disbursement-table td:nth-child(2),
+#dashboardView .mc-disbursement-table th:nth-child(3),
+#dashboardView .mc-disbursement-table td:nth-child(3) { width: 18%; }
+#dashboardView .mc-disbursement-table th:nth-child(4),
+#dashboardView .mc-disbursement-table td:nth-child(4) { width: 41%; }
+#dashboardView .mc-disbursement-table th,
+#dashboardView .mc-disbursement-table td {
+    padding: 0.32rem 0.4rem;
+    border: 1px solid #d9dde3;
+    text-align: right;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+#dashboardView .mc-disbursement-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f8fbff;
+    color: #172c40;
+    font-weight: 700;
+    white-space: nowrap;
+}
+#dashboardView .mc-disbursement-table thead th:nth-child(2),
+#dashboardView .mc-disbursement-table thead th:nth-child(3) {
+    background: #e7f3ff;
+    border-bottom-color: #8fc4f8;
+    color: #164b78;
+    font-size: 0.84rem;
+}
+#dashboardView .mc-disbursement-table thead th:nth-child(2) { border-inline-end: 0; }
+#dashboardView .mc-disbursement-table thead th:nth-child(3) { border-inline-start: 0; }
+#dashboardView .mc-disbursement-table tbody tr:nth-child(even) { background: #ededed; }
+#dashboardView .mc-disbursement-table td:nth-child(1),
+#dashboardView .mc-disbursement-table td:nth-child(2),
+#dashboardView .mc-disbursement-table td:nth-child(3) {
+    white-space: nowrap;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+#dashboardView .mc-disbursement-table tbody td:nth-child(2),
+#dashboardView .mc-disbursement-table tbody td:nth-child(3) {
+    background: #f3f8fd;
+    color: #1d3448;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+#dashboardView .mc-disbursement-table tbody tr:nth-child(even) td:nth-child(2),
+#dashboardView .mc-disbursement-table tbody tr:nth-child(even) td:nth-child(3) { background: #eaf2f9; }
+#dashboardView .mc-disbursement-table tbody td:nth-child(2) { border-inline-end: 0; }
+#dashboardView .mc-disbursement-table tbody td:nth-child(3) { border-inline-start: 0; }
+#dashboardView .mc-disbursement-table td:nth-child(4) { min-width: 130px; }
+#dashboardView .mc-disbursement-table tfoot th {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #8fc4f8;
+    font-weight: 800;
+}
+#dashboardView .mc-disbursement-table tfoot th:nth-child(2),
+#dashboardView .mc-disbursement-table tfoot th:nth-child(3) { text-align: center; direction: ltr; }
+
+@media (max-width: 1050px) {
+    #dashboardView .mc-disbursement-layout { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-disbursement-side { grid-template-columns: minmax(150px, 0.4fr) minmax(0, 1fr); grid-template-rows: auto; }
+    #dashboardView .mc-manager-disbursement-body { height: 420px; }
+}
+@media (max-width: 640px) {
+    #dashboardView .mc-dashboard-tabs { margin-bottom: 0.55rem; }
+    #dashboardView .mc-dashboard-tab { min-height: 46px; font-size: 0.94rem; }
+    #dashboardView .mc-disbursement-side { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-disbursement-monthly-body { height: 290px; }
+    #dashboardView .mc-manager-disbursement-body { height: 430px; }
+    #dashboardView .mc-disbursement-table-wrap { max-height: 320px; }
+    #dashboardView .mc-disbursement-table { min-width: 680px; font-size: 0.76rem; }
+    #dashboardView .mc-disbursement-table thead th:nth-child(2),
+    #dashboardView .mc-disbursement-table thead th:nth-child(3),
+    #dashboardView .mc-disbursement-table tbody td:nth-child(2),
+    #dashboardView .mc-disbursement-table tbody td:nth-child(3) { font-size: 0.8rem; }
+}
+
 #dashboardView .mc-chart-card {
     padding: 0;
     margin: 0;
@@ -72,6 +337,55 @@
 #dashboardView .mc-remaining-table-row {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
 }
+#dashboardView .mc-remaining-charts-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+#dashboardView .mc-remaining-charts-row > .mc-chart-card {
+    height: 300px;
+}
+#dashboardView .mc-remaining-charts-row .mc-chart-header {
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.84rem;
+}
+#dashboardView .mc-remaining-charts-row .mc-horizontal-chart-body {
+    height: 268px;
+    padding: 0.3rem 0.55rem 0.3rem 0.3rem;
+    scrollbar-gutter: stable;
+}
+#dashboardView .mc-remaining-charts-row .mc-chart-scroll-inner {
+    min-width: 0;
+}
+#dashboardView .mc-contract-value-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+}
+#dashboardView .mc-contract-value-row .mc-chart-body,
+#dashboardView .mc-contract-value-row .mc-horizontal-chart-body {
+    height: 380px;
+}
+#dashboardView #mcChartContractValueBody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.65rem 0.55rem;
+    direction: ltr;
+    -webkit-overflow-scrolling: touch;
+}
+#dashboardView .mc-contract-value-inner {
+    position: relative;
+    height: 100%;
+    min-width: 100%;
+}
+#dashboardView .mc-contract-value-inner canvas {
+    display: block;
+}
+#dashboardView #mcManagerContractBody {
+    height: 300px;
+    padding: 0.6rem 0.55rem;
+}
 #dashboardView .mc-remaining-table-row .mc-chart-body { height: 380px; }
 
 #dashboardView .mc-category-chart-scroll { height: 300px; padding: 0.65rem 0.5rem 0.4rem; }
@@ -89,7 +403,8 @@
 
 
 #dashboardView .mc-remaining-table-card { display: flex; flex-direction: column; }
-#dashboardView .mc-project-table-wrap { min-height: 360px; max-height: 380px; overflow: auto; direction: rtl; }
+#dashboardView .mc-remaining-table-card { margin-top: 1rem; }
+#dashboardView .mc-project-table-wrap { width: 100%; min-height: 0; max-height: 420px; overflow: auto; direction: rtl; }
 #dashboardView .mc-project-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; color: #1e293b; }
 #dashboardView .mc-project-table th,
 #dashboardView .mc-project-table td { padding: 0.55rem 0.55rem; border: 1px solid #dbe3ec; text-align: right; vertical-align: middle; }
@@ -100,14 +415,391 @@
 #dashboardView .mc-project-table tfoot th:not(:first-child) { white-space: nowrap; direction: ltr; text-align: left; }
 #dashboardView .mc-project-table tfoot th { position: sticky; bottom: 0; background: #f1f7fd; border-top: 2px solid #9dceff; }
 
+#dashboardView .mc-contract-register {
+    margin-top: 1rem;
+}
+#dashboardView .mc-contract-register-wrap {
+    max-width: 100%;
+    max-height: 440px;
+    overflow: auto;
+    direction: rtl;
+    -webkit-overflow-scrolling: touch;
+}
+#dashboardView .mc-contract-register-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: #1e293b;
+    font-size: 0.82rem;
+}
+#dashboardView .mc-contract-register-table th,
+#dashboardView .mc-contract-register-table td {
+    padding: 0.62rem 0.75rem;
+    border: 1px solid #dbe3ec;
+    text-align: right;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+#dashboardView .mc-contract-register-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #eaf4ff;
+    color: #17324d;
+    font-weight: 800;
+    white-space: normal;
+}
+#dashboardView .mc-contract-register-table tbody tr:nth-child(even) { background: #f7faff; }
+#dashboardView .mc-contract-register-table tbody tr:hover { background: #edf6ff; }
+#dashboardView .mc-contract-register-table th:nth-child(1) { width: 19%; }
+#dashboardView .mc-contract-register-table th:nth-child(2) { width: 24%; }
+#dashboardView .mc-contract-register-table th:nth-child(3) { width: 15%; }
+#dashboardView .mc-contract-register-table th:nth-child(4) { width: 14%; }
+#dashboardView .mc-contract-register-table th:nth-child(5) { width: 13%; }
+#dashboardView .mc-contract-register-table th:nth-child(6) { width: 15%; }
+#dashboardView .mc-contract-register-table td:nth-child(3),
+#dashboardView .mc-contract-register-table td:nth-child(5) { white-space: nowrap; }
+#dashboardView .mc-contract-register-table td:nth-child(3) {
+    direction: ltr;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+#dashboardView .mc-contract-register-table td:nth-child(4),
+#dashboardView .mc-contract-register-table td:nth-child(5),
+#dashboardView .mc-contract-register-table td:nth-child(6) { text-align: center; }
+#dashboardView .mc-contract-register-table tfoot th {
+    position: sticky;
+    bottom: 0;
+    background: #eaf4ff;
+    border-top: 2px solid #9dceff;
+    font-weight: 800;
+}
+#dashboardView .mc-contract-register-table tfoot th:nth-child(2) {
+    direction: ltr;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Final dashboard readability and interaction pass */
+#dashboardView {
+    --mc-border: #d8e1eb;
+    --mc-ink: #172b3e;
+    --mc-muted: #5c6d7d;
+}
+#dashboardView .mc-dashboard-tabs {
+    position: relative;
+    gap: 0.35rem;
+    margin: 0 0 1rem;
+    padding: 0.35rem;
+    border-color: var(--mc-border);
+    border-radius: 12px;
+    background: #eef3f8;
+    box-shadow: inset 0 1px 2px rgba(23, 43, 62, .04);
+}
+#dashboardView .mc-dashboard-tab {
+    position: relative;
+    flex: initial;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    border-radius: 9px;
+    font-size: 1rem;
+    letter-spacing: .01em;
+}
+#dashboardView .mc-dashboard-tab[aria-selected="true"] {
+    border-color: #c3d9ed;
+    box-shadow: 0 2px 6px rgba(23, 62, 95, .12);
+}
+#dashboardView .mc-dashboard-tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    inset-inline: 20%;
+    bottom: 3px;
+    height: 3px;
+    border-radius: 3px;
+    background: #2875b2;
+}
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="progress"],
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="contracts"],
+#dashboardView .mc-dashboard-tab-panel[data-dashboard-panel="invoices"] {
+    animation: mc-panel-enter .22s ease-out both;
+}
+@keyframes mc-panel-enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+#dashboardView .mc-chart-card,
+#dashboardView .kpi-card {
+    border-radius: 12px;
+    border-color: var(--mc-border);
+    transition: box-shadow .18s ease, transform .18s ease;
+}
+#dashboardView .mc-chart-card:hover,
+#dashboardView .kpi-card:hover {
+    box-shadow: 0 5px 16px rgba(20, 46, 70, .09);
+}
+#dashboardView .mc-chart-header { font-size: 1rem; line-height: 1.45; }
+#dashboardView .mc-section-head h3 { font-size: clamp(1.25rem, 1.6vw, 1.65rem); }
+#dashboardView .mc-section-head p { font-size: .95rem; line-height: 1.55; }
+#dashboardView .mc-chart-body,
+#dashboardView .mc-chart-scroll-inner { min-width: 0; }
+#dashboardView .mc-project-table,
+#dashboardView .mc-contract-register-table,
+#dashboardView .mc-disbursement-table {
+    font-size: .94rem;
+    color: var(--mc-ink);
+}
+#dashboardView .mc-attention-table th,
+#dashboardView .mc-attention-table td {
+    padding: .65rem .7rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.45;
+}
+#dashboardView .mc-attention-table { font-size: .92rem; }
+#dashboardView .mc-project-table th,
+#dashboardView .mc-project-table td,
+#dashboardView .mc-contract-register-table th,
+#dashboardView .mc-contract-register-table td,
+#dashboardView .mc-disbursement-table th,
+#dashboardView .mc-disbursement-table td,
+#dashboardView .mc-attention-table th,
+#dashboardView .mc-attention-table td {
+    text-align: center !important;
+}
+#dashboardView .mc-disbursement-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #f8fbff !important;
+    background-image: none;
+    opacity: 1;
+    box-shadow: 0 1px 0 #cbd9e6;
+}
+#dashboardView .mc-disbursement-table thead th:nth-child(4),
+#dashboardView .mc-disbursement-table thead th:nth-child(5) {
+    background-color: #e7f3ff !important;
+}
+#dashboardView .mc-disbursement-table tbody td:nth-child(4),
+#dashboardView .mc-disbursement-table tbody td:nth-child(5) {
+    background-color: #edf6ff;
+}
+#dashboardView .mc-chart-scroll { overflow-x: auto; overflow-y: hidden; }
+#dashboardView #mcChartExecPositionScroll {
+    height: 390px;
+    padding-inline: 1rem;
+    scroll-behavior: smooth;
+}
+#dashboardView #mcChartExecPositionInner { min-width: 100%; }
+#dashboardView .mc-disbursement-monthly-body { height: 360px; }
+#dashboardView .mc-disbursement-layout { grid-template-columns: minmax(0, 2.5fr) minmax(300px, 1fr); gap: .45rem; }
+#dashboardView .mc-disbursement-side { gap: .45rem; }
+#dashboardView .mc-disbursement-table-wrap { max-height: 360px; }
+#dashboardView .mc-disbursement-table { min-width: 1120px; }
+#dashboardView .mc-disbursement-monthly-card .mc-chart-header,
+#dashboardView .mc-disbursement-table-card .mc-chart-header,
+#dashboardView .mc-manager-disbursement-card .mc-chart-header { min-height: 40px; font-size: 1rem; }
+#dashboardView .mc-contract-register-table,
+#dashboardView .mc-project-table,
+#dashboardView .mc-disbursement-table { font-size: .96rem; }
+#dashboardView .mc-project-table th,
+#dashboardView .mc-project-table td,
+#dashboardView .mc-contract-register-table th,
+#dashboardView .mc-contract-register-table td,
+#dashboardView .mc-disbursement-table th,
+#dashboardView .mc-disbursement-table td {
+    min-height: 44px;
+    padding: .7rem .75rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+#dashboardView .mc-project-table { min-width: 880px; }
+#dashboardView .mc-disbursement-table { min-width: 1040px; table-layout: fixed; }
+#dashboardView .mc-disbursement-table .mc-project-col { width: 22%; }
+#dashboardView .mc-disbursement-table .mc-contract-col { width: 22%; }
+#dashboardView .mc-disbursement-table .mc-invoice-number-col { width: 13%; }
+#dashboardView .mc-disbursement-table .mc-expected-col,
+#dashboardView .mc-disbursement-table .mc-actual-col { width: 14%; }
+#dashboardView .mc-disbursement-table .mc-manager-col { width: 15%; }
+#dashboardView .mc-disbursement-table th { white-space: normal; }
+#dashboardView .mc-disbursement-table td:nth-child(1),
+#dashboardView .mc-disbursement-table td:nth-child(2),
+#dashboardView .mc-disbursement-table td:nth-child(6) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#dashboardView .mc-disbursement-table tbody td:nth-child(4),
+#dashboardView .mc-disbursement-table tbody td:nth-child(5),
+#dashboardView .mc-project-table td:not(:first-child),
+#dashboardView .mc-contract-register-table td:nth-child(3) {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+}
+#dashboardView .mc-contract-register-table th,
+#dashboardView .mc-contract-register-table td { overflow-wrap: anywhere; }
+#dashboardView .mc-disbursement-table tbody tr,
+#dashboardView .mc-project-table tbody tr { transition: background-color .14s ease; }
+#dashboardView .mc-disbursement-table tbody tr:hover,
+#dashboardView .mc-project-table tbody tr:hover { background: #edf6ff; }
+#dashboardView .mc-disbursement-table thead th:nth-child(4),
+#dashboardView .mc-disbursement-table thead th:nth-child(5),
+#dashboardView .mc-disbursement-table tbody td:nth-child(4),
+#dashboardView .mc-disbursement-table tbody td:nth-child(5) { background-color: #edf6ff; }
+#dashboardView .mc-disbursement-table thead th:nth-child(2),
+#dashboardView .mc-disbursement-table thead th:nth-child(3),
+#dashboardView .mc-disbursement-table tbody td:nth-child(2),
+#dashboardView .mc-disbursement-table tbody td:nth-child(3) { background-color: transparent; border-color: #d9dde3; color: var(--mc-ink); }
+#dashboardView .mc-disbursement-table thead th:nth-child(4),
+#dashboardView .mc-disbursement-table tbody td:nth-child(4) { border-inline-end: 0; }
+#dashboardView .mc-disbursement-table thead th:nth-child(5),
+#dashboardView .mc-disbursement-table tbody td:nth-child(5) { border-inline-start: 0; }
+#dashboardView .mc-disbursement-table tfoot th { text-align: center; }
+#dashboardView .mc-primary-kpis .kpi-value { font-size: clamp(1.25rem, 1.7vw, 1.75rem); }
+#dashboardView .kpi-label { font-size: .96rem; line-height: 1.45; }
+
+@media (max-width: 1050px) {
+    #dashboardView .mc-disbursement-layout { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-disbursement-side { grid-template-columns: minmax(180px, .7fr) minmax(0, 2fr); grid-template-rows: auto; }
+    #dashboardView .mc-manager-disbursement-body { height: 460px; }
+}
+@media (max-width: 640px) {
+    #dashboardView .mc-dashboard-tabs { gap: .25rem; }
+    #dashboardView .mc-dashboard-tab { flex-basis: 120px; min-height: 46px; padding-inline: .55rem; font-size: .95rem; }
+    #dashboardView .mc-disbursement-section { padding: .5rem; }
+    #dashboardView .mc-disbursement-side { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-disbursement-monthly-body { height: 350px; }
+    #dashboardView .mc-disbursement-table-wrap { max-height: 360px; }
+    #dashboardView .mc-project-table-wrap { max-height: 360px; }
+    #dashboardView .mc-project-table,
+    #dashboardView .mc-contract-register-table,
+    #dashboardView .mc-disbursement-table { font-size: .9rem; }
+}
+@media (max-width: 480px) {
+    #dashboardView .mc-dashboard-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .35rem;
+        padding: .35rem;
+        overflow: visible;
+    }
+    #dashboardView .mc-dashboard-tab[data-dashboard-tab="invoices"] { grid-column: 1 / -1; }
+}
+@media (max-width: 360px) {
+    #dashboardView .mc-dashboard-tab {
+        min-height: 44px;
+        padding-inline: .35rem;
+        font-size: .88rem;
+    }
+}
+@media (max-width: 760px) {
+    #dashboardView #mcChartExecPositionScroll { height: 370px; }
+    #dashboardView .mc-disbursement-layout { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-disbursement-side { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Invoice chart mode switch and non-scrolling responsive navigation tabs. */
+#dashboardView .mc-dashboard-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+}
+#dashboardView .mc-dashboard-tab {
+    width: 100%;
+    min-width: 0;
+    padding-inline: clamp(.35rem, 1.5vw, .9rem);
+    white-space: nowrap;
+}
+#dashboardView .mc-disbursement-monthly-card { min-width: 0; }
+#dashboardView .mc-disbursement-monthly-card .mc-chart-header {
+    min-height: 44px;
+    font-size: 1.08rem;
+}
+#dashboardView .mc-invoice-chart-toolbar {
+    display: flex;
+    justify-content: center;
+    padding: .65rem .8rem .35rem;
+}
+#dashboardView .mc-invoice-chart-toggle {
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(92px, 1fr));
+    gap: .2rem;
+    padding: .22rem;
+    border: 1px solid #cbd8e5;
+    border-radius: 10px;
+    background: #f1f5f9;
+}
+#dashboardView .mc-invoice-chart-option {
+    min-height: 40px;
+    padding: .45rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: #40556a;
+    font: 700 .95rem/1.2 Tahoma, "Segoe UI", sans-serif;
+    cursor: pointer;
+    transition: color .18s ease, background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+#dashboardView .mc-invoice-chart-option:hover { background: #e5edf5; color: #1d4f78; }
+#dashboardView .mc-invoice-chart-option.is-active {
+    border-color: #c6daed;
+    background: #fff;
+    color: #174f7d;
+    box-shadow: 0 1px 4px rgba(23, 62, 95, .14);
+}
+#dashboardView .mc-invoice-chart-option:focus-visible {
+    outline: 2px solid #3184c6;
+    outline-offset: 2px;
+}
+#dashboardView .mc-disbursement-monthly-body {
+    height: 390px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+@media (max-width: 480px) {
+    #dashboardView .mc-dashboard-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        overflow: visible;
+    }
+    #dashboardView .mc-dashboard-tab[data-dashboard-tab="invoices"] { grid-column: 1 / -1; }
+    #dashboardView .mc-dashboard-tab { min-height: 46px; font-size: .94rem; }
+    #dashboardView .mc-invoice-chart-toggle { grid-template-columns: repeat(2, minmax(84px, 1fr)); }
+    #dashboardView .mc-invoice-chart-option { padding-inline: .7rem; }
+    #dashboardView .mc-disbursement-monthly-body { height: 370px; }
+}
+@media (max-width: 360px) {
+    #dashboardView .mc-dashboard-tab { padding-inline: .35rem; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    #dashboardView *, #dashboardView *::before, #dashboardView *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
 @media (max-width: 760px) {
     #dashboardView .mc-comparison-row { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-remaining-charts-row { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-remaining-charts-row > .mc-chart-card { height: 300px; }
     #dashboardView .mc-cumulative-table-row { grid-template-columns: minmax(0, 1fr); }
     #dashboardView .mc-remaining-table-row { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView .mc-contract-value-row { grid-template-columns: minmax(0, 1fr); }
+    #dashboardView #mcManagerContractBody { height: 280px; }
     #dashboardView .mc-chart-primary .mc-chart-body,
     #dashboardView .mc-chart-compact .mc-chart-body { height: 300px; }
     #dashboardView .mc-project-table-wrap { max-height: 360px; }
     #dashboardView .mc-project-table { min-width: 760px; }
+    #dashboardView .mc-contract-register-table { font-size: 0.8rem; }
+}
+
+@media (min-width: 761px) and (max-width: 1050px) {
+    #dashboardView .mc-remaining-charts-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #dashboardView .mc-remaining-charts-row > .mc-chart-card:last-child { grid-column: 1 / -1; }
 }
 
 #dashboardView .mc-chart-body[data-empty="true"] canvas {
@@ -137,6 +829,107 @@
 
 @media (max-width: 380px) {
     #dashboardView .mc-chart-body { height: 280px; }
+}
+
+/* Global execution summary, positioned between portfolio KPIs and tabs. */
+#dashboardView .mc-exec-summary-section {
+    margin-bottom: 1rem;
+    padding: 1.2rem 1.35rem 1.3rem;
+    border: 1px solid var(--mc-border, #d9deea);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: var(--mc-shadow-sm, 0 2px 8px rgba(15, 23, 42, .06));
+}
+#dashboardView .mc-exec-summary-head {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: .8rem;
+}
+#dashboardView .mc-exec-summary-head h3 { font-size: clamp(1.2rem, 1.7vw, 1.5rem); }
+#dashboardView .mc-exec-summary-head p { font-size: .92rem; }
+#dashboardView .mc-gap-strip.mc-exec-summary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .8rem;
+    margin: 0;
+}
+#dashboardView .mc-exec-summary-grid .mc-exec-summary-metric {
+    display: flex;
+    min-width: 0;
+    min-height: 104px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    padding: .9rem 1rem;
+    border: 1px solid var(--mc-border, #d9deea);
+    border-radius: 10px;
+    background: var(--mc-slate-tint, #f4f7fa);
+    text-align: center;
+}
+#dashboardView .mc-exec-summary-grid .mc-exec-summary-metric small {
+    color: var(--mc-slate, #637487);
+    font-size: clamp(.84rem, .95vw, .98rem);
+    font-weight: 700;
+    line-height: 1.45;
+}
+#dashboardView .mc-exec-summary-grid .mc-exec-summary-metric strong {
+    max-width: 100%;
+    color: var(--mc-ink, #1e293b);
+    font-size: clamp(1.18rem, 1.7vw, 1.65rem);
+    font-weight: 800;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+#dashboardView .mc-exec-summary-grid .mc-exec-summary-due {
+    background: var(--mc-blue-tint, #eef6ff);
+    border-color: #d7e6ff;
+    border-inline-start: 4px solid var(--mc-blue, #2f80c9);
+}
+@media (max-width: 900px) {
+    #dashboardView .mc-gap-strip.mc-exec-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+    #dashboardView .mc-exec-summary-section { padding: 1rem; }
+    #dashboardView .mc-gap-strip.mc-exec-summary-grid { gap: .6rem; }
+    #dashboardView .mc-exec-summary-grid .mc-exec-summary-metric { min-height: 96px; padding: .75rem .55rem; }
+    #dashboardView .mc-exec-summary-grid .mc-exec-summary-metric small { font-size: .84rem; }
+    #dashboardView .mc-exec-summary-grid .mc-exec-summary-metric strong { font-size: clamp(1rem, 4.4vw, 1.35rem); }
+}
+
+/* Keep final overrides last so table scrolling never shows through sticky headers. */
+#dashboardView .mc-disbursement-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f8fbff !important;
+    background-color: #f8fbff !important;
+    opacity: 1;
+    box-shadow: 0 1px 0 #cbd9e6;
+}
+#dashboardView .mc-disbursement-table thead th:nth-child(4),
+#dashboardView .mc-disbursement-table thead th:nth-child(5) {
+    background: #e7f3ff !important;
+    background-color: #e7f3ff !important;
+}
+#dashboardView .mc-disbursement-table thead th:nth-child(2),
+#dashboardView .mc-disbursement-table thead th:nth-child(3) {
+    background: #f8fbff !important;
+    background-color: #f8fbff !important;
+}
+#dashboardView .mc-project-table th,
+#dashboardView .mc-project-table td,
+#dashboardView .mc-contract-register-table th,
+#dashboardView .mc-contract-register-table td,
+#dashboardView .mc-disbursement-table th,
+#dashboardView .mc-disbursement-table td,
+#dashboardView .mc-attention-table th,
+#dashboardView .mc-attention-table td { text-align: center !important; }
+#dashboardView #mcChartExecPositionScroll { overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 760px) {
+    #dashboardView .mc-contract-register-table { font-size: .92rem; }
+    #dashboardView .mc-project-table,
+    #dashboardView .mc-disbursement-table { font-size: .92rem; }
 }
 
 /* ---- Searchable sector manager combobox (used in project modal) ---- */
@@ -174,3 +967,39 @@
     font-size: 0.85rem;
     text-align: center;
 }
+
+/* ---- Invoice table: date column + sort bar ---- */
+#dashboardView .mc-table-sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.65rem;
+    background: #f8fbff;
+    border-bottom: 1px solid #d9deea;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #172c40;
+}
+#dashboardView .mc-table-sort-bar .form-select {
+    width: auto;
+    min-width: 170px;
+    max-width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.82rem;
+}
+#dashboardView .mc-disbursement-table { min-width: 820px; }
+#dashboardView .mc-disbursement-table th:nth-child(1),
+#dashboardView .mc-disbursement-table td:nth-child(1) { width: 17%; }
+#dashboardView .mc-disbursement-table th:nth-child(2),
+#dashboardView .mc-disbursement-table td:nth-child(2) { width: 15%; }
+#dashboardView .mc-disbursement-table th:nth-child(3),
+#dashboardView .mc-disbursement-table td:nth-child(3) { width: 12%; }
+#dashboardView .mc-disbursement-table th:nth-child(4),
+#dashboardView .mc-disbursement-table td:nth-child(4) { width: 12%; min-width: 0; white-space: nowrap; text-align: center; font-variant-numeric: tabular-nums; }
+#dashboardView .mc-disbursement-table th:nth-child(5),
+#dashboardView .mc-disbursement-table td:nth-child(5),
+#dashboardView .mc-disbursement-table th:nth-child(6),
+#dashboardView .mc-disbursement-table td:nth-child(6) { width: 13%; white-space: nowrap; text-align: center; font-variant-numeric: tabular-nums; }
+#dashboardView .mc-disbursement-table th:nth-child(7),
+#dashboardView .mc-disbursement-table td:nth-child(7) { width: 18%; min-width: 120px; }

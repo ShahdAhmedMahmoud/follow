@@ -4,7 +4,11 @@
                 <div class="table-container">
                     <div class="table-toolbar">
                         <div class="table-toolbar-left"><input type="text" class="form-control table-search" id="searchProjects" placeholder="بحث في جميع الأعمدة..."></div>
-                        <button class="btn btn-primary" id="btnAddProject">+ إضافة مشروع</button>
+                        <div class="table-toolbar-actions">
+                            <button class="btn btn-secondary" id="btnAddSector" type="button">+ إضافة قطاع</button>
+                            <button class="btn btn-secondary" id="btnAddSectorManager" type="button">+ إضافة مدير قطاع</button>
+                            <button class="btn btn-primary" id="btnAddProject" type="button">+ إضافة مشروع</button>
+                        </div>
                     </div>
                     <div class="data-table-wrapper">
                         <table class="data-table" id="tblProjects">
